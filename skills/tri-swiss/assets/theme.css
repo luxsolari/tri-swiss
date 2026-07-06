@@ -1,0 +1,89 @@
+/* Tri-Swiss — theme tokens for Tailwind 4.
+ * Paste into your global stylesheet (e.g. app/globals.css).
+ * For non-Tailwind stacks, the :root / .dark blocks work as plain CSS
+ * custom properties — drop the @import and @theme lines. */
+
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #eae8d0;
+  --foreground: #000000;
+  --card: #f1efdb;
+  --card-foreground: #000000;
+  --primary: #d3281b;
+  --primary-foreground: #eae8d0;
+  --secondary: #000000;
+  --secondary-foreground: #eae8d0;
+  --muted: #e2dfc7;
+  --muted-foreground: #4a4838;
+  --border: #000000;
+  --input: #f1efdb;
+  --ring: #d3281b;
+  --highlight: #56bfa3;
+  --radius: 0.5rem;
+
+  /* Font roles. Primary = Geist (display + body/utility). Secondary = Space
+     Mono, italic only, annotations/captions. Tertiary = Zilla Slab, long-form.
+     4th register = Jost, hero/wordmark + section dividers only. */
+  --mono: "Geist Mono", ui-monospace, monospace;
+  --sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --annotation: "Space Mono", ui-monospace, monospace;
+  --serif: "Zilla Slab", Georgia, serif;
+  --hero: "Jost", ui-sans-serif, system-ui, sans-serif;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #eae8d0;
+  --card: #161616;
+  --card-foreground: #eae8d0;
+  --primary: #e2503f;
+  --primary-foreground: #eae8d0;
+  --secondary: #eae8d0;
+  --secondary-foreground: #000000;
+  --muted: #1f1f1f;
+  --muted-foreground: #a8a696;
+  --border: #eae8d0;
+  --input: #161616;
+  --ring: #e2503f;
+  --highlight: #63cbae;
+}
+
+@theme inline {
+  /* Reference the role vars so Tailwind's font utilities stay in sync. */
+  --font-sans: var(--sans);
+  --font-mono: var(--mono);
+  --font-annotation: var(--annotation);
+  --font-serif: var(--serif);
+  --font-hero: var(--hero);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-highlight: var(--highlight);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
