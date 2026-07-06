@@ -111,6 +111,58 @@ Rules: explicit palette colors per mark (no default scheme), no color legend,
 square bars, muted grid, solid-vs-dashed for series, outline ring (not hue) for a
 highlighted slice, `--highlight` reserved for a genuine third line only.
 
+## Accent expansion — Red dividers, emphasis borders, Turquoise decoration
+
+Beyond their original jobs (Red: primary action/destructive/ring. Turquoise:
+chart second series/brand moment), both accents now recur more often across
+a page — Red picks up two new structural jobs; Turquoise gets decorative
+reuse. Guardrails: ink/cream still dominate any surface, Red and Turquoise
+never touch on the same element, and each component gets at most one accent.
+
+**Section-divider rule, red variant.** The default section-header rule is
+`bg-border`; swap to `bg-primary` for a section that earns emphasis (used
+selectively — a page's opening section, a "featured" callout — not on
+every divider):
+
+```jsx
+<div className="mb-4 flex items-baseline gap-3">
+  <h5>Section title</h5>
+  <span className="h-px flex-1 bg-primary" />
+</div>
+```
+
+**Selective card border.** One card in a set — the featured one, the
+current one, the first-in-list — swaps its border from `border-border` to
+`border-primary`. Never the default for a whole grid:
+
+```jsx
+<div className="border border-primary bg-card p-6">
+  <p className="font-mono font-bold">Featured</p>
+  <p className="text-sm text-muted-foreground">
+    One card in a set — never the default for a whole grid.
+  </p>
+</div>
+```
+
+**Turquoise decorative accents.** Non-semantic, ornamental only — never on
+a button, tag, status pip, or link:
+
+```jsx
+{/* Icon fill, used as a flourish rather than a state cue */}
+<Icon className="icon" style={{ color: "var(--highlight)" }} />
+
+{/* Underline beneath a heading or label */}
+<span className="border-b-2" style={{ borderColor: "var(--highlight)" }}>
+  Underlined label
+</span>
+
+{/* Background wash behind a block, softer than a hard border */}
+<div className="bg-highlight/10 p-4">Separated without a border</div>
+
+{/* Dot accent, matching the existing dot-indicator pattern */}
+<span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--highlight)" }} />
+```
+
 ## Iconography (geist-icons, restyled)
 
 `geist-icons` is the only sanctioned icon set. Drop in the icon's SVG and add
@@ -139,18 +191,18 @@ import { IconArrowRight } from "geist-icons";
 <IconArrowRight className="icon" />
 ```
 
-## Hero / display type (Jost)
+## Hero / display type (Geist Mono)
 
-Reserved for exactly two jobs: a page's hero title/wordmark, and section/chapter
-dividers inside long-form editorial content. Never a UI heading, never a
-pull-quote, never running body text.
+The hero title/wordmark and section/chapter dividers inside long-form
+editorial content both use Geist Mono at display weight/size — the same
+face as every other heading, just scaled up. No separate register needed.
 
 ```jsx
-<h1 className="font-hero" style={{ fontSize: "3.5rem", fontWeight: 700, letterSpacing: "-0.01em" }}>
+<h1 className="font-mono" style={{ fontSize: "3.5rem", fontWeight: 700, letterSpacing: "-0.01em" }}>
   Page Title.
 </h1>
 
-<div className="font-hero" style={{ fontSize: "1.5rem", fontWeight: 700 }}>
+<div className="font-mono" style={{ fontSize: "1.5rem", fontWeight: 700 }}>
   02 — Chapter Title
 </div>
 ```
@@ -175,7 +227,9 @@ border border-border bg-card text-card-foreground p-6
 ```
 
 Nest a section divider (see `SKILL.md`) inside for titled regions. Keep corners
-square unless a `rounded-md` (0.5rem) genuinely helps.
+square unless a `rounded-md` (0.5rem) genuinely helps. For the one emphasized
+card in a set, see the selective-border pattern under "Accent expansion"
+above — swap `border-border` for `border-primary`.
 
 ## Inputs
 
