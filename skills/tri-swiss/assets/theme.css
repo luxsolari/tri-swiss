@@ -24,14 +24,13 @@
   --highlight: #56bfa3;
   --radius: 0.5rem;
 
-  /* Font roles. Primary = Geist (display + body/utility). Secondary = Space
-     Mono, italic only, annotations/captions. Tertiary = Zilla Slab, long-form.
-     4th register = Jost, hero/wordmark + section dividers only. */
+  /* Font roles. Primary = Geist (display + body/utility, and now also
+     hero/wordmark + section dividers). Secondary = Space Mono, italic
+     only, annotations/captions. Tertiary = Zilla Slab, long-form. */
   --mono: "Geist Mono", ui-monospace, monospace;
   --sans: "Geist", ui-sans-serif, system-ui, sans-serif;
   --annotation: "Space Mono", ui-monospace, monospace;
   --serif: "Zilla Slab", Georgia, serif;
-  --hero: "Jost", ui-sans-serif, system-ui, sans-serif;
 }
 
 .dark {
@@ -57,7 +56,6 @@
   --font-mono: var(--mono);
   --font-annotation: var(--annotation);
   --font-serif: var(--serif);
-  --font-hero: var(--hero);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
