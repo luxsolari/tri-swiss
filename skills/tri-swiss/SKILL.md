@@ -126,20 +126,17 @@ voice, the other three are governed extras with exactly one job each.
 
 | Tier | Font | Role |
 |------|------|------|
-| Primary | **Geist Mono** (`font-mono`) | Headings, display, data values, tags, nav, labels |
+| Primary | **Geist Mono** (`font-mono`) | Headings, display, data values, tags, nav, labels, hero title/wordmark, and section/chapter dividers in long-form editorial content |
 | Primary | **Geist Sans** (`font-sans`) | Body copy, prose, **and** dense-data/utility text (tables, fine print) at smaller size with tabular figures |
 | Secondary | **Space Mono, italic only** (`font-annotation italic`) | Inline annotations and figure captions only — never emphasis |
 | Tertiary | **Zilla Slab** (`font-serif`) | Long-form editorial body and pull-quotes — never UI |
-| 4th register | **Jost** (`font-hero`) | Hero title/wordmark and section/chapter dividers in long-form editorial content only — never a UI heading, never a pull-quote |
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Space+Mono:ital,wght@0,400;1,400&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Space+Mono:ital,wght@0,400;1,400&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
 ```
 
 Geist Sans and Geist Mono load as **variable fonts** (100–900 axis); Space
-Mono loads regular + italic; Zilla Slab loads its usual four cuts; Jost
-loads two static weights (400/700) — a hero/wordmark register doesn't need
-a full variable scale.
+Mono loads regular + italic; Zilla Slab loads its usual four cuts.
 
 **Range comes from weight, not more typefaces.** Within the Primary
 register, hierarchy is expressed through the weight axis, not a new face:
@@ -172,12 +169,6 @@ annotations and figure captions** (e.g. a `<figcaption>` or a marginal
 note). It is never used for emphasis — emphasis is always weight. It is
 also the visible nod tying Tri-Swiss to its sibling system, Duotone Swiss
 (which uses Space Mono/Grotesk as its own core pairing).
-
-**Jost** is reserved for exactly two jobs: a page or section's hero
-title/wordmark, and chapter/section dividers inside long-form editorial
-content (e.g. a large "02" or chapter title between article sections). It
-never appears as a UI heading (that's Geist Mono's job) and never as a
-pull-quote (that's Zilla Slab's job).
 
 ## Spacing & layout
 
