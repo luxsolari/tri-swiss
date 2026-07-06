@@ -28,7 +28,7 @@
      Mono, italic only, annotations/captions. Tertiary = Zilla Slab, long-form.
      4th register = Jost, hero/wordmark + section dividers only. */
   --mono: "Geist Mono", ui-monospace, monospace;
-  --sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif;
+  --sans: "Geist", ui-sans-serif, system-ui, sans-serif;
   --annotation: "Space Mono", ui-monospace, monospace;
   --serif: "Zilla Slab", Georgia, serif;
   --hero: "Jost", ui-sans-serif, system-ui, sans-serif;
