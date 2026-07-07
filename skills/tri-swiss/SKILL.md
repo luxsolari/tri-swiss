@@ -314,6 +314,51 @@ tracking-[0.12em]`.
 
 `rounded-full` is reserved for dot indicators only — never on containers or pills.
 
+## Lists / tables
+
+**Lists.** No default round bullet glyphs. Unordered list items get a
+thin top-border divider between rows (`border-top:1px solid
+var(--border)`) instead of a bullet mark. Ordered list items use
+tabular mono-font numbers (`font-mono`, matching the existing "Tabular
+figures" pattern) followed by body-font (`font-sans`) item text.
+
+**Tables.** Bold mono-font (`font-mono`) header row with a 2px bottom
+border (matching the `.rule`/divider style used throughout this page),
+1px `border-border` between body rows, `tabular-nums` right-aligned for
+numeric columns. No zebra striping — kept consistent with the existing
+"no invented decoration" pattern.
+
+**Guardrail: markers and borders stay neutral.** List dividers and
+table borders/headers use ink/muted-foreground only — **never** Red or
+Turquoise. Using an accent color as a decorative list/table marker
+would be a new, unsanctioned use of colors reserved for their named
+jobs (action, emphasis, hover, Structural Block). This is a hard rule,
+not a style preference.
+
+## Images
+
+Neither the theme nor the component library had an opinion on images
+until now.
+
+**Grid placement.** An image sits inside a bordered container (1px
+`border-border`, matching the existing card border style) spanning a
+defined number of grid columns, at a consistent aspect ratio (e.g. 4:3
+or 16:9) rather than an arbitrary crop, with a mono-label caption
+beneath it (reusing the existing `.label`/`.annotation` caption
+convention already used elsewhere on the page).
+
+**Color treatment.** The **default and recommended** treatment is a
+grayscale or duotone filter (`filter: grayscale(1)` or a duotone
+technique mapped toward ink+cream) — this keeps the "only four color
+tokens, ever" invariant airtight and matches the historical
+Swiss/International Typographic Style tradition of black-and-white
+photography. **Full color is permitted specifically when the image
+itself is the primary content** — e.g. a blog post's photography, a
+portfolio gallery, product photography — not as a general license for
+decorative images sprinkled through UI chrome. This is a scoped, named
+exception (like the tri-part stripe or the dual-accent hover pattern),
+not an open "designer's choice."
+
 ## Iconography
 
 **`geist-icons` is the single sanctioned icon set** — mirroring the
@@ -381,5 +426,12 @@ to the mono label pattern. See
   accent per component at any single moment — the tri-part stripe
   (spatial) and the dual-accent hover pattern (sequential) are the two
   named exceptions, not a general loosening.
+- **No accent-colored list markers or table borders.** Dividers,
+  numbers, and header rules stay ink/muted-foreground — Red and
+  Turquoise are reserved for their named jobs, not decoration in a list
+  or table.
+- **No full-color images outside the named photography-content
+  exception.** Default to grayscale/duotone; full color is only for
+  images that are themselves the primary content (see "Images").
 - **Ink/cream still dominate.** Accents are seasoning; a surface where
   Red or Turquoise out-covers ink/cream has gone too far.
