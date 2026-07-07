@@ -6,6 +6,8 @@ All notable changes to this plugin are documented here. Format follows
 
 ## [Unreleased]
 
+## [0.1.0] — 2026-07-07
+
 ### Added
 - Initial release of the **Tri-Swiss** design-system skill (`tri-swiss`).
 - **`SKILL.md`** — philosophy (tri-tone, more colorful, Swiss-minimalist),
