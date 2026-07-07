@@ -58,7 +58,11 @@ library (status pips, modals, toggles, SVG charts) see
 colors. Swiss Red is the primary accent — primary action, destructive,
 focus ring — and now also marks section-divider rules and a selectively
 emphasized card/component border (one card in a set, never the whole
-grid). Pastel Turquoise stays a **third, non-semantic** color — it never
+grid). It also has a third job: a Structural Block — a solid-color sidebar/nav
+rail or hero band (pick one per layout, capped at ~25% of viewport
+width/height), plus an independent bold-word accent inside a heading that
+may combine with either. Outside that one block, ink/cream continue to
+dominate every other surface exactly as before. Pastel Turquoise stays a **third, non-semantic** color — it never
 carries meaning (no success/info/second-interactive-state use) — but is
 no longer rationed to one touch per page: it recurs as pure decoration
 (icon fills, underlines, background washes, dot accents, a chart's
@@ -67,7 +71,11 @@ wouldn't change what the user understands about state. It still never
 appears on a button, tag, status pip, or link. Three guardrails keep this
 from tipping into loud: ink/cream still visually dominate any surface;
 Red and Turquoise never touch or sit adjacent on the same element; one
-accent per component, not both.
+accent per component, not both. The **tri-part segment stripe** — three equal solid blocks, ink/Red/
+Turquoise in a row, used for a static decorative bar (e.g. beneath a hero
+title) — is the one explicitly named exception to "Red and Turquoise
+never touch": a single governed device, not a general loosening. Nowhere
+else may the two sit adjacent.
 
 **Swiss-minimalist.** Borders are visible (1px solid, full ink or full
 cream). No shadows — elevation comes from a background-color step (`--card`
@@ -132,6 +140,11 @@ something. It IS sanctioned for open-ended **decorative** reuse:
 5. A background wash (e.g. `bg-highlight/10`) behind a block that wants
    separation without a hard border.
 6. A dot accent, matching the existing dot-indicator pattern.
+7. A hover-triggered flourish on a nav link or label — an underline or dot
+   that appears on `:hover`, purely ornamental and identical regardless of
+   active/current/visited state, layered *alongside* the element's
+   existing ink/muted-foreground hover color change (which still carries
+   the real interactive feedback).
 
 It can recur multiple times on the same page — the old "exactly one
 brand moment" cap is gone — but the test that governs every use is
@@ -139,9 +152,10 @@ unchanged: if turquoise's presence or absence would change what the user
 understands about *state*, it's wrong. If it's purely ornamental and
 removable without changing meaning, it's fine.
 
-**Do not** use it in buttons, tags, status pips, links, or any other UI
-state indicator. If a new element wants a second color for *meaning*, the
-answer is still "no — use weight, size, or whitespace."
+**Do not** use it as a button's, tag's, status pip's, or link's own
+state-indicating color. A link may show a decorative Turquoise
+hover-flourish (item 7 above) *in addition to* its real ink/red state
+feedback — Turquoise itself never signals the state.
 
 ## Typography
 
