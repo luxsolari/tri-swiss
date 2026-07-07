@@ -186,6 +186,10 @@
       <section id="hero" style="border-top:none;">
         <p class="label">Claude Code plugin</p>
         <h1 class="hero-title">Tri-Swiss.</h1>
+        <div style="display:flex; align-items:center; gap:8px; margin-top:12px;">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18" style="color:var(--highlight);" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>
+          <p style="font-family:var(--font-mono); font-weight:700; font-size:1.5rem; margin:0; color:var(--highlight);">A genuine third color.</p>
+        </div>
         <div style="display:flex; gap:4px; width:64px; margin-top:16px;" aria-hidden="true">
           <div style="height:3px; flex:1; background:var(--foreground);"></div>
           <div style="height:3px; flex:1; background:var(--primary);"></div>
@@ -201,9 +205,9 @@
                     text-transform:uppercase; letter-spacing:0.2em; font-size:0.75rem;">
           <a href="#components" style="border:1px solid var(--foreground); background:var(--foreground);
              color:var(--background); padding:12px 20px; text-decoration:none;">See the components</a>
-          <a href="https://github.com/luxsolari/tri-swiss"
-             style="border:1px solid var(--foreground); padding:12px 20px; text-decoration:none;
-             display:inline-flex; align-items:center; gap:8px;">
+          <a href="https://github.com/luxsolari/tri-swiss" class="btn-accent"
+             style="padding:12px 20px; text-decoration:none; display:inline-flex; align-items:center;
+             gap:8px; font:inherit; letter-spacing:inherit; text-transform:inherit;">
             View on GitHub
             <svg class="icon" viewBox="0 0 24 24"><!-- geist-icons arrow-up-right -->
               <path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
@@ -235,10 +239,11 @@
               section dividers, a selectively emphasized card border, and a genuine
               Structural Block. Pastel Turquoise stays non-semantic but recurs as
               pure decoration and now has a Structural Block of its own, smaller in
-              scale — icon fills, underlines, washes, dots, callout panels. Neither
-              ever carries state meaning, and the two never touch on the same
-              element — except the tri-part segment stripe, reused here as a
-              divider at a few different lengths.</p>
+              scale — icon fills, underlines, washes, dots, callout panels, an
+              accent card's border. Two named exceptions aside — the tri-part
+              segment stripe (spatial) and a dual-accent hover swap on the Accent
+              button and Interactive card (sequential, never simultaneous) —
+              neither color carries state meaning nor touches the other.</p>
           </div>
           <div style="border:1px solid var(--border); background:var(--card); padding:24px;">
             <p class="label">02 — Swiss-minimalist</p>
