@@ -12,9 +12,12 @@ never for state) and **Swiss-minimalist** (visible borders, no shadows).
 Changes that add a *semantic* color (a third color that means
 success/info/state) or a shadow contradict the system and won't be
 accepted; express new states through weight, size, spacing, and contrast
-instead. The one named exception is the tri-part segment stripe (§
-SKILL.md Philosophy section) — a single governed pattern where Red and
-Turquoise sit adjacent, reusable at any length, not a general loosening.
+instead. Two named exceptions: the tri-part segment stripe (§ SKILL.md
+Philosophy section) — Red and Turquoise sit spatially adjacent, reusable
+at any length — and the dual-accent hover pattern on the Accent button
+and Interactive card (§ SKILL.md "Hover states") — Red and Turquoise
+swap sequentially on hover, never simultaneously. Neither is a general
+loosening; don't extend either beyond its named pattern.
 
 - Palette / token changes: update both `SKILL.md`'s tables and `assets/theme.css`
   so they never drift apart.

@@ -6,6 +6,24 @@ All notable changes to this plugin are documented here. Format follows
 
 ## [Unreleased]
 
+### Added
+- **Accent button and Accent card** — a fifth button variant
+  (Red-bordered, general emphasis rather than destructive) and a new
+  static Turquoise-bordered card with a background wash, addressing
+  that only the Destructive button previously used an accent color on
+  hover/border (`SKILL.md`, `references/components.md`,
+  `docs/index.html`).
+- **Interactive card and the dual-accent hover exception** — a new
+  clickable card pattern, and a second named exception (this time to
+  the hover-hierarchy rule): the Accent button and Interactive card
+  swap Red for Turquoise on hover — a sequential state transition, not
+  simultaneous adjacency, scoped to exactly these two patterns
+  (`SKILL.md`, `references/components.md`, `docs/index.html`).
+- **Hero turquoise** — a new turquoise tagline and icon accent beneath
+  the hero title, and the hero's second CTA now uses the Accent button's
+  dual-accent style, so Tri-Swiss's tri-color identity registers on
+  first page load instead of only after scrolling (`docs/index.html`).
+
 ## [0.1.0] — 2026-07-07
 
 ### Added
