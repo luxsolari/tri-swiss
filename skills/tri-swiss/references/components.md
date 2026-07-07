@@ -209,7 +209,8 @@ face as every other heading, just scaled up. No separate register needed.
 
 ## Annotations & captions (Space Mono, italic only)
 
-The visible nod to Tri-Swiss's sibling system (Duotone Swiss). Reserved for inline
+The visible nod to Tri-Swiss's sibling system, Lux Swiss (formerly Duotone
+Swiss). Reserved for inline
 annotations and figure captions — never emphasis, never a heading.
 
 ```jsx

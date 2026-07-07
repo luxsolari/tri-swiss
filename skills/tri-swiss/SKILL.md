@@ -2,7 +2,7 @@
 name: tri-swiss
 description: >
   Tri-Swiss — Lux Solari's Geist-based house design system, sibling to
-  lux-design-system (Duotone Swiss). A tri-tone visual language (ink + cream,
+  lux-swiss (Lux Swiss, formerly Duotone Swiss). A tri-tone visual language (ink + cream,
   a Swiss Red accent, and a governed non-semantic highlight)
   Swiss-minimalist layout, visible borders, no shadows, and Geist / Geist Mono
   typography. Use this skill whenever building, styling, or restyling ANY user
@@ -14,7 +14,7 @@ description: >
   design system", "tri-tone", "swiss", "geist", "give it a theme", or when
   starting a new frontend from scratch. When another design language is
   explicitly requested (Material, shadcn defaults untouched, a client's brand
-  kit, or the sibling lux-design-system/Duotone Swiss system specifically),
+  kit, or the sibling lux-swiss/Lux Swiss system specifically),
   defer to that instead.
 ---
 
@@ -191,8 +191,8 @@ the grid. Prose numerals stay proportional (the default).
 **Space Mono italic** is reserved for one structural job: **inline
 annotations and figure captions** (e.g. a `<figcaption>` or a marginal
 note). It is never used for emphasis — emphasis is always weight. It is
-also the visible nod tying Tri-Swiss to its sibling system, Duotone Swiss
-(which uses Space Mono/Grotesk as its own core pairing).
+also the visible nod tying Tri-Swiss to its sibling system, Lux Swiss
+(formerly Duotone Swiss; it uses Space Mono/Grotesk as its own core pairing).
 
 ## Spacing & layout
 

@@ -37,7 +37,7 @@ never carries meaning, however often it recurs.
 - **Geist Mono** for headings, data, tags, and nav; **Geist Sans** for body
   and dense-data/utility text.
 - One governed extra register: **Space Mono** (italic, annotations/captions
-  only — the visible nod to Duotone Swiss).
+  only — the visible nod to Lux Swiss, formerly Duotone Swiss).
 - Uppercase monospace labels with wide letter-spacing.
 - Hand-rolled SVG charts by default — no chart libraries except a
   restyled Observable Plot.
