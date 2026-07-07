@@ -40,5 +40,5 @@ All notable changes to this plugin are documented here. Format follows
   (`skills/tri-swiss/`, `docs/index.html`, `docs/assets/`,
   `HOUSE-MARK.md`) is now licensed under CC BY-SA 4.0 — free to use and
   adapt, including commercially, with attribution and share-alike
-  required. Tooling and scripts remain MIT. See `LICENSE-DESIGN` and the
+  required. Tooling and scripts remain MIT/X11. See `LICENSE-DESIGN` and the
   README's License section.

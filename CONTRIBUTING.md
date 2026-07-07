@@ -36,7 +36,7 @@ version.
 This repo is dual-licensed (see [README.md](README.md#license)):
 contributions to `skills/tri-swiss/`, `docs/index.html`, `docs/assets/`,
 or `HOUSE-MARK.md` are accepted under CC BY-SA 4.0; contributions to
-`scripts/` or other tooling are accepted under MIT.
+`scripts/` or other tooling are accepted under MIT/X11.
 
 ## Code of conduct
 Be kind. Be constructive.
