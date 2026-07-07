@@ -21,11 +21,12 @@ description: >
 # Tri-Swiss — Design System
 
 A strict, minimalist visual language built around the Geist typeface family.
-Two structural colors plus one strong accent plus one rare, non-semantic
+Two structural colors plus one strong accent plus a governed, non-semantic
 highlight; hard borders, generous whitespace, monospace labels. The whole
 point is restraint: every element earns its place or is removed, and
-**difference is expressed through typography, spacing, and contrast —
-almost never by adding a color.**
+**most difference is still expressed through typography, spacing, and
+contrast — Red and Turquoise are a deliberate, governed layer on top, never
+a substitute for that discipline.**
 
 ## When you apply this
 
