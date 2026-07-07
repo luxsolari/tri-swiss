@@ -36,9 +36,13 @@ fills, underlines, washes, chart series, a hover-triggered flourish on
 nav links, and now its own smaller Structural Block (a callout panel, a
 second-moment panel, a closing band). The tri-part segment stripe — the
 one place all three colors meet — is reusable at any length as a
-decorative divider, not a one-off. No success green, no info blue, no
-second *semantic* accent — the highlight never carries meaning, however
-often it recurs.
+decorative divider, not a one-off. A new Accent button and Accent card
+put more color on hover/borders, and a second named exception — a
+dual-accent hover swap on the Accent button and a new Interactive card —
+lets Turquoise carry real hover meaning in exactly those two places. No
+success green, no info blue, no second *semantic* accent otherwise — the
+highlight never carries meaning outside these two named exceptions,
+however often it recurs.
 
 - Visible 1px borders everywhere; **no shadows** (elevation is a background step).
 - Generous whitespace; mostly square corners.
