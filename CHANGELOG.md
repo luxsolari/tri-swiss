@@ -8,17 +8,20 @@ All notable changes to this plugin are documented here. Format follows
 
 ### Added
 - Initial release of the **Tri-Swiss** design-system skill (`tri-swiss`).
-- **`SKILL.md`** — philosophy (tri-tone strict, Swiss-minimalist), full
-  light/dark palette token tables including the governed `--highlight`
-  token, typography rules across four registers (Geist Mono/Sans, Space
-  Mono italic, Zilla Slab, Jost), spacing/layout, and core component
-  patterns (buttons, tags, section dividers).
+- **`SKILL.md`** — philosophy (tri-tone, more colorful, Swiss-minimalist),
+  full light/dark palette token tables including the governed `--highlight`
+  token, typography rules across three registers (Geist Mono/Sans, Space
+  Mono italic, Zilla Slab), spacing/layout, and core component patterns
+  (buttons, tags, section dividers, selective red card-border emphasis,
+  decorative Turquoise accents).
 - **`assets/theme.css`** — ready-to-paste Tailwind 4 theme with every CSS
   variable for light and dark mode, wired to Tailwind via `@theme inline`;
   also usable as plain CSS custom properties on non-Tailwind stacks.
 - **`references/components.md`** — extended component catalogue: status
   pips, modal overlay, toggle controls, cards, inputs, hero/annotation
-  type patterns, and the hand-rolled + Observable Plot chart patterns.
+  type patterns, accent-expansion patterns (red dividers, red card
+  borders, turquoise decoration), and the hand-rolled + Observable Plot
+  chart patterns.
 - **Showcase landing page** (`docs/index.html`) served on GitHub Pages,
   plus README screenshots, a 1200×630 social-preview card, and a
   reproducible Playwright capture script.
