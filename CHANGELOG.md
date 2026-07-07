@@ -10,8 +10,8 @@ All notable changes to this plugin are documented here. Format follows
 - Initial release of the **Tri-Swiss** design-system skill (`tri-swiss`).
 - **`SKILL.md`** — philosophy (tri-tone, more colorful, Swiss-minimalist),
   full light/dark palette token tables including the governed `--highlight`
-  token, typography rules across three registers (Geist Mono/Sans, Space
-  Mono italic, Zilla Slab), spacing/layout, and core component patterns
+  token, typography rules across four registers (Geist Mono, Geist Sans,
+  Space Mono italic, Zilla Slab), spacing/layout, and core component patterns
   (buttons, tags, section dividers, selective red card-border emphasis,
   decorative Turquoise accents, a Structural Block sidebar/hero-band/
   bold-word job for Swiss Red, the tri-part segment stripe, and a
