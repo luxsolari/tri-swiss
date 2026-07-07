@@ -28,12 +28,17 @@ for how the two relate.
 **Tri-tone, more colorful, still Swiss-minimalist.** Two structural colors
 — ink (`#000000`) and warm cream (`#f5efe0`) — plus a Swiss Red accent
 (`#d3281b`) that now also marks section dividers, selective card emphasis,
-and a genuine Structural Block (a solid-color sidebar/hero band, capped at
-~25% of viewport, or a bold word inside a heading), and a non-semantic
+a genuine Structural Block (a solid-color sidebar/hero band, capped at
+~25% of viewport, or a bold word inside a heading), and hover-state
+feedback wherever an accent signals interactivity, and a non-semantic
 highlight, Pastel Turquoise (`#56bfa3`), used decoratively across icon
-fills, underlines, washes, chart series, and a hover-triggered flourish on
-nav links. No success green, no info blue, no second *semantic* accent —
-the highlight never carries meaning, however often it recurs.
+fills, underlines, washes, chart series, a hover-triggered flourish on
+nav links, and now its own smaller Structural Block (a callout panel, a
+second-moment panel, a closing band). The tri-part segment stripe — the
+one place all three colors meet — is reusable at any length as a
+decorative divider, not a one-off. No success green, no info blue, no
+second *semantic* accent — the highlight never carries meaning, however
+often it recurs.
 
 - Visible 1px borders everywhere; **no shadows** (elevation is a background step).
 - Generous whitespace; mostly square corners.
@@ -59,6 +64,11 @@ Four type registers and the component library:
 ![Type registers](docs/assets/type-registers.png)
 ![Component gallery](docs/assets/components.png)
 ![Charts](docs/assets/charts.png)
+
+Turquoise's own Structural Block — a genuine third color, not an occasional accent:
+
+![Turquoise second-moment panel](docs/assets/turquoise-moment.png)
+![Turquoise closing band](docs/assets/closing-band.png)
 
 ## What it does
 
@@ -94,8 +104,10 @@ Add the marketplace, then install:
 3. Build with the semantic tokens (`bg-background`, `text-foreground`,
    `border-border`, `bg-primary`, …) and the component patterns. Reach for
    `bg-highlight`/`text-highlight` decoratively — icon fills, underlines,
-   washes, a chart's second series, a brand moment — never for a button,
-   tag, or status color, and never to signal state.
+   washes, a chart's second series, a brand moment, a callout/panel/
+   closing-band background (paired with `text-highlight-foreground`) —
+   never for a button, tag, or status color, and never to signal state on
+   its own in a hover.
 
 Dark mode is the `.dark` class on `<html>`, toggled via JS and persisted to
 `localStorage` under a `theme` key.

@@ -6,14 +6,15 @@ Contributions welcome! Here's how:
 The design language lives in `skills/tri-swiss/`. Keep the two governing
 rules intact — **tri-tone, more colorful** (two structural colors + one
 accent, Swiss Red, used more freely for action/divider/emphasis-border/
-Structural-Block jobs + one non-semantic highlight, Pastel Turquoise, used
-decoratively but never for state) and **Swiss-minimalist** (visible
-borders, no shadows). Changes that add a *semantic* color (a third color
-that means success/info/state) or a shadow contradict the system and won't
-be accepted; express new states through weight, size, spacing, and
-contrast instead. The one named exception is the tri-part segment stripe
-(§ SKILL.md `--highlight` section) — a single governed device where Red and
-Turquoise sit adjacent, not a general loosening.
+Structural-Block/hover-signal jobs + one non-semantic highlight, Pastel
+Turquoise, used decoratively and in its own smaller Structural Block, but
+never for state) and **Swiss-minimalist** (visible borders, no shadows).
+Changes that add a *semantic* color (a third color that means
+success/info/state) or a shadow contradict the system and won't be
+accepted; express new states through weight, size, spacing, and contrast
+instead. The one named exception is the tri-part segment stripe (§
+SKILL.md Philosophy section) — a single governed pattern where Red and
+Turquoise sit adjacent, reusable at any length, not a general loosening.
 
 - Palette / token changes: update both `SKILL.md`'s tables and `assets/theme.css`
   so they never drift apart.
