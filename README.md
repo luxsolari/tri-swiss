@@ -85,8 +85,9 @@ Add the marketplace, then install:
    link (or `next/font`).
 3. Build with the semantic tokens (`bg-background`, `text-foreground`,
    `border-border`, `bg-primary`, …) and the component patterns. Reach for
-   `bg-highlight`/`text-highlight` only for a chart's second series or one
-   single brand moment — never for a button, tag, or status color.
+   `bg-highlight`/`text-highlight` decoratively — icon fills, underlines,
+   washes, a chart's second series, a brand moment — never for a button,
+   tag, or status color, and never to signal state.
 
 Dark mode is the `.dark` class on `<html>`, toggled via JS and persisted to
 `localStorage` under a `theme` key.
