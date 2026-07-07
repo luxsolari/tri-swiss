@@ -169,6 +169,8 @@ something. It IS sanctioned for open-ended **decorative** reuse:
    active/current/visited state, layered *alongside* the element's
    existing ink/muted-foreground hover color change (which still carries
    the real interactive feedback).
+8. A card's border plus a subtle background wash (the Accent card) —
+   still purely decorative, not a semantic "this card matters more" cue.
 
 It can recur multiple times on the same page — the old "exactly one
 brand moment" cap is gone — but the test that governs every use is
@@ -253,7 +255,7 @@ also the visible nod tying Tri-Swiss to its sibling system, Lux Swiss
 
 ## Buttons
 
-All buttons: `font-mono uppercase tracking-[0.2em] text-xs`. Four variants:
+All buttons: `font-mono uppercase tracking-[0.2em] text-xs`. Five variants:
 
 - **Ghost / nav** (most common): `text-muted-foreground hover:text-foreground
   transition-colors`, no border.
@@ -266,6 +268,11 @@ All buttons: `font-mono uppercase tracking-[0.2em] text-xs`. Four variants:
   "destructive" job (see Philosophy), now with a documented variant.
   Demonstrates the hover hierarchy below: Red carries the real hover
   signal.
+- **Accent:** `border border-primary text-primary px-4 py-2
+  hover:bg-highlight hover:text-highlight-foreground hover:border-highlight`
+  — general emphasis, not destructive. Red border at rest, Turquoise on
+  hover: the dual-accent hover exception (see "Hover states" below), not
+  a decorative flourish.
 
 **Disabled** is always `opacity-40` — never a color change.
 
@@ -280,6 +287,17 @@ and the nav-link hover-flourish (see the `--highlight` token section)
 both demonstrate. This doesn't require every hoverable element to use an
 accent color: most buttons/tags/toggles hover via ink/muted-foreground
 shifts only, unaffected by this rule.
+
+**The one named exception: dual-accent hover.** The Accent button above
+and the Interactive card (see `references/components.md`) swap Red for
+Turquoise on hover — Red border at rest, Turquoise border/fill on hover.
+This is a genuine, deliberate exception to "Red is the only color
+permitted to carry real hover meaning," scoped to exactly these two
+patterns. The two colors are never visible on the element simultaneously
+(a state transition, not spatial adjacency), so it doesn't touch the
+separate "Red and Turquoise never touch" guardrail — but it is a real
+carve-out from this hover hierarchy, not a decorative layer, and must
+not spread beyond these two named patterns.
 
 ## Tags / pills
 
@@ -352,9 +370,14 @@ to the mono label pattern. See
 - **No raw hex in markup.** Always the semantic token.
 - **Icons: restyled geist-icons only.** Monoline, `currentColor`, square
   caps. No icon fonts. **No emoji** in UI text unless explicitly requested.
-- **No Turquoise on buttons, tags, status pips, or links.** Decorative
-  reuse elsewhere is fine; semantic/interactive roles are not.
-- **No red-and-turquoise on the same element.** Pick one accent per
-  component, never both.
+- **No Turquoise on buttons, tags, status pips, or links as their
+  default/rest color.** Decorative reuse elsewhere is fine;
+  semantic/interactive roles are not — except the Accent button's and
+  Interactive card's dual-accent hover state (see "Hover states"), the
+  one named exception where Turquoise carries real hover meaning.
+- **No red-and-turquoise simultaneously on the same element.** Pick one
+  accent per component at any single moment — the tri-part stripe
+  (spatial) and the dual-accent hover pattern (sequential) are the two
+  named exceptions, not a general loosening.
 - **Ink/cream still dominate.** Accents are seasoning; a surface where
   Red or Turquoise out-covers ink/cream has gone too far.
