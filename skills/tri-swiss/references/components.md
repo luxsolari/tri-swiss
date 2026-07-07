@@ -163,6 +163,80 @@ a button, tag, status pip, or link:
 <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--highlight)" }} />
 ```
 
+## Structural Block — sidebar, hero band, bold word
+
+A third job for Swiss Red, on top of dividers and card borders: a genuine
+layout element, not just a border or divider. Three forms — pick one
+block form per layout; the bold-word form is independent and may combine
+with either.
+
+**Sidebar / nav rail.** Full-height solid Red panel, capped at ~25% of
+viewport width (min 220px, max 280px), sticky/fixed. Holds wordmark,
+in-page anchor nav, theme toggle, external link, copyright:
+
+```html
+<aside class="sidebar" style="width:22%; min-width:220px; max-width:280px;
+  background:var(--primary); color:var(--primary-foreground);
+  position:sticky; top:0; height:100vh; display:flex; flex-direction:column;
+  justify-content:space-between; padding:32px 28px; box-sizing:border-box;">
+  <div>
+    <span style="font-family:var(--font-mono); font-weight:700; font-size:1.5rem;">Wordmark</span>
+    <nav style="margin-top:40px; display:flex; flex-direction:column; gap:16px;
+      font-family:var(--font-mono); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.15em;">
+      <a href="#section-one" style="color:var(--primary-foreground); text-decoration:none;
+         opacity:0.75; border-bottom:2px solid transparent; padding-bottom:2px;">Section One</a>
+    </nav>
+  </div>
+  <div style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase;
+    letter-spacing:0.12em; opacity:0.75;">© Year Author</div>
+</aside>
+```
+
+**Hero band.** Solid Red horizontal block, used once, for a hero/intro
+moment — an alternative to the sidebar, never combined with it:
+
+```html
+<div style="background:var(--primary); color:var(--primary-foreground); padding:64px 48px;">
+  <h1 style="margin:0;">Hero title.</h1>
+</div>
+```
+
+**Bold word/phrase accent.** One word inside a heading or paragraph in
+Red, at normal weight/size — independent of the two block forms, may
+combine with either:
+
+```html
+<p>Two structural colors, one strong <span style="color:var(--primary);">accent</span>.</p>
+```
+
+**Tri-part segment stripe.** Three equal solid blocks — ink, Red,
+Turquoise — used as a static decorative bar. The one named exception to
+"Red and Turquoise never touch": scoped to this pattern only.
+
+```html
+<div style="display:flex; gap:4px; width:64px;">
+  <div style="height:3px; flex:1; background:var(--foreground);"></div>
+  <div style="height:3px; flex:1; background:var(--primary);"></div>
+  <div style="height:3px; flex:1; background:var(--highlight);"></div>
+</div>
+```
+
+**Turquoise hover-flourish on nav links.** Purely decorative, identical
+regardless of state — layered alongside the link's real ink/red hover
+feedback, never replacing it:
+
+```html
+<a href="#section" style="color:var(--primary-foreground); text-decoration:none;
+   opacity:0.75; border-bottom:2px solid transparent; padding-bottom:2px;"
+   onmouseover="this.style.borderBottomColor='var(--highlight)'"
+   onmouseout="this.style.borderBottomColor='transparent'">Section</a>
+```
+
+(In `docs/index.html` this is implemented via a CSS `:hover` rule rather
+than inline `onmouseover`, shown in Task 3 — the inline-handler form above
+is illustrative of the effect for consumers who copy this pattern into a
+project without the page's own stylesheet.)
+
 ## Iconography (geist-icons, restyled)
 
 `geist-icons` is the only sanctioned icon set. Drop in the icon's SVG and add
