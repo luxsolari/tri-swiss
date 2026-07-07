@@ -17,39 +17,38 @@
   </script>
 
   <title>Tri-Swiss — a tri-tone Swiss-minimalist design system for Claude Code</title>
-  <meta name="description" content="Two structural colors, one strong accent, one rare highlight. A Geist-based Swiss-minimalist design system that gives every Claude Code project one consistent, opinionated aesthetic." />
+  <meta name="description" content="Two structural colors, one strong accent, one governed highlight. A Geist-based Swiss-minimalist design system that gives every Claude Code project one consistent, opinionated aesthetic." />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Tri-Swiss — a tri-tone Swiss-minimalist design system" />
-  <meta property="og:description" content="Two structural colors, one strong accent, one rare highlight. One install, one opinionated aesthetic across every Claude Code project." />
+  <meta property="og:description" content="Two structural colors, one strong accent, one governed highlight. One install, one opinionated aesthetic across every Claude Code project." />
   <meta property="og:url" content="https://luxsolari.github.io/tri-swiss/" />
   <meta property="og:image" content="https://luxsolari.github.io/tri-swiss/assets/social-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Tri-Swiss — a tri-tone Swiss-minimalist design system" />
-  <meta name="twitter:description" content="Two structural colors, one strong accent, one rare highlight." />
+  <meta name="twitter:description" content="Two structural colors, one strong accent, one governed highlight." />
   <meta name="twitter:image" content="https://luxsolari.github.io/tri-swiss/assets/social-card.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Space+Mono:ital,wght@0,400;1,400&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Space+Mono:ital,wght@0,400;1,400&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --background:#eae8d0; --foreground:#000000; --card:#f1efdb; --card-foreground:#000000;
-      --primary:#d3281b; --primary-foreground:#eae8d0; --secondary:#000000; --secondary-foreground:#eae8d0;
-      --muted:#e2dfc7; --muted-foreground:#4a4838; --border:#000000; --input:#f1efdb; --ring:#d3281b;
+      --background:#f5efe0; --foreground:#000000; --card:#faf6ec; --card-foreground:#000000;
+      --primary:#d3281b; --primary-foreground:#f5efe0; --secondary:#000000; --secondary-foreground:#f5efe0;
+      --muted:#ebe5d5; --muted-foreground:#4a4838; --border:#000000; --input:#faf6ec; --ring:#d3281b;
       --highlight:#56bfa3;
       /* Role fonts */
       --font-mono:'Geist Mono',ui-monospace,monospace; --font-sans:'Geist',system-ui,sans-serif;
       --font-annotation:'Space Mono',ui-monospace,monospace; --font-serif:'Zilla Slab',Georgia,serif;
-      --font-hero:'Jost',system-ui,sans-serif;
     }
     .dark {
-      --background:#000000; --foreground:#eae8d0; --card:#161616; --card-foreground:#eae8d0;
-      --primary:#e2503f; --primary-foreground:#eae8d0; --secondary:#eae8d0; --secondary-foreground:#000000;
-      --muted:#1f1f1f; --muted-foreground:#a8a696; --border:#eae8d0; --input:#161616; --ring:#e2503f;
+      --background:#000000; --foreground:#f5efe0; --card:#161616; --card-foreground:#f5efe0;
+      --primary:#e2503f; --primary-foreground:#f5efe0; --secondary:#f5efe0; --secondary-foreground:#000000;
+      --muted:#1f1f1f; --muted-foreground:#a8a696; --border:#f5efe0; --input:#161616; --ring:#e2503f;
       --highlight:#63cbae;
     }
     * { box-sizing: border-box; }
@@ -61,7 +60,7 @@
     h1 { font-size:3rem; letter-spacing:-0.02em; line-height:1.1; }
     h2 { font-size:2.25rem; letter-spacing:-0.02em; line-height:1.15; }
     h3 { font-size:1.5rem; line-height:1.3; }
-    .hero-title { font-family:var(--font-hero); font-weight:700; letter-spacing:-0.01em;
+    .hero-title { font-family:var(--font-mono); font-weight:700; letter-spacing:-0.01em;
       font-size:3.5rem; line-height:1.05; margin:20px 0 0; }
     .label { font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;
       letter-spacing:0.2em; color:var(--muted-foreground); }
@@ -72,36 +71,104 @@
     a { color:inherit; }
     .icon { width:20px; height:20px; fill:none; stroke:currentColor;
       stroke-width:1.5; stroke-linecap:square; stroke-linejoin:miter; }
-    /* nav */
-    nav { display:flex; align-items:center; justify-content:space-between;
-      padding:20px 0; border-bottom:1px solid var(--border); }
-    .wordmark { font-family:var(--font-mono); font-weight:700; letter-spacing:0.15em;
-      text-transform:uppercase; font-size:0.8rem; }
     .toggle { display:flex; align-items:baseline; gap:6px; font-family:var(--font-mono);
       font-size:0.75rem; text-transform:uppercase; letter-spacing:0.2em; }
     .toggle button { background:none; border:none; padding:0; cursor:pointer;
       font:inherit; letter-spacing:inherit; text-transform:inherit; color:var(--muted-foreground); }
     .toggle button[aria-pressed="true"] { color:var(--foreground); }
     .toggle .mid { color:var(--muted-foreground); opacity:0.4; }
+
+    /* Structural Block — sidebar layout */
+    .layout { display:flex; min-height:100vh; }
+    .sidebar { width:22%; min-width:220px; max-width:280px; flex-shrink:0;
+      background:var(--primary); color:var(--primary-foreground);
+      position:sticky; top:0; height:100vh; overflow-y:auto;
+      display:flex; flex-direction:column; justify-content:space-between;
+      padding:32px 28px; box-sizing:border-box; }
+    .sidebar-wordmark { font-family:var(--font-mono); font-weight:700;
+      font-size:1.4rem; line-height:1.2; }
+    .sidebar-nav { margin-top:40px; display:flex; flex-direction:column; gap:16px;
+      font-family:var(--font-mono); font-size:0.8rem; text-transform:uppercase;
+      letter-spacing:0.15em; }
+    .sidebar-nav a { color:var(--primary-foreground); text-decoration:none;
+      opacity:0.75; border-bottom:2px solid transparent; padding-bottom:2px;
+      width:max-content; transition:opacity 0.15s, border-color 0.15s; }
+    .sidebar-nav a:hover { opacity:1; border-bottom-color:var(--highlight); }
+    .sidebar-bottom { display:flex; flex-direction:column; gap:16px;
+      font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase;
+      letter-spacing:0.12em; }
+    .sidebar-bottom a { color:var(--primary-foreground); text-decoration:none;
+      opacity:0.85; display:inline-flex; align-items:center; gap:6px; }
+    .sidebar-bottom .toggle button { color:var(--primary-foreground); opacity:0.6; }
+    .sidebar-bottom .toggle button[aria-pressed="true"] { opacity:1; }
+    .sidebar-bottom .toggle .mid { color:var(--primary-foreground); opacity:0.4; }
+    .hamburger { display:none; background:none; border:none;
+      color:var(--primary-foreground); cursor:pointer; padding:4px; }
+    .content { flex:1; min-width:0; }
+    .content-inner { max-width:900px; margin:0 auto; padding:0 32px; }
+    @media (max-width: 860px) {
+      .layout { flex-direction:column; }
+      .sidebar { width:100%; max-width:none; height:auto; position:sticky;
+        top:0; z-index:10; flex-direction:row; align-items:center;
+        justify-content:space-between; padding:16px 20px; }
+      .sidebar-nav { display:none; margin-top:0; position:absolute; top:100%;
+        left:0; right:0; background:var(--primary); padding:20px;
+        flex-direction:column; gap:16px; }
+      .sidebar-nav.open { display:flex; }
+      .sidebar-bottom { display:none; }
+      .hamburger { display:block; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <nav>
-      <span class="wordmark">Lux / Tri-Swiss</span>
-      <div class="toggle" role="group" aria-label="Color theme">
-        <button data-theme-btn="light" aria-pressed="true">Light</button>
-        <span class="mid">·</span>
-        <button data-theme-btn="dark" aria-pressed="false">Dark</button>
+  <div class="layout">
+    <aside class="sidebar">
+      <div>
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span class="sidebar-wordmark">Tri-Swiss</span>
+          <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+            <svg class="icon" viewBox="0 0 24 24" style="color:var(--primary-foreground);">
+              <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        <nav class="sidebar-nav" data-nav-list>
+          <a href="#palette">Palette</a>
+          <a href="#typography">Typography</a>
+          <a href="#components">Components</a>
+          <a href="#charts">Charts</a>
+        </nav>
       </div>
-    </nav>
+      <div class="sidebar-bottom">
+        <div class="toggle" role="group" aria-label="Color theme">
+          <button data-theme-btn="light" aria-pressed="true">Light</button>
+          <span class="mid">·</span>
+          <button data-theme-btn="dark" aria-pressed="false">Dark</button>
+        </div>
+        <a href="https://github.com/luxsolari/tri-swiss">
+          GitHub
+          <svg class="icon" viewBox="0 0 24 24" width="14" height="14" style="color:var(--primary-foreground);">
+            <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+        <span>© 2026 Lux Solari</span>
+      </div>
+    </aside>
+    <div class="content">
+      <div class="content-inner">
     <main>
       <section id="hero" style="border-top:none;">
         <p class="label">Claude Code plugin</p>
         <h1 class="hero-title">Tri-Swiss.</h1>
+        <div style="display:flex; gap:4px; width:64px; margin-top:16px;" aria-hidden="true">
+          <div style="height:3px; flex:1; background:var(--foreground);"></div>
+          <div style="height:3px; flex:1; background:var(--primary);"></div>
+          <div style="height:3px; flex:1; background:var(--highlight);"></div>
+        </div>
         <p style="font-size:1.15rem; max-width:60ch; margin:24px 0 0; color:var(--foreground);">
           Lux Solari's Geist-based house design language — Swiss-minimalist,
-          tri-tone. Two structural colors, one strong accent, one rare
+          tri-tone, more colorful. Two structural colors, one strong
+          <span style="color:var(--primary);">accent</span>, one governed
           highlight; everything else is weight, space, and contrast.
         </p>
         <div style="display:flex; gap:16px; margin-top:32px; font-family:var(--font-mono);
@@ -133,14 +200,17 @@
         </div>
       </section>
       <section id="rules">
-        <div class="divider"><h3>Two rules govern everything</h3><span class="rule"></span></div>
+        <div class="divider"><h3>Two rules govern everything</h3><span class="rule" style="background:var(--primary);"></span></div>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
           <div style="border:1px solid var(--border); background:var(--card); padding:24px;">
-            <p class="label">01 — Tri-tone strict</p>
-            <p style="margin:12px 0 0;">Ink and cream are the two structural colors; Swiss
-              Red is the primary accent. Pastel Turquoise is a rare, non-semantic
-              highlight reserved for a chart's second series or one single brand
-              moment — never a button, tag, or status color.</p>
+            <p class="label">01 — Tri-tone, more colorful</p>
+            <p style="margin:12px 0 0;">Ink and cream still lead. Swiss Red is the primary
+              accent — action, destructive, focus — and now also marks section
+              dividers and a selectively emphasized card border. Pastel Turquoise
+              stays non-semantic but recurs as pure decoration: icon fills,
+              underlines, washes, dots. Neither ever carries state meaning, and
+              the two never touch on the same element — except the one named
+              tri-part segment stripe in the hero above.</p>
           </div>
           <div style="border:1px solid var(--border); background:var(--card); padding:24px;">
             <p class="label">02 — Swiss-minimalist</p>
@@ -206,7 +276,7 @@
             <div class="pal-chip" data-token="highlight" style="height:64px; background:var(--highlight);"></div>
             <figcaption style="border-top:1px solid var(--border); padding:8px 10px;">
               <span class="label" style="display:block;">highlight</span>
-              <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--muted-foreground);">charts/brand only</span>
+              <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--muted-foreground);">decorative, non-semantic</span>
               <dl class="pal-vals" style="margin:8px 0 0; font-family:var(--font-mono); font-size:0.62rem; line-height:1.55; color:var(--muted-foreground);"></dl>
             </figcaption>
           </figure>
@@ -251,8 +321,8 @@
         </div>
       </section>
       <section id="registers">
-        <div class="divider"><h3>Five type registers</h3><span class="rule"></span></div>
-        <p class="label" style="margin:-8px 0 24px;">Core Geist duotone + three sanctioned registers</p>
+        <div class="divider"><h3>Four type registers</h3><span class="rule"></span></div>
+        <p class="label" style="margin:-8px 0 24px;">Core Geist pairing + two sanctioned registers</p>
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:32px;">
           <div>
             <p class="label" style="margin-bottom:12px;">Display / mono</p>
@@ -273,11 +343,6 @@
             <p class="label" style="margin-bottom:12px;">Serif / long-form</p>
             <p style="font-family:var(--font-serif); font-size:1.15rem; line-height:1.5; margin:0;">For editorial body and pull-quotes — the comfortable reading register.</p>
             <p class="label" style="margin-top:10px;">Zilla Slab</p>
-          </div>
-          <div>
-            <p class="label" style="margin-bottom:12px;">Hero / editorial display</p>
-            <p style="font-family:var(--font-hero); font-size:1.4rem; font-weight:700; margin:0;">02 — Chapter</p>
-            <p class="label" style="margin-top:10px;">Jost</p>
           </div>
         </div>
         <blockquote style="font-family:var(--font-serif); font-style:italic; font-size:1.5rem; line-height:1.45; border-left:2px solid var(--border); margin:40px 0 0; padding:2px 0 2px 24px; max-width:62ch;">
@@ -340,6 +405,24 @@
               <p style="margin:0; font-family:var(--font-mono); font-weight:700;">Elevated surface</p>
               <p style="margin:8px 0 0; font-size:0.85rem; color:var(--muted-foreground);">
                 Depth is a background step, never a shadow.</p>
+            </div>
+          </div>
+
+          <div style="border:1px solid var(--border); padding:20px;">
+            <p class="label" style="margin-bottom:16px;">Emphasis card <span style="text-transform:none; letter-spacing:normal; color:var(--muted-foreground);">— selective red border</span></p>
+            <div style="border:1px solid var(--primary); background:var(--card); padding:16px;">
+              <p style="margin:0; font-family:var(--font-mono); font-weight:700;">Featured</p>
+              <p style="margin:8px 0 0; font-size:0.85rem; color:var(--muted-foreground);">
+                One card in a set — never the default for a whole grid.</p>
+            </div>
+          </div>
+
+          <div style="border:1px solid var(--border); padding:20px;">
+            <p class="label" style="margin-bottom:16px;">Decorative accent <span style="text-transform:none; letter-spacing:normal; color:var(--muted-foreground);">— non-semantic</span></p>
+            <div style="display:flex; align-items:center; gap:14px;">
+              <svg class="icon" viewBox="0 0 24 24" style="color:var(--highlight);"><path d="M12 2v20"/><path d="M2 12h20"/></svg>
+              <span style="width:6px; height:6px; border-radius:9999px; background:var(--highlight);"></span>
+              <span style="border-bottom:2px solid var(--highlight); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; padding-bottom:2px;">Underline</span>
             </div>
           </div>
 
@@ -409,7 +492,7 @@
         <div>
           <h1 class="hero-title" style="font-size:4.5rem; line-height:1.05; margin:0;">Tri-Swiss.</h1>
           <p style="font-family:var(--font-mono); font-size:1.25rem; margin:20px 0 0;
-             color:var(--muted-foreground);">Two colors. One accent. One rare highlight.</p>
+             color:var(--muted-foreground);">Two colors. One accent. One governed highlight.</p>
         </div>
         <p style="font-family:var(--font-mono); font-size:1rem; letter-spacing:0.1em;
            margin:0;">/plugin install tri-swiss</p>
@@ -426,6 +509,8 @@
         </div>
       </footer>
     </main>
+      </div>
+    </div>
   </div>
   <script type="module">
     import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
@@ -497,6 +582,17 @@
         var dark = btn.dataset.themeBtn === "dark";
         localStorage.setItem("theme", dark ? "dark" : "light");
         apply(dark);
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var btn = document.querySelector("[data-nav-toggle]");
+      var list = document.querySelector("[data-nav-list]");
+      if (!btn || !list) return;
+      btn.addEventListener("click", function () {
+        var open = list.classList.toggle("open");
+        btn.setAttribute("aria-expanded", String(open));
       });
     })();
   </script>

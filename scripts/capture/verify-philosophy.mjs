@@ -6,7 +6,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const html = fs.readFileSync(path.resolve(here, "../../docs/index.html"), "utf8");
 
 const PALETTE = new Set([
-  "#eae8d0","#000000","#f1efdb","#d3281b","#e2dfc7","#4a4838","#56bfa3",
+  "#f5efe0","#000000","#faf6ec","#d3281b","#ebe5d5","#4a4838","#56bfa3",
   "#161616","#e2503f","#1f1f1f","#a8a696","#63cbae",
 ]);
 

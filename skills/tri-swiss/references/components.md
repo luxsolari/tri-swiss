@@ -111,6 +111,137 @@ Rules: explicit palette colors per mark (no default scheme), no color legend,
 square bars, muted grid, solid-vs-dashed for series, outline ring (not hue) for a
 highlighted slice, `--highlight` reserved for a genuine third line only.
 
+## Accent expansion — Red dividers, emphasis borders, Turquoise decoration
+
+Beyond their original jobs (Red: primary action/destructive/ring. Turquoise:
+chart second series/brand moment), both accents now recur more often across
+a page — Red picks up two new structural jobs; Turquoise gets decorative
+reuse. Guardrails: ink/cream still dominate any surface, Red and Turquoise
+never touch on the same element (one named exception: see "Tri-part
+segment stripe" under Structural Block below), and each component gets at
+most one accent.
+
+**Section-divider rule, red variant.** The default section-header rule is
+`bg-border`; swap to `bg-primary` for a section that earns emphasis (used
+selectively — a page's opening section, a "featured" callout — not on
+every divider):
+
+```jsx
+<div className="mb-4 flex items-baseline gap-3">
+  <h5>Section title</h5>
+  <span className="h-px flex-1 bg-primary" />
+</div>
+```
+
+**Selective card border.** One card in a set — the featured one, the
+current one, the first-in-list — swaps its border from `border-border` to
+`border-primary`. Never the default for a whole grid:
+
+```jsx
+<div className="border border-primary bg-card p-6">
+  <p className="font-mono font-bold">Featured</p>
+  <p className="text-sm text-muted-foreground">
+    One card in a set — never the default for a whole grid.
+  </p>
+</div>
+```
+
+**Turquoise decorative accents.** Non-semantic, ornamental only — never as
+a button's, tag's, status pip's, or link's own state color (see the
+"Structural Block" section below for the one sanctioned exception: a
+purely decorative hover-flourish on nav links, layered alongside — never
+replacing — the link's real state feedback):
+
+```jsx
+{/* Icon fill, used as a flourish rather than a state cue */}
+<Icon className="icon" style={{ color: "var(--highlight)" }} />
+
+{/* Underline beneath a heading or label */}
+<span className="border-b-2" style={{ borderColor: "var(--highlight)" }}>
+  Underlined label
+</span>
+
+{/* Background wash behind a block, softer than a hard border */}
+<div className="bg-highlight/10 p-4">Separated without a border</div>
+
+{/* Dot accent, matching the existing dot-indicator pattern */}
+<span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--highlight)" }} />
+```
+
+## Structural Block — sidebar, hero band, bold word
+
+A third job for Swiss Red, on top of dividers and card borders: a genuine
+layout element, not just a border or divider. Three forms — pick one
+block form per layout; the bold-word form is independent and may combine
+with either.
+
+**Sidebar / nav rail.** Full-height solid Red panel, capped at ~25% of
+viewport width (min 220px, max 280px), sticky/fixed. Holds wordmark,
+in-page anchor nav, theme toggle, external link, copyright:
+
+```html
+<aside class="sidebar" style="width:22%; min-width:220px; max-width:280px;
+  background:var(--primary); color:var(--primary-foreground);
+  position:sticky; top:0; height:100vh; display:flex; flex-direction:column;
+  justify-content:space-between; padding:32px 28px; box-sizing:border-box;">
+  <div>
+    <span style="font-family:var(--font-mono); font-weight:700; font-size:1.5rem;">Wordmark</span>
+    <nav style="margin-top:40px; display:flex; flex-direction:column; gap:16px;
+      font-family:var(--font-mono); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.15em;">
+      <a href="#section-one" style="color:var(--primary-foreground); text-decoration:none;
+         opacity:0.75; border-bottom:2px solid transparent; padding-bottom:2px;">Section One</a>
+    </nav>
+  </div>
+  <div style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase;
+    letter-spacing:0.12em; opacity:0.75;">© Year Author</div>
+</aside>
+```
+
+**Hero band.** Solid Red horizontal block, used once, for a hero/intro
+moment — an alternative to the sidebar, never combined with it:
+
+```html
+<div style="background:var(--primary); color:var(--primary-foreground); padding:64px 48px;">
+  <h1 style="margin:0;">Hero title.</h1>
+</div>
+```
+
+**Bold word/phrase accent.** One word inside a heading or paragraph in
+Red, at normal weight/size — independent of the two block forms, may
+combine with either:
+
+```html
+<p>Two structural colors, one strong <span style="color:var(--primary);">accent</span>.</p>
+```
+
+**Tri-part segment stripe.** Three equal solid blocks — ink, Red,
+Turquoise — used as a static decorative bar. The one named exception to
+"Red and Turquoise never touch": scoped to this pattern only.
+
+```html
+<div style="display:flex; gap:4px; width:64px;">
+  <div style="height:3px; flex:1; background:var(--foreground);"></div>
+  <div style="height:3px; flex:1; background:var(--primary);"></div>
+  <div style="height:3px; flex:1; background:var(--highlight);"></div>
+</div>
+```
+
+**Turquoise hover-flourish on nav links.** Purely decorative, identical
+regardless of state — layered alongside the link's real ink/red hover
+feedback, never replacing it:
+
+```html
+<a href="#section" style="color:var(--primary-foreground); text-decoration:none;
+   opacity:0.75; border-bottom:2px solid transparent; padding-bottom:2px;"
+   onmouseover="this.style.borderBottomColor='var(--highlight)'"
+   onmouseout="this.style.borderBottomColor='transparent'">Section</a>
+```
+
+(In `docs/index.html` this is implemented via a CSS `:hover` rule rather
+than inline `onmouseover`, shown in Task 3 — the inline-handler form above
+is illustrative of the effect for consumers who copy this pattern into a
+project without the page's own stylesheet.)
+
 ## Iconography (geist-icons, restyled)
 
 `geist-icons` is the only sanctioned icon set. Drop in the icon's SVG and add
@@ -139,25 +270,26 @@ import { IconArrowRight } from "geist-icons";
 <IconArrowRight className="icon" />
 ```
 
-## Hero / display type (Jost)
+## Hero / display type (Geist Mono)
 
-Reserved for exactly two jobs: a page's hero title/wordmark, and section/chapter
-dividers inside long-form editorial content. Never a UI heading, never a
-pull-quote, never running body text.
+The hero title/wordmark and section/chapter dividers inside long-form
+editorial content both use Geist Mono at display weight/size — the same
+face as every other heading, just scaled up. No separate register needed.
 
 ```jsx
-<h1 className="font-hero" style={{ fontSize: "3.5rem", fontWeight: 700, letterSpacing: "-0.01em" }}>
+<h1 className="font-mono" style={{ fontSize: "3.5rem", fontWeight: 700, letterSpacing: "-0.01em" }}>
   Page Title.
 </h1>
 
-<div className="font-hero" style={{ fontSize: "1.5rem", fontWeight: 700 }}>
+<div className="font-mono" style={{ fontSize: "1.5rem", fontWeight: 700 }}>
   02 — Chapter Title
 </div>
 ```
 
 ## Annotations & captions (Space Mono, italic only)
 
-The visible nod to Tri-Swiss's sibling system (Duotone Swiss). Reserved for inline
+The visible nod to Tri-Swiss's sibling system, Lux Swiss (formerly Duotone
+Swiss). Reserved for inline
 annotations and figure captions — never emphasis, never a heading.
 
 ```jsx
@@ -175,7 +307,9 @@ border border-border bg-card text-card-foreground p-6
 ```
 
 Nest a section divider (see `SKILL.md`) inside for titled regions. Keep corners
-square unless a `rounded-md` (0.5rem) genuinely helps.
+square unless a `rounded-md` (0.5rem) genuinely helps. For the one emphasized
+card in a set, see the selective-border pattern under "Accent expansion"
+above — swap `border-border` for `border-primary`.
 
 ## Inputs
 

@@ -2,8 +2,8 @@
 name: tri-swiss
 description: >
   Tri-Swiss — Lux Solari's Geist-based house design system, sibling to
-  lux-design-system (Duotone Swiss). A tri-tone visual language (ink + cream,
-  one blood-red-adjacent accent, one rare non-semantic highlight)
+  lux-swiss (Lux Swiss, formerly Duotone Swiss). A tri-tone visual language (ink + cream,
+  a Swiss Red accent, and a governed non-semantic highlight)
   Swiss-minimalist layout, visible borders, no shadows, and Geist / Geist Mono
   typography. Use this skill whenever building, styling, or restyling ANY user
   interface: React/Next/Svelte/Vue components, HTML pages, landing pages,
@@ -14,18 +14,25 @@ description: >
   design system", "tri-tone", "swiss", "geist", "give it a theme", or when
   starting a new frontend from scratch. When another design language is
   explicitly requested (Material, shadcn defaults untouched, a client's brand
-  kit, or the sibling lux-design-system/Duotone Swiss system specifically),
+  kit, or the sibling lux-swiss/Lux Swiss system specifically),
   defer to that instead.
 ---
 
 # Tri-Swiss — Design System
 
 A strict, minimalist visual language built around the Geist typeface family.
-Two structural colors plus one strong accent plus one rare, non-semantic
+Two structural colors plus one strong accent plus a governed, non-semantic
 highlight; hard borders, generous whitespace, monospace labels. The whole
 point is restraint: every element earns its place or is removed, and
-**difference is expressed through typography, spacing, and contrast —
-almost never by adding a color.**
+**most difference is still expressed through typography, spacing, and
+contrast — Red and Turquoise are a deliberate, governed layer on top, never
+a substitute for that discipline.**
+
+Tri-Swiss is one of Lux Solari's two house-mark design systems — the
+personal brand identity carried into every project built with them. Its
+sibling, [Lux Swiss](https://github.com/luxsolari/lux-swiss) (formerly
+Duotone Swiss), applies the same governance philosophy through a strict
+two-color-plus-accent palette; see `HOUSE-MARK.md` for how the two relate.
 
 ## When you apply this
 
@@ -47,13 +54,30 @@ library (status pips, modals, toggles, SVG charts) see
 
 ## Philosophy — two rules that govern everything
 
-**Tri-tone strict.** Ink and cream are the two structural colors; Swiss Red
-is the primary accent. Pastel Turquoise is a **third, rare, non-semantic**
-color — it never carries meaning (no success/info/second-interactive-state
-use) and appears in exactly two places: a second data series in a chart, and
-one single brand/hero moment per page. Everywhere else — buttons, tags,
-status pips, links — it does not exist. If you feel the urge to add a color
-beyond these, add a `font-bold`, a size step, or whitespace instead.
+**Tri-tone, more colorful.** Ink and cream are still the two structural
+colors. Swiss Red is the primary accent — primary action, destructive,
+focus ring — and now also marks section-divider rules and a selectively
+emphasized card/component border (one card in a set, never the whole
+grid). It also has a third job: a Structural Block — a solid-color sidebar/nav
+rail or hero band (pick one per layout, capped at ~25% of viewport
+width/height), plus an independent bold-word accent inside a heading that
+may combine with either. Outside that one block, ink/cream continue to
+dominate every other surface exactly as before. Pastel Turquoise stays a **third, non-semantic** color — it never
+carries meaning (no success/info/second-interactive-state use) — but is
+no longer rationed to one touch per page: it recurs as pure decoration
+(icon fills, underlines, background washes, dot accents, a chart's
+second series, a brand/hero moment) anywhere its presence or absence
+wouldn't change what the user understands about state. It still never
+appears on a button, tag, or status pip, and never as a link's own
+state-indicating color — though a link may carry it as a purely
+decorative hover-flourish (see the `--highlight` section below). Three guardrails keep this
+from tipping into loud: ink/cream still visually dominate any surface;
+Red and Turquoise never touch or sit adjacent on the same element; one
+accent per component, not both. The **tri-part segment stripe** — three equal solid blocks, ink/Red/
+Turquoise in a row, used for a static decorative bar (e.g. beneath a hero
+title) — is the one explicitly named exception to "Red and Turquoise
+never touch": a single governed device, not a general loosening. Nowhere
+else may the two sit adjacent.
 
 **Swiss-minimalist.** Borders are visible (1px solid, full ink or full
 cream). No shadows — elevation comes from a background-color step (`--card`
@@ -68,18 +92,18 @@ Use the semantic token, never a raw hex. `bg-background`, `text-foreground`,
 ### Light mode
 | Token | Hex | Role |
 |-------|-----|------|
-| `--background` | `#eae8d0` | Page background — warm cream |
+| `--background` | `#f5efe0` | Page background — warm cream |
 | `--foreground` | `#000000` | Body text, active controls, borders |
-| `--card` | `#f1efdb` | Elevated surface — card, popover |
+| `--card` | `#faf6ec` | Elevated surface — card, popover |
 | `--card-foreground` | `#000000` | Text on card surfaces |
 | `--primary` | `#d3281b` | Swiss Red — accent, destructive, ring |
-| `--primary-foreground` | `#eae8d0` | Text on primary |
+| `--primary-foreground` | `#f5efe0` | Text on primary |
 | `--secondary` | `#000000` | Secondary action background |
-| `--secondary-foreground` | `#eae8d0` | Text on secondary |
-| `--muted` | `#e2dfc7` | Subtle backgrounds — hover, code blocks |
+| `--secondary-foreground` | `#f5efe0` | Text on secondary |
+| `--muted` | `#ebe5d5` | Subtle backgrounds — hover, code blocks |
 | `--muted-foreground` | `#4a4838` | Subdued labels, metadata, placeholders |
 | `--border` | `#000000` | All borders — full ink for structural clarity |
-| `--input` | `#f1efdb` | Input field background |
+| `--input` | `#faf6ec` | Input field background |
 | `--ring` | `#d3281b` | Focus ring |
 | `--highlight` | `#56bfa3` | Pastel Turquoise — governed, non-semantic (see below) |
 
@@ -87,14 +111,14 @@ Use the semantic token, never a raw hex. `bg-background`, `text-foreground`,
 | Token | Hex | Role |
 |-------|-----|------|
 | `--background` | `#000000` | Near-black |
-| `--foreground` | `#eae8d0` | Cream text |
+| `--foreground` | `#f5efe0` | Cream text |
 | `--card` | `#161616` | Slightly lifted surface |
 | `--primary` | `#e2503f` | Red lifted for dark contrast |
-| `--secondary` | `#eae8d0` | Inverted |
+| `--secondary` | `#f5efe0` | Inverted |
 | `--secondary-foreground` | `#000000` | — |
 | `--muted` | `#1f1f1f` | Subtle dark surface |
 | `--muted-foreground` | `#a8a696` | Warm grey — readable but recessed |
-| `--border` | `#eae8d0` | Full cream — maintains structural clarity |
+| `--border` | `#f5efe0` | Full cream — maintains structural clarity |
 | `--input` | `#161616` | — |
 | `--ring` | `#e2503f` | — |
 | `--highlight` | `#63cbae` | Pastel Turquoise, lifted for dark mode |
@@ -108,16 +132,32 @@ a `theme` key in `localStorage`. In Tailwind 4 the variant is
 
 Pastel Turquoise is not a second accent. It carries **zero semantic
 meaning** — never success, never info, never a second interactive state.
-It is sanctioned for exactly two jobs:
+Unlike Swiss Red, it is never the answer when an element needs to signal
+something. It IS sanctioned for open-ended **decorative** reuse:
 
 1. A second data series/stroke in a hand-rolled SVG or Observable Plot chart.
-2. One single brand moment per surface (e.g. a hero accent or a logo mark) —
-   never repeated elsewhere on the same page.
+2. A brand/hero moment (e.g. a hero accent or a logo mark).
+3. An icon fill on a single icon, used as a flourish rather than a state cue.
+4. An underline or rule beneath a heading or label.
+5. A background wash (e.g. `bg-highlight/10`) behind a block that wants
+   separation without a hard border.
+6. A dot accent, matching the existing dot-indicator pattern.
+7. A hover-triggered flourish on a nav link or label — an underline or dot
+   that appears on `:hover`, purely ornamental and identical regardless of
+   active/current/visited state, layered *alongside* the element's
+   existing ink/muted-foreground hover color change (which still carries
+   the real interactive feedback).
 
-**Do not** use it in buttons, tags, status pips, links, or any other UI
-state. If a new element wants a second color for meaning, the answer is
-still "no — use weight, size, or whitespace," exactly as in the two-color
-core.
+It can recur multiple times on the same page — the old "exactly one
+brand moment" cap is gone — but the test that governs every use is
+unchanged: if turquoise's presence or absence would change what the user
+understands about *state*, it's wrong. If it's purely ornamental and
+removable without changing meaning, it's fine.
+
+**Do not** use it as a button's, tag's, status pip's, or link's own
+state-indicating color. A link may show a decorative Turquoise
+hover-flourish (item 7 above) *in addition to* its real ink/red state
+feedback — Turquoise itself never signals the state.
 
 ## Typography
 
@@ -126,20 +166,17 @@ voice, the other three are governed extras with exactly one job each.
 
 | Tier | Font | Role |
 |------|------|------|
-| Primary | **Geist Mono** (`font-mono`) | Headings, display, data values, tags, nav, labels |
+| Primary | **Geist Mono** (`font-mono`) | Headings, display, data values, tags, nav, labels, hero title/wordmark, and section/chapter dividers in long-form editorial content |
 | Primary | **Geist Sans** (`font-sans`) | Body copy, prose, **and** dense-data/utility text (tables, fine print) at smaller size with tabular figures |
 | Secondary | **Space Mono, italic only** (`font-annotation italic`) | Inline annotations and figure captions only — never emphasis |
 | Tertiary | **Zilla Slab** (`font-serif`) | Long-form editorial body and pull-quotes — never UI |
-| 4th register | **Jost** (`font-hero`) | Hero title/wordmark and section/chapter dividers in long-form editorial content only — never a UI heading, never a pull-quote |
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Space+Mono:ital,wght@0,400;1,400&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Space+Mono:ital,wght@0,400;1,400&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
 ```
 
 Geist Sans and Geist Mono load as **variable fonts** (100–900 axis); Space
-Mono loads regular + italic; Zilla Slab loads its usual four cuts; Jost
-loads two static weights (400/700) — a hero/wordmark register doesn't need
-a full variable scale.
+Mono loads regular + italic; Zilla Slab loads its usual four cuts.
 
 **Range comes from weight, not more typefaces.** Within the Primary
 register, hierarchy is expressed through the weight axis, not a new face:
@@ -170,14 +207,8 @@ the grid. Prose numerals stay proportional (the default).
 **Space Mono italic** is reserved for one structural job: **inline
 annotations and figure captions** (e.g. a `<figcaption>` or a marginal
 note). It is never used for emphasis — emphasis is always weight. It is
-also the visible nod tying Tri-Swiss to its sibling system, Duotone Swiss
-(which uses Space Mono/Grotesk as its own core pairing).
-
-**Jost** is reserved for exactly two jobs: a page or section's hero
-title/wordmark, and chapter/section dividers inside long-form editorial
-content (e.g. a large "02" or chapter title between article sections). It
-never appears as a UI heading (that's Geist Mono's job) and never as a
-pull-quote (that's Zilla Slab's job).
+also the visible nod tying Tri-Swiss to its sibling system, Lux Swiss
+(formerly Duotone Swiss; it uses Space Mono/Grotesk as its own core pairing).
 
 ## Spacing & layout
 
@@ -186,6 +217,9 @@ pull-quote (that's Zilla Slab's job).
 - **Borders:** 1px solid `--border` everywhere. **No shadows** — elevation is a
   background step (`--card` on `--background`).
 - **Section header:** uppercase mono label with a full-width rule beside it.
+  The rule is `bg-border` by default; swap to `bg-primary` for a section
+  that earns emphasis (used selectively — one or two per page, never on
+  every divider).
 
 ```jsx
 <div className="mb-4 flex items-baseline gap-3">
@@ -276,7 +310,9 @@ to the mono label pattern. See
 - **No raw hex in markup.** Always the semantic token.
 - **Icons: restyled geist-icons only.** Monoline, `currentColor`, square
   caps. No icon fonts. **No emoji** in UI text unless explicitly requested.
-- **No Turquoise outside charts/brand moments.** It never appears in
-  buttons, tags, or status indicators.
-- **No Jost outside hero/wordmark and chapter dividers.** It is not a body
-  face, not a UI heading face, not a pull-quote face.
+- **No Turquoise on buttons, tags, status pips, or links.** Decorative
+  reuse elsewhere is fine; semantic/interactive roles are not.
+- **No red-and-turquoise on the same element.** Pick one accent per
+  component, never both.
+- **Ink/cream still dominate.** Accents are seasoning; a surface where
+  Red or Turquoise out-covers ink/cream has gone too far.
