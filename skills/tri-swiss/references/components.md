@@ -147,10 +147,11 @@ current one, the first-in-list — swaps its border from `border-border` to
 ```
 
 **Turquoise decorative accents.** Non-semantic, ornamental only — never as
-a button's, tag's, status pip's, or link's own state color (see the
-"Structural Block" section below for the one sanctioned exception: a
-purely decorative hover-flourish on nav links, layered alongside — never
-replacing — the link's real state feedback):
+a button's, tag's, status pip's, or link's own default/rest state color
+(see the "Structural Block" section below for the nav-link
+hover-flourish, and "Cards" below for the Accent button / Interactive
+card — the sanctioned exceptions where Turquoise carries real hover
+meaning, not decoration):
 
 ```jsx
 {/* Icon fill, used as a flourish rather than a state cue */}
@@ -325,6 +326,18 @@ alongside the link's real ink/red state feedback:
   solid var(--highlight); padding-bottom:2px;">Section</a>
 ```
 
+**Accent button hover, Default vs. Hover — the dual-accent exception.**
+Red border at rest, Turquoise fill on hover — the one named exception
+where Turquoise carries real hover meaning:
+
+```html
+<button style="border:1px solid var(--primary); background:none;
+  color:var(--primary); padding:8px 16px;">Learn more</button>
+<!-- :hover (or a static .is-hover-demo modifier class for illustration) -->
+<button style="border:1px solid var(--highlight); background:var(--highlight);
+  color:var(--highlight-foreground); padding:8px 16px;">Learn more</button>
+```
+
 ## Iconography (geist-icons, restyled)
 
 `geist-icons` is the only sanctioned icon set. Drop in the icon's SVG and add
@@ -393,6 +406,44 @@ Nest a section divider (see `SKILL.md`) inside for titled regions. Keep corners
 square unless a `rounded-md` (0.5rem) genuinely helps. For the one emphasized
 card in a set, see the selective-border pattern under "Accent expansion"
 above — swap `border-border` for `border-primary`.
+
+**Accent card.** A static, Turquoise-bordered card with a subtle
+background wash — stronger than the plain Emphasis card (border alone,
+no wash), and non-semantic like every other Turquoise decorative reuse:
+
+```jsx
+<div className="border border-highlight p-6" style={{ background: "color-mix(in srgb, var(--highlight) 8%, var(--card))" }}>
+  <p className="font-mono font-bold">Accent card</p>
+  <p className="text-sm text-muted-foreground">
+    Turquoise border + wash — decorative, not a state indicator.
+  </p>
+</div>
+```
+
+**Interactive card.** A clickable card (wrap in `<a>` or `<button>`) with
+its own hover transition. Red border at rest, Turquoise border + wash on
+hover — the dual-accent hover exception (see `SKILL.md`'s "Hover
+states"), applied to a card instead of a button:
+
+```html
+<a href="#" style="display:block; text-decoration:none; color:inherit;
+  border:1px solid var(--primary); padding:24px;
+  transition:border-color 0.15s, background-color 0.15s;">
+  <p style="margin:0; font-family:var(--font-mono); font-weight:700;">Interactive card</p>
+  <p style="margin:8px 0 0; font-size:0.85rem; color:var(--muted-foreground);">
+    Red border at rest, Turquoise on hover — click anywhere on the card.
+  </p>
+</a>
+<!-- :hover (or a static .is-hover-demo modifier class for illustration) -->
+<a href="#" style="display:block; text-decoration:none; color:inherit;
+  border:1px solid var(--highlight);
+  background:color-mix(in srgb, var(--highlight) 5%, var(--card)); padding:24px;">
+  <p style="margin:0; font-family:var(--font-mono); font-weight:700;">Interactive card</p>
+  <p style="margin:8px 0 0; font-size:0.85rem; color:var(--muted-foreground);">
+    Red border at rest, Turquoise on hover — click anywhere on the card.
+  </p>
+</a>
+```
 
 ## Inputs
 
