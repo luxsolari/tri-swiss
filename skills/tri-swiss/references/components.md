@@ -308,10 +308,10 @@ hierarchy (see `SKILL.md`'s "Hover states"): Red carries the real signal.
 
 ```html
 <button style="border:1px solid var(--primary); background:none;
-  color:var(--primary); padding:16px 8px;">Delete</button>
+  color:var(--primary); padding:8px 16px;">Delete</button>
 <!-- :hover (or a static .is-hover-demo modifier class for illustration) -->
 <button style="border:1px solid var(--primary); background:var(--primary);
-  color:var(--primary-foreground); padding:16px 8px;">Delete</button>
+  color:var(--primary-foreground); padding:8px 16px;">Delete</button>
 ```
 
 **Nav-link hover, Default vs. Hover.** The Turquoise flourish layered
