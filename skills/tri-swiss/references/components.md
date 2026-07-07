@@ -144,8 +144,11 @@ current one, the first-in-list — swaps its border from `border-border` to
 </div>
 ```
 
-**Turquoise decorative accents.** Non-semantic, ornamental only — never on
-a button, tag, status pip, or link:
+**Turquoise decorative accents.** Non-semantic, ornamental only — never as
+a button's, tag's, status pip's, or link's own state color (see the
+"Structural Block" section below for the one sanctioned exception: a
+purely decorative hover-flourish on nav links, layered alongside — never
+replacing — the link's real state feedback):
 
 ```jsx
 {/* Icon fill, used as a flourish rather than a state cue */}
