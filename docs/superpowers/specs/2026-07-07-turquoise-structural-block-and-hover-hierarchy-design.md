@@ -13,8 +13,11 @@ components-section demo cluster, a chart line). The system doesn't visibly
 prove it's a tri-color system rather than "duotone plus an occasional red."
 
 This spec gives Turquoise genuine structural presence — a Structural Block
-of its own, parallel to Red's — and formalizes the color hierarchy for
-hover states, then makes both visible on the showcase page.
+of its own, parallel to Red's — makes the tri-part segment stripe (the
+one place all three colors already appear together) reusable at varying
+lengths as a general decorative divider/spacer instead of one fixed
+instance, and formalizes the color hierarchy for hover states. All three
+changes are made visible on the showcase page.
 
 ## 2. Non-goals
 
@@ -25,9 +28,13 @@ hover states, then makes both visible on the showcase page.
   *structural* and *hover-adjacent decorative* presence, not meaning.
 - Not a redesign of the existing Ghost/Outlined/Filled button defaults —
   they keep hovering via ink/muted-foreground shifts, unaffected.
-- Not a change to the tri-part segment stripe or the existing purely
-  decorative Turquoise jobs (icon fills, washes, chart lines, underlines,
-  dot accents) — those are unchanged, this is additive.
+- Not a change to the tri-part segment stripe's structure (still three
+  *equal* solid blocks, ink/Red/Turquoise, in that order, still the one
+  named exception to "Red and Turquoise never touch") — only its length
+  and where it may appear become flexible.
+- Not a change to the other existing purely decorative Turquoise jobs
+  (icon fills, washes, chart lines, underlines, dot accents) — unchanged,
+  this is additive.
 
 ## 3. Turquoise Structural Block
 
@@ -67,7 +74,35 @@ Three forms, independently usable and combinable:
   Red's Structural Block and Turquoise's Structural Block (the tri-part
   stripe is the one named exception, unchanged).
 
-## 4. Hover-state color hierarchy
+## 4. Tri-part segment stripe as a flexible decorative device
+
+Today the tri-part stripe (ink/Red/Turquoise, three equal solid blocks) is
+documented as a single fixed-width (64px) bar used once, beneath the hero.
+It's the one place all three colors already appear together, which makes
+it the clearest visual proof that this is a tri-color system — so it
+should be reusable, not a one-off.
+
+**Rule:** the stripe may be used at any length as a decorative divider or
+spacer — a small marker before a heading, a section divider between two
+blocks of content, a wider closing flourish — anywhere a purely decorative
+horizontal (or vertical) rule would otherwise go. Height/thickness stays
+thin and consistent with the existing convention (the three segments
+always equal width to each other, always in ink/Red/Turquoise order); only
+the overall length varies by context.
+
+**Guardrails (unchanged from today, now stated explicitly for reuse):**
+
+- Always three *equal* segments in ink/Red/Turquoise order — never
+  reweighted, reordered, or reduced to two colors.
+- Static and decorative only — never interactive, never a progress/status
+  indicator, never carrying meaning.
+- Stays a deliberate, recognizable signature mark — used selectively (a
+  handful of times per page) rather than replacing the default
+  `bg-border` divider throughout. Overuse would dilute it into wallpaper
+  and undercut the "one named exception to Red-and-Turquoise-never-touch"
+  status it holds.
+
+## 5. Hover-state color hierarchy
 
 A new, system-wide rule governing how the two accents behave in hover
 states, generalizing the existing nav-link-specific footnote:
@@ -88,7 +123,7 @@ and are unaffected. It governs only the cases where an accent participates.
 philosophy (`Red: primary action/destructive/ring`) but had no documented
 button variant until now.
 
-## 5. Making hover states visible on the showcase
+## 6. Making hover states visible on the showcase
 
 Static screenshots can't capture a live `:hover`, and the existing
 Turquoise hover-flourish on nav links is invisible without a mouse. Add two
@@ -105,30 +140,37 @@ nav, the actual destructive button if placed in a live context) keep
 genuine `:hover` CSS — the static swatches are documentation, layered
 alongside, not a replacement for real interaction.
 
-## 6. Files and page changes
+## 7. Files and page changes
 
 - `skills/tri-swiss/SKILL.md` — add the Turquoise Structural Block job and
   its guardrails (Philosophy section, near the existing Structural Block/
-  `--highlight` discussion); add the hover-state color hierarchy rule (new
-  subsection, likely near "The `--highlight` token" or "Buttons").
+  `--highlight` discussion); state the tri-part stripe's reuse-as-divider
+  rule explicitly (same area of the Philosophy section); add the
+  hover-state color hierarchy rule (new subsection, likely near "The
+  `--highlight` token" or "Buttons").
 - `skills/tri-swiss/references/components.md` — new patterns: Turquoise
   callout/note panel, second-moment panel, closing band (under the
-  existing "Structural Block" section); new Destructive button variant
-  (under "Buttons" — currently only Ghost/Outlined/Filled exist); new
-  "Default / Hover" swatch-pair pattern for both the destructive button
-  and the nav-link flourish.
+  existing "Structural Block" section); update the existing "Tri-part
+  segment stripe" entry to show it at more than one length and state the
+  reuse guardrails; new Destructive button variant (under "Buttons" —
+  currently only Ghost/Outlined/Filled exist); new "Default / Hover"
+  swatch-pair pattern for both the destructive button and the nav-link
+  flourish.
 - `docs/index.html` — implement all three Turquoise Structural Block forms
   (callout panel in Components, second-moment panel after Charts, closing
-  band near the footer); add a Destructive button demo; add the two
-  Default/Hover static swatch pairs.
-- `docs/assets/*.png` — re-capture to show the new blocks and swatches.
+  band near the footer); add at least one more tri-part stripe instance at
+  a different length in a new location (in addition to the existing hero
+  instance); add a Destructive button demo; add the two Default/Hover
+  static swatch pairs.
+- `docs/assets/*.png` — re-capture to show the new blocks, the additional
+  stripe instance, and the swatches.
 - `CHANGELOG.md` — new entries under `[Unreleased]` documenting the
-  Turquoise Structural Block, the hover-state hierarchy rule, and the
-  Destructive button variant.
+  Turquoise Structural Block, the tri-part stripe's reuse-as-divider rule,
+  the hover-state hierarchy rule, and the Destructive button variant.
 - `README.md` / `CONTRIBUTING.md` — reflect the new patterns in the
   aesthetic-summary / Design-changes paragraphs.
 
-## 7. Rollout
+## 8. Rollout
 
 Branch `feat/turquoise-structural-block-and-hovers` off `main`, following
 this repo's own `AGENTS.md` conventions (Conventional Commits,
