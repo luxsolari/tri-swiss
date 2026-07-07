@@ -25,7 +25,7 @@ for how the two relate.
 ## The aesthetic
 
 **Tri-tone, more colorful, still Swiss-minimalist.** Two structural colors
-— ink (`#000000`) and warm cream (`#eae8d0`) — plus a Swiss Red accent
+— ink (`#000000`) and warm cream (`#f5efe0`) — plus a Swiss Red accent
 (`#d3281b`) that now also marks section dividers, selective card emphasis,
 and a genuine Structural Block (a solid-color sidebar/hero band, capped at
 ~25% of viewport, or a bold word inside a heading), and a non-semantic
