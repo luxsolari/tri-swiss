@@ -34,6 +34,22 @@ All notable changes to this plugin are documented here. Format follows
   — automated check that the showcase page never uses a rogue color, a
   shadow, an unrestyled icon cap, or leaks `--highlight` into a semantic
   UI role.
+- **Turquoise Structural Block** — a third job for Pastel Turquoise,
+  parallel to Red's own Structural Block but smaller in scale: a
+  callout/note panel, a single second-moment panel, and a closing band
+  (`SKILL.md`, `references/components.md`, `docs/index.html`).
+- **Tri-part segment stripe reuse** — the stripe is no longer a single
+  fixed instance; it's now a general decorative divider/spacer reusable
+  at any length, demonstrated at three different lengths on the showcase
+  page (`SKILL.md`, `references/components.md`, `docs/index.html`).
+- **Hover-state color hierarchy** — a system-wide rule: Red is the only
+  color permitted to carry real hover-state meaning; Turquoise may only
+  layer in decoratively. Demonstrated via a new Destructive button
+  variant and two "Default / Hover" static swatch pairs on the showcase
+  page (`SKILL.md`, `references/components.md`, `docs/index.html`).
+- **`--highlight-foreground` token** — constant black text/icon color for
+  content placed on solid `--highlight` fills, needed now that Turquoise
+  has real panel/band backgrounds (`assets/theme.css`, `SKILL.md`).
 
 ### Changed
 - **Dual-licensed the repo.** The design system itself

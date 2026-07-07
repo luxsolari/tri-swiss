@@ -22,6 +22,7 @@
   --input: #faf6ec;
   --ring: #d3281b;
   --highlight: #56bfa3;
+  --highlight-foreground: #000000;
   --radius: 0.5rem;
 
   /* Font roles. Primary = Geist (display + body/utility, and now also
@@ -48,6 +49,7 @@
   --input: #161616;
   --ring: #e2503f;
   --highlight: #63cbae;
+  --highlight-foreground: #000000;
 }
 
 @theme inline {
@@ -71,6 +73,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
 
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: var(--radius);
