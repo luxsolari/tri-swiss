@@ -168,7 +168,7 @@ replacing — the link's real state feedback):
 <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--highlight)" }} />
 ```
 
-## Structural Block — sidebar, hero band, bold word
+## Structural Block — sidebar, hero band, bold word, and Turquoise's own forms
 
 A third job for Swiss Red, on top of dividers and card borders: a genuine
 layout element, not just a border or divider. Three forms — pick one
@@ -215,11 +215,24 @@ combine with either:
 ```
 
 **Tri-part segment stripe.** Three equal solid blocks — ink, Red,
-Turquoise — used as a static decorative bar. The one named exception to
-"Red and Turquoise never touch": scoped to this pattern only.
+Turquoise — used as a static decorative divider or spacer, at any
+length: a small marker before a heading, a section divider, a wider
+closing flourish. The one named exception to "Red and Turquoise never
+touch": scoped to this pattern only. Always three *equal* segments in
+this exact order; static and decorative only, never interactive or
+meaningful; used selectively (a handful of times per page) rather than
+replacing the default `bg-border` divider throughout.
 
 ```html
-<div style="display:flex; gap:4px; width:64px;">
+<!-- Small marker before a heading -->
+<div style="display:flex; gap:3px; width:36px;">
+  <div style="height:3px; flex:1; background:var(--foreground);"></div>
+  <div style="height:3px; flex:1; background:var(--primary);"></div>
+  <div style="height:3px; flex:1; background:var(--highlight);"></div>
+</div>
+
+<!-- Wider closing flourish -->
+<div style="display:flex; gap:6px; width:140px;">
   <div style="height:3px; flex:1; background:var(--foreground);"></div>
   <div style="height:3px; flex:1; background:var(--primary);"></div>
   <div style="height:3px; flex:1; background:var(--highlight);"></div>
@@ -241,6 +254,75 @@ feedback, never replacing it:
 than inline `onmouseover`, shown in Task 3 — the inline-handler form above
 is illustrative of the effect for consumers who copy this pattern into a
 project without the page's own stylesheet.)
+
+**Turquoise callout/note panel.** Solid-Turquoise highlight box for tips,
+notes, or dashboard callouts — content-sized, never full-bleed, capped at
+a modest max-width matching prose/card width. May recur a few times per
+page — a content-level device, not page chrome:
+
+```html
+<div style="background:var(--highlight); color:var(--highlight-foreground);
+  padding:14px 16px; max-width:60ch;">
+  <p style="margin:0; font-family:var(--font-mono); font-size:0.7rem;
+    text-transform:uppercase; letter-spacing:0.12em; font-weight:700;">Tip</p>
+  <p style="margin:8px 0 0; font-size:0.9rem;">Content-sized, never full-bleed.</p>
+</div>
+```
+
+**Turquoise second-moment panel.** One larger solid-Turquoise section,
+used once per page, appearing later in the page flow — never in the
+hero, which stays Red's territory:
+
+```html
+<section>
+  <div style="background:var(--highlight); color:var(--highlight-foreground); padding:40px;">
+    <p style="margin:0; font-family:var(--font-mono); font-weight:700; font-size:1.5rem;">
+      One genuine moment.
+    </p>
+  </div>
+</section>
+```
+
+**Turquoise closing band.** Solid-Turquoise horizontal strip near the
+bottom of the page (opposite the sidebar), used once, capped at roughly
+15% of viewport height:
+
+```html
+<div style="background:var(--highlight); color:var(--highlight-foreground); padding:28px 0;">
+  <div class="content-inner" style="text-align:center;">
+    <p style="margin:0; font-family:var(--font-mono); text-transform:uppercase;
+      letter-spacing:0.15em; font-size:0.8rem; font-weight:700;">Closing statement.</p>
+  </div>
+</div>
+```
+
+Guardrails for all three: never adjacent to Red's own Structural Block
+(no shared edges, no touching the sidebar/hero-band); combined footprint
+stays visibly smaller than Red's block wherever both appear on the same
+page; ink/cream still dominate every surface outside these blocks; one
+accent per component still holds.
+
+**Destructive button hover, Default vs. Hover.** Demonstrates the hover
+hierarchy (see `SKILL.md`'s "Hover states"): Red carries the real signal.
+
+```html
+<button style="border:1px solid var(--primary); background:none;
+  color:var(--primary); padding:8px 14px;">Delete</button>
+<!-- :hover (or a static .is-hover-demo modifier class for illustration) -->
+<button style="border:1px solid var(--primary); background:var(--primary);
+  color:var(--primary-foreground); padding:8px 14px;">Delete</button>
+```
+
+**Nav-link hover, Default vs. Hover.** The Turquoise flourish layered
+alongside the link's real ink/red state feedback:
+
+```html
+<a style="color:var(--primary-foreground); opacity:0.75; border-bottom:2px
+  solid transparent; padding-bottom:2px;">Section</a>
+<!-- :hover (or a static .is-hover-demo modifier class for illustration) -->
+<a style="color:var(--primary-foreground); opacity:1; border-bottom:2px
+  solid var(--highlight); padding-bottom:2px;">Section</a>
+```
 
 ## Iconography (geist-icons, restyled)
 
