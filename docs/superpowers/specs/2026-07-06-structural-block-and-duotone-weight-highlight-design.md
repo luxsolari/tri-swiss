@@ -6,7 +6,9 @@ Repos: `luxsolari/tri-swiss` (branch `feat/expand-accents-drop-jost`, extends th
 in-flight color-expansion work) and `luxsolari/lux-design-system` (new branch
 `feat/structural-block-and-weight-highlight`, off `main` @ `v1.0.0`)
 Supersedes/extends: [2026-07-06-colorful-accents-drop-jost-design.md](2026-07-06-colorful-accents-drop-jost-design.md)
-(adds a new job for Swiss Red on top of that spec's dividers/card-border jobs)
+(adds a new job for Swiss Red on top of that spec's dividers/card-border jobs,
+plus a governed exception to that spec's "Red and Turquoise never touch"
+guardrail — see §4)
 
 ## 1. Purpose
 
@@ -17,7 +19,10 @@ a heading) — and restructure each system's showcase page to actually use it.
 Additionally, give Duotone Swiss the functional equivalent of what Pastel
 Turquoise does in Tri-Swiss (a governed, non-semantic "one special moment"
 device), expressed through typographic weight instead of a new color, so
-Duotone Swiss's two-color identity stays literally true.
+Duotone Swiss's two-color identity stays literally true. Finally, replace
+Tri-Swiss's static solid-turquoise hero underline with a segmented
+ink/red/turquoise stripe, and give Turquoise a new decorative hover-triggered
+role that reaches nav links and labels for the first time.
 
 ## 2. Non-goals
 
@@ -33,6 +38,12 @@ Duotone Swiss's two-color identity stays literally true.
   keeps `--highlight` for a genuine second series; Duotone Swiss keeps its
   existing dash/opacity/outline-ring approach (already weight/pattern-based,
   not color-based, and already sufficient — no changes needed there).
+- Not a general license to combine Red and Turquoise on arbitrary elements.
+  The one exception carved out in §4 (the segment stripe) is a single named
+  device, not a relaxation of the "never touch" guardrail in general.
+- Not a change to what turquoise means. It still carries zero state
+  semantics anywhere, including in its new hover-triggered use in §4 — the
+  ornament is identical regardless of any actual interactive state.
 
 ## 3. The Structural Block pattern (shared definition)
 
@@ -71,12 +82,57 @@ It does not host Turquoise — a sidebar/hero-band block stays red/ink/cream
 only, consistent with the existing "one accent per component, not both"
 guardrail (the block itself is "one component").
 
-## 4. Tri-Swiss: files and page restructure
+## 4. Tri-part segment stripe and turquoise hover-flourish (Tri-Swiss + Duotone Swiss)
+
+Two related refinements to how Turquoise (Tri-Swiss) shows up, prompted by
+looking at the shipped Task 5 hero underline in context:
+
+### 4.1 Tri-part segment stripe (replaces the solid hero underline)
+
+The static decorative bar beneath the hero title — currently one solid
+`--highlight` (turquoise) bar from Task 5 — becomes a **segmented stripe**:
+three equal-width solid blocks in a row, one each of ink, Swiss Red, and
+Pastel Turquoise, in that order. Duotone Swiss gets the two-color version
+(ink, Blood Red) in the equivalent spot on its own showcase page.
+
+This is the **one explicitly named exception** to the "Red and Turquoise
+never touch or sit adjacent on the same element" guardrail from the prior
+spec — the segment stripe is a single governed device, not a general
+loosening of that guardrail. Nowhere else may Red and Turquoise sit
+adjacent; this pattern is named and scoped exactly to the segmented-stripe
+use, documented in `components.md` as its own named pattern so it isn't
+mistaken for general license.
+
+### 4.2 Turquoise decorative hover-flourish (Tri-Swiss only — no Duotone equivalent, it has no Turquoise)
+
+Turquoise's decorative toolkit (icon fill, underline, wash, dot, established
+in the prior spec) gains a hover-triggered variant, and — new in this
+spec — it now reaches **nav links and labels**, which the prior spec's "no
+Turquoise on links" rule excluded entirely. On hover, a nav item, the
+sidebar's anchor-nav entries, or a similar text label shows a decorative
+turquoise underline or dot — purely ornamental, identical regardless of
+active/current/visited state — layered *alongside* the element's existing
+ink/muted-foreground hover color change, which continues to carry the real
+interactive feedback unchanged.
+
+**Rule wording update:** "No Turquoise on buttons, tags, status pips, or
+links" (prior spec, §3.2/Do-not list) becomes "No Turquoise as a link's (or
+button's/tag's/status pip's) own state-indicating color" — the ornament in
+§4.2 is additive decoration layered on top of an element whose real
+state-feedback is still 100% ink/red/weight, never a replacement for or
+instance of that feedback. Buttons, tags, and status pips otherwise keep
+today's rule untouched — this hover-flourish is scoped to nav links/labels
+only, not extended to buttons/tags/status pips in this spec.
+
+## 5. Tri-Swiss: files and page restructure
 
 - `skills/tri-swiss/SKILL.md` — add the Structural Block job to Swiss Red's
-  description in the Philosophy section; add the guardrail carve-out.
+  description in the Philosophy section; add the guardrail carve-out; add
+  the segment-stripe exception and the updated Turquoise-on-links wording
+  from §4.
 - `skills/tri-swiss/references/components.md` — new patterns: sidebar/nav
-  rail markup, hero band markup, bold-word inline pattern.
+  rail markup, hero band markup, bold-word inline pattern, segment-stripe
+  pattern, turquoise hover-flourish pattern.
 - `docs/index.html` — full layout restructure: replace the current
   centered-column-with-top-nav structure with a persistent sidebar
   (wordmark, anchor nav to Palette/Typography/Components/Charts, theme
@@ -84,13 +140,15 @@ guardrail (the block itself is "one component").
   to a red top band with a hamburger toggle (small vanilla-JS toggle,
   consistent with the existing theme-toggle script already on the page —
   no new framework or build step). Content area (everything currently in
-  `<main>`) shifts to fill the remaining ~75%+ width.
+  `<main>`) shifts to fill the remaining ~75%+ width. Hero underline becomes
+  the ink/red/turquoise segment stripe (§4.1). Sidebar anchor-nav entries
+  get the turquoise hover-flourish (§4.2).
 - `docs/assets/*.png` — full re-capture (every screenshot's framing
   changes with the new layout, not just the ones with new patterns).
 - `CHANGELOG.md` — edit the still-`[Unreleased]` entry in place (no tag
   cut yet), same approach as the prior spec.
 
-## 5. Duotone Swiss: files, page restructure, and the weight-based highlight
+## 6. Duotone Swiss: files, page restructure, and the weight-based highlight
 
 - `skills/lux-design-system/SKILL.md`:
   - Add the identical Structural Block job to Blood Red's description
@@ -109,18 +167,25 @@ guardrail (the block itself is "one component").
     family actually ships a 900 cut before implementation — if neither
     does, fall back to the heaviest weight either family actually
     supports, and note the substitution in the commit).
+  - Add the two-color (ink/red) segment-stripe pattern from §4.1 as the
+    hero underline device — Duotone Swiss has no Turquoise, so it has no
+    equivalent of the §4.2 hover-flourish; this section does not apply to
+    it beyond the two-color stripe.
 - `skills/lux-design-system/references/components.md` — same three
   Structural Block patterns as Tri-Swiss's components.md (Red → Blood
-  Red), plus the weight-900 brand-moment pattern.
+  Red), the weight-900 brand-moment pattern, and the two-color segment
+  stripe.
 - `docs/index.html` — same full restructure to a persistent sidebar nav as
   Tri-Swiss's page, using Blood Red instead of Swiss Red, plus the
-  weight-900 hero wordmark treatment.
+  weight-900 hero wordmark treatment and the two-color segment stripe in
+  place of its own current hero underline (if any — confirm current state
+  during implementation).
 - `docs/assets/*.png` — full re-capture.
 - `CHANGELOG.md` — **new** `### Added` entries under a fresh
   `[Unreleased]` section (this repo is already tagged `v1.0.0` — unlike
   Tri-Swiss, there is no still-pending release to edit in place).
 
-## 6. Rollout
+## 7. Rollout
 
 Two separate branches, two separate PRs, executed one after the other
 (not in parallel):
@@ -134,7 +199,7 @@ Two separate branches, two separate PRs, executed one after the other
    conventions (Conventional Commits, changelog-first, branch+PR only —
    confirmed present via its own `AGENTS.md`/`CONTRIBUTING.md`).
 
-## 7. Open items for implementation (explicitly deferred, not blocking)
+## 8. Open items for implementation (explicitly deferred, not blocking)
 
 - Exact anchor-nav section labels in each sidebar (Tri-Swiss: Palette,
   Typography, Components, Charts; Duotone Swiss: its own equivalent
@@ -148,3 +213,7 @@ Two separate branches, two separate PRs, executed one after the other
   variable 900 cut needs confirming against the real Google Fonts family
   metadata before the SKILL.md/theme.css edit lands — if unavailable,
   substitute the heaviest weight either family supports and note it.
+- Duotone Swiss's current showcase page's own hero-underline state (if it
+  has one at all) needs confirming during implementation — §6 assumes it
+  gets the two-color segment stripe either as a replacement or a new
+  addition, whichever applies.
