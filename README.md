@@ -26,11 +26,13 @@ for how the two relate.
 
 **Tri-tone, more colorful, still Swiss-minimalist.** Two structural colors
 — ink (`#000000`) and warm cream (`#eae8d0`) — plus a Swiss Red accent
-(`#d3281b`) that now also marks section dividers and selective card
-emphasis, and a non-semantic highlight, Pastel Turquoise (`#56bfa3`), used
-decoratively across icon fills, underlines, washes, and chart series. No
-success green, no info blue, no second *semantic* accent — the highlight
-never carries meaning, however often it recurs.
+(`#d3281b`) that now also marks section dividers, selective card emphasis,
+and a genuine Structural Block (a solid-color sidebar/hero band, capped at
+~25% of viewport, or a bold word inside a heading), and a non-semantic
+highlight, Pastel Turquoise (`#56bfa3`), used decoratively across icon
+fills, underlines, washes, chart series, and a hover-triggered flourish on
+nav links. No success green, no info blue, no second *semantic* accent —
+the highlight never carries meaning, however often it recurs.
 
 - Visible 1px borders everywhere; **no shadows** (elevation is a background step).
 - Generous whitespace; mostly square corners.
