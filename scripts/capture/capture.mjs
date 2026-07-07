@@ -72,6 +72,8 @@ await shoot({ dsr: 2, viewport: { width: 1180, height: 1000 } }, [
   { id: "#components", file: "components.png", dark: false },
   { id: "#charts", file: "charts.png", dark: false },
   { id: "#registers", file: "type-registers.png", dark: false },
+  { id: "#text-length", file: "text-length.png", dark: false },
+  { id: "#images", file: "images.png", dark: false },
   { id: "#turquoise-moment", file: "turquoise-moment.png", dark: false },
   { id: "#closing-band", file: "closing-band.png", dark: false },
 ]);
