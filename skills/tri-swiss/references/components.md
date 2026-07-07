@@ -271,7 +271,8 @@ page — a content-level device, not page chrome:
 
 **Turquoise second-moment panel.** One larger solid-Turquoise section,
 used once per page, appearing later in the page flow — never in the
-hero, which stays Red's territory:
+hero, which stays Red's territory. Capped at roughly 15% of viewport
+height, matching the closing band's cap:
 
 ```html
 <section>
@@ -307,10 +308,10 @@ hierarchy (see `SKILL.md`'s "Hover states"): Red carries the real signal.
 
 ```html
 <button style="border:1px solid var(--primary); background:none;
-  color:var(--primary); padding:8px 14px;">Delete</button>
+  color:var(--primary); padding:16px 8px;">Delete</button>
 <!-- :hover (or a static .is-hover-demo modifier class for illustration) -->
 <button style="border:1px solid var(--primary); background:var(--primary);
-  color:var(--primary-foreground); padding:8px 14px;">Delete</button>
+  color:var(--primary-foreground); padding:16px 8px;">Delete</button>
 ```
 
 **Nav-link hover, Default vs. Hover.** The Turquoise flourish layered
