@@ -70,9 +70,10 @@ touchpoint distinct from Red's Emphasis card.
 ## 4. Interactive card and the dual-accent hover exception (Tri-Swiss only)
 
 **Interactive card** — a new clickable card pattern (an `<a>` or
-`<button>` wrapping card content): ink border at rest, transitioning on
-hover. In Tri-Swiss, the hover transition uses the **dual-accent**
-pattern below rather than plain Red.
+`<button>` wrapping card content) with its own hover-transitioning
+border color. In Tri-Swiss, this uses the **dual-accent** pattern below:
+Red border at rest, Turquoise on hover — the same rest/hover states as
+the Accent button, applied to a card instead of a button.
 
 **Dual-accent hover pattern.** The existing hover-state color hierarchy
 (established last round) says: "Red is the only color permitted to
