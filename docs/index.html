@@ -91,6 +91,17 @@
       transition:opacity 0.15s, border-color 0.15s; }
     .demo-nav-link:hover, .demo-nav-link.is-hover-demo { opacity:1; border-bottom-color:var(--highlight); }
 
+    /* Dual-accent hover exception — Red at rest, Turquoise on hover.
+       The one named exception to "Turquoise never signals on its own." */
+    .btn-accent { border:1px solid var(--primary); background:none; color:var(--primary);
+      transition:background-color 0.15s, color 0.15s, border-color 0.15s; }
+    .btn-accent:hover, .btn-accent.is-hover-demo { background:var(--highlight);
+      color:var(--highlight-foreground); border-color:var(--highlight); }
+    .card-interactive { display:block; text-decoration:none; color:inherit;
+      border:1px solid var(--primary); transition:border-color 0.15s, background-color 0.15s; }
+    .card-interactive:hover, .card-interactive.is-hover-demo { border-color:var(--highlight);
+      background:color-mix(in srgb, var(--highlight) 5%, var(--card)); }
+
     /* Structural Block — sidebar layout */
     .layout { display:flex; min-height:100vh; }
     .sidebar { width:22%; min-width:220px; max-width:280px; flex-shrink:0;
@@ -391,6 +402,8 @@
                 opacity:0.4;" disabled>Disabled</button>
               <button class="btn-destructive" style="padding:8px 14px; font:inherit;
                 letter-spacing:inherit; text-transform:inherit;">Destructive</button>
+              <button class="btn-accent" style="padding:8px 14px; font:inherit;
+                letter-spacing:inherit; text-transform:inherit;">Accent</button>
             </div>
           </div>
 
@@ -440,6 +453,15 @@
               <p style="margin:0; font-family:var(--font-mono); font-weight:700;">Featured</p>
               <p style="margin:8px 0 0; font-size:0.85rem; color:var(--muted-foreground);">
                 One card in a set — never the default for a whole grid.</p>
+            </div>
+          </div>
+
+          <div style="border:1px solid var(--border); padding:20px;">
+            <p class="label" style="margin-bottom:16px;">Accent card <span style="text-transform:none; letter-spacing:normal; color:var(--muted-foreground);">— Turquoise border + wash</span></p>
+            <div style="border:1px solid var(--highlight); background:color-mix(in srgb, var(--highlight) 8%, var(--card)); padding:16px;">
+              <p style="margin:0; font-family:var(--font-mono); font-weight:700;">Accent card</p>
+              <p style="margin:8px 0 0; font-size:0.85rem; color:var(--muted-foreground);">
+                Turquoise border + wash — decorative, not a state indicator.</p>
             </div>
           </div>
 
@@ -509,6 +531,30 @@
                 <a href="#components" class="demo-nav-link is-hover-demo" onclick="return false;">Section</a>
               </div>
             </div>
+          </div>
+
+          <div style="border:1px solid var(--border); padding:20px;">
+            <p class="label" style="margin-bottom:16px;">Hover — accent button <span style="text-transform:none; letter-spacing:normal; color:var(--muted-foreground);">Red at rest, Turquoise on hover</span></p>
+            <div style="display:flex; gap:24px; font-family:var(--font-mono);
+                        text-transform:uppercase; letter-spacing:0.2em; font-size:0.7rem;">
+              <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-start;">
+                <span style="font-size:0.65rem; letter-spacing:0.12em; color:var(--muted-foreground);">Default</span>
+                <button class="btn-accent" style="padding:8px 16px; font:inherit; letter-spacing:inherit; text-transform:inherit;">Learn more</button>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-start;">
+                <span style="font-size:0.65rem; letter-spacing:0.12em; color:var(--muted-foreground);">Hover</span>
+                <button class="btn-accent is-hover-demo" style="padding:8px 16px; font:inherit; letter-spacing:inherit; text-transform:inherit;">Learn more</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="border:1px solid var(--border); padding:20px;">
+            <p class="label" style="margin-bottom:16px;">Interactive card <span style="text-transform:none; letter-spacing:normal; color:var(--muted-foreground);">— dual-accent hover, hover to try</span></p>
+            <a href="#components" class="card-interactive" style="padding:16px;" onclick="return false;">
+              <p style="margin:0; font-family:var(--font-mono); font-weight:700;">Click anywhere</p>
+              <p style="margin:8px 0 0; font-size:0.85rem; color:var(--muted-foreground);">
+                Red border at rest, Turquoise on hover.</p>
+            </a>
           </div>
 
         </div>
