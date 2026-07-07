@@ -79,6 +79,26 @@ title) — is the one explicitly named exception to "Red and Turquoise
 never touch": a single governed device, not a general loosening. Nowhere
 else may the two sit adjacent.
 
+Turquoise also gets a genuine layout job of its own — a **Turquoise
+Structural Block**, parallel to Red's but kept clearly secondary: a
+callout/note panel (content-sized, may recur a few times per page), a
+single second-moment panel used once later in the page flow, or a
+closing band used once near the page's end. These never touch or sit
+adjacent to Red's own Structural Block, and their combined footprint
+stays visibly smaller than Red's block wherever both appear on the same
+page — Red keeps its ~25% viewport cap; Turquoise's forms are smaller
+(the second-moment panel and closing band each capped around ~15% of
+viewport height; the callout panel is content-sized, no viewport cap).
+Ink/cream still dominate every surface outside these governed blocks,
+and one accent per component still holds.
+
+The tri-part segment stripe isn't limited to one instance either: it may
+be reused at any length as a decorative divider or spacer — a small
+marker before a heading, a wider closing flourish — anywhere a purely
+decorative rule would otherwise go, as long as it stays three *equal*
+segments in ink/Red/Turquoise order and is used selectively rather than
+replacing the default `bg-border` divider throughout.
+
 **Swiss-minimalist.** Borders are visible (1px solid, full ink or full
 cream). No shadows — elevation comes from a background-color step (`--card`
 vs `--background`). Whitespace is generous. Labels are uppercase monospace
@@ -106,6 +126,7 @@ Use the semantic token, never a raw hex. `bg-background`, `text-foreground`,
 | `--input` | `#faf6ec` | Input field background |
 | `--ring` | `#d3281b` | Focus ring |
 | `--highlight` | `#56bfa3` | Pastel Turquoise — governed, non-semantic (see below) |
+| `--highlight-foreground` | `#000000` | Text/icon color on solid `--highlight` fills — constant black in both modes since Turquoise stays light/pastel even in dark mode |
 
 ### Dark mode
 | Token | Hex | Role |
@@ -122,6 +143,7 @@ Use the semantic token, never a raw hex. `bg-background`, `text-foreground`,
 | `--input` | `#161616` | — |
 | `--ring` | `#e2503f` | — |
 | `--highlight` | `#63cbae` | Pastel Turquoise, lifted for dark mode |
+| `--highlight-foreground` | `#000000` | Same constant black — Turquoise stays light/pastel even in dark mode |
 
 Dark mode is the `.dark` class on `<html>`. Toggle with
 `document.documentElement.classList.toggle("dark", isDark)` and persist under
@@ -157,7 +179,8 @@ removable without changing meaning, it's fine.
 **Do not** use it as a button's, tag's, status pip's, or link's own
 state-indicating color. A link may show a decorative Turquoise
 hover-flourish (item 7 above) *in addition to* its real ink/red state
-feedback — Turquoise itself never signals the state.
+feedback — Turquoise itself never signals the state (see "Hover states"
+below for the system-wide rule this follows).
 
 ## Typography
 
@@ -230,7 +253,7 @@ also the visible nod tying Tri-Swiss to its sibling system, Lux Swiss
 
 ## Buttons
 
-All buttons: `font-mono uppercase tracking-[0.2em] text-xs`. Three variants:
+All buttons: `font-mono uppercase tracking-[0.2em] text-xs`. Four variants:
 
 - **Ghost / nav** (most common): `text-muted-foreground hover:text-foreground
   transition-colors`, no border.
@@ -238,8 +261,25 @@ All buttons: `font-mono uppercase tracking-[0.2em] text-xs`. Three variants:
   hover:text-background`.
 - **Filled** (primary action, rare): `border border-foreground bg-foreground px-4
   py-2 text-background hover:bg-foreground/90`.
+- **Destructive:** `border border-primary text-primary px-4 py-2
+  hover:bg-primary hover:text-primary-foreground` — Red's already-named
+  "destructive" job (see Philosophy), now with a documented variant.
+  Demonstrates the hover hierarchy below: Red carries the real hover
+  signal.
 
 **Disabled** is always `opacity-40` — never a color change.
+
+## Hover states
+
+Wherever a hover state uses an *accent* color — not just an ink/muted-
+foreground tone shift — to signal interactivity, **Red is the only color
+permitted to carry that real signal.** Turquoise never signals on its own
+in a hover state; it may only layer in as a purely decorative flourish
+alongside Red's or ink's real feedback — as the Destructive button above
+and the nav-link hover-flourish (see the `--highlight` token section)
+both demonstrate. This doesn't require every hoverable element to use an
+accent color: most buttons/tags/toggles hover via ink/muted-foreground
+shifts only, unaffected by this rule.
 
 ## Tags / pills
 
@@ -302,6 +342,8 @@ to the mono label pattern. See
 
 - **No third semantic color.** `--highlight` is not success green or info
   blue in disguise — it carries no state meaning anywhere.
+- **No accent-colored hover signal other than Red.** Turquoise may only
+  decorate a hover state, never carry its meaning alone.
 - **No shadows.** Depth is border presence + background steps.
 - **No chart libraries except restyled Observable Plot.** Hand-rolled SVG is
   the default; reach for Plot only when complexity earns it, restyled to
