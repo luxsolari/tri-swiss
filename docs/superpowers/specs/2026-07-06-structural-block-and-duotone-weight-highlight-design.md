@@ -154,19 +154,23 @@ only, not extended to buttons/tags/status pips in this spec.
   - Add the identical Structural Block job to Blood Red's description
     (sidebar/nav rail, hero band, bold-word accent — same ~25% cap, same
     combinability rule).
-  - Add the new **weight-based brand-moment device**: exactly one element
-    per page (the hero wordmark) rendered at an extreme weight — **900/
-    Black** — a cut heavier than anything else on the page, reserved for
-    that one moment only. This is Duotone Swiss's functional equivalent of
-    Tri-Swiss's "one brand moment" job for Turquoise, expressed through
-    weight instead of color. Chart-series differentiation needs no new
-    device — the existing dash/opacity/outline-ring rules already cover
-    that job.
-  - Update the Google Fonts `<link>` to add weight `900` for whichever of
-    Space Mono/Space Grotesk hosts the brand-moment element (confirm which
-    family actually ships a 900 cut before implementation — if neither
-    does, fall back to the heaviest weight either family actually
-    supports, and note the substitution in the commit).
+  - Add the new **typographic brand-moment device**: exactly one element
+    per page (the hero wordmark) rendered larger and bolder than anything
+    else on the page, reserved for that one moment only. This is Duotone
+    Swiss's functional equivalent of Tri-Swiss's "one brand moment" job for
+    Turquoise, expressed through typography instead of color. Chart-series
+    differentiation needs no new device — the existing dash/opacity/
+    outline-ring rules already cover that job.
+  - **Resolved during planning:** neither Space Grotesk nor Space Mono
+    actually ships a weight past 700 (verified directly against Google
+    Fonts — a `wght@300..900` request for Space Grotesk returns HTTP 400,
+    and Space Mono only serves 400/700). Since 700 is already every
+    heading's weight, a pure weight-only device would be indistinguishable
+    from a normal heading. Per the fallback clause below, this device
+    combines the heaviest real weight (700, same as headings) with a
+    deliberate size jump — the brand-moment element is dramatically larger
+    than the type scale otherwise allows, still zero new color. No Google
+    Fonts `<link>` change is needed (900 was never actually servable).
   - Add the two-color (ink/red) segment-stripe pattern from §4.1 as the
     hero underline device — Duotone Swiss has no Turquoise, so it has no
     equivalent of the §4.2 hover-flourish; this section does not apply to
@@ -209,11 +213,9 @@ Two separate branches, two separate PRs, executed one after the other
   animation) is an implementation-time visual judgment call, guided only
   by: vanilla JS, no new dependency, reuses the existing theme-toggle
   script's style.
-- Whether Space Mono or Space Grotesk (or both) actually ship a static/
-  variable 900 cut needs confirming against the real Google Fonts family
-  metadata before the SKILL.md/theme.css edit lands — if unavailable,
-  substitute the heaviest weight either family supports and note it.
-- Duotone Swiss's current showcase page's own hero-underline state (if it
-  has one at all) needs confirming during implementation — §6 assumes it
-  gets the two-color segment stripe either as a replacement or a new
-  addition, whichever applies.
+- **Resolved:** neither font ships past weight 700 — see §6's brand-moment
+  device description for the weight+size resolution. No longer open.
+- Duotone Swiss's current showcase page has **no existing hero underline
+  at all** (confirmed by reading `docs/index.html` directly) — the
+  two-color segment stripe from §4.1 is a pure addition there, not a
+  replacement.
