@@ -117,7 +117,9 @@ Beyond their original jobs (Red: primary action/destructive/ring. Turquoise:
 chart second series/brand moment), both accents now recur more often across
 a page — Red picks up two new structural jobs; Turquoise gets decorative
 reuse. Guardrails: ink/cream still dominate any surface, Red and Turquoise
-never touch on the same element, and each component gets at most one accent.
+never touch on the same element (one named exception: see "Tri-part
+segment stripe" under Structural Block below), and each component gets at
+most one accent.
 
 **Section-divider rule, red variant.** The default section-header rule is
 `bg-border`; swap to `bg-primary` for a section that earns emphasis (used
