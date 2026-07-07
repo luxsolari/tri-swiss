@@ -68,7 +68,9 @@ no longer rationed to one touch per page: it recurs as pure decoration
 (icon fills, underlines, background washes, dot accents, a chart's
 second series, a brand/hero moment) anywhere its presence or absence
 wouldn't change what the user understands about state. It still never
-appears on a button, tag, status pip, or link. Three guardrails keep this
+appears on a button, tag, or status pip, and never as a link's own
+state-indicating color — though a link may carry it as a purely
+decorative hover-flourish (see the `--highlight` section below). Three guardrails keep this
 from tipping into loud: ink/cream still visually dominate any surface;
 Red and Turquoise never touch or sit adjacent on the same element; one
 accent per component, not both. The **tri-part segment stripe** — three equal solid blocks, ink/Red/
