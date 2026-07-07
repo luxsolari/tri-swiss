@@ -4,12 +4,13 @@ Contributions welcome! Here's how:
 
 ## Design changes
 The design language lives in `skills/tri-swiss/`. Keep the two governing
-rules intact — **tri-tone strict** (two structural colors + one strong accent
-+ one rare, non-semantic highlight reserved for charts/brand moments — never
-a second accent, never a third UI color) and **Swiss-minimalist** (visible
-borders, no shadows). Changes that add a semantic color or a shadow
-contradict the system and won't be accepted; express new states through
-weight, size, spacing, and contrast instead.
+rules intact — **tri-tone, more colorful** (two structural colors + one
+accent, Swiss Red, used more freely for action/divider/emphasis-border jobs
++ one non-semantic highlight, Pastel Turquoise, used decoratively but never
+for state) and **Swiss-minimalist** (visible borders, no shadows). Changes
+that add a *semantic* color (a third color that means success/info/state)
+or a shadow contradict the system and won't be accepted; express new states
+through weight, size, spacing, and contrast instead.
 
 - Palette / token changes: update both `SKILL.md`'s tables and `assets/theme.css`
   so they never drift apart.

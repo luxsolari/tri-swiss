@@ -19,20 +19,20 @@ aesthetic.
 
 ## The aesthetic
 
-**Tri-tone strict, Swiss-minimalist.** Two structural colors — ink
-(`#000000`) and warm cream (`#eae8d0`) — plus a Swiss Red accent
-(`#d3281b`) and one rare, non-semantic highlight, Pastel Turquoise
-(`#56bfa3`), reserved for a chart's second series or one single brand
-moment. No success green, no info blue, no second *semantic* accent — the
-highlight never carries meaning.
+**Tri-tone, more colorful, still Swiss-minimalist.** Two structural colors
+— ink (`#000000`) and warm cream (`#eae8d0`) — plus a Swiss Red accent
+(`#d3281b`) that now also marks section dividers and selective card
+emphasis, and a non-semantic highlight, Pastel Turquoise (`#56bfa3`), used
+decoratively across icon fills, underlines, washes, and chart series. No
+success green, no info blue, no second *semantic* accent — the highlight
+never carries meaning, however often it recurs.
 
 - Visible 1px borders everywhere; **no shadows** (elevation is a background step).
 - Generous whitespace; mostly square corners.
 - **Geist Mono** for headings, data, tags, and nav; **Geist Sans** for body
   and dense-data/utility text.
-- Two governed extra registers: **Space Mono** (italic, annotations/captions
-  only — the visible nod to Duotone Swiss) and **Jost** (hero title/wordmark
-  and section dividers only).
+- One governed extra register: **Space Mono** (italic, annotations/captions
+  only — the visible nod to Duotone Swiss).
 - Uppercase monospace labels with wide letter-spacing.
 - Hand-rolled SVG charts by default — no chart libraries except a
   restyled Observable Plot.
@@ -46,7 +46,7 @@ contrast, never by a new hue:
 |-------|------|
 | ![Light mode hero](docs/assets/hero-light.png) | ![Dark mode hero](docs/assets/hero-dark.png) |
 
-Five type registers and the component library:
+Four type registers and the component library:
 
 ![Type registers](docs/assets/type-registers.png)
 ![Component gallery](docs/assets/components.png)
@@ -81,7 +81,7 @@ Add the marketplace, then install:
 ## Applying it to a project
 
 1. Copy `assets/theme.css` into your global stylesheet.
-2. Add the Geist + Geist Mono + Space Mono + Zilla Slab + Jost Google Fonts
+2. Add the Geist + Geist Mono + Space Mono + Zilla Slab Google Fonts
    link (or `next/font`).
 3. Build with the semantic tokens (`bg-background`, `text-foreground`,
    `border-border`, `bg-primary`, …) and the component patterns. Reach for
