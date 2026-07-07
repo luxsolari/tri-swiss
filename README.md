@@ -13,9 +13,14 @@
 
 A Claude Code plugin that teaches Claude **Tri-Swiss** — Lux Solari's
 Geist-based house design language, sibling to
-[lux-design-system](https://github.com/luxsolari/lux-design-system) (Duotone
+[Lux Swiss](https://github.com/luxsolari/lux-swiss) (formerly Duotone
 Swiss) — so every project you build shares one consistent, opinionated
 aesthetic.
+
+Tri-Swiss and Lux Swiss are the two house-mark design systems that carry
+Lux Solari's personal brand identity into every project built with them —
+related governance, distinct palettes. See [HOUSE-MARK.md](HOUSE-MARK.md)
+for how the two relate.
 
 ## The aesthetic
 

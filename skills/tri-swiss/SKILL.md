@@ -28,6 +28,12 @@ point is restraint: every element earns its place or is removed, and
 contrast — Red and Turquoise are a deliberate, governed layer on top, never
 a substitute for that discipline.**
 
+Tri-Swiss is one of Lux Solari's two house-mark design systems — the
+personal brand identity carried into every project built with them. Its
+sibling, [Lux Swiss](https://github.com/luxsolari/lux-swiss) (formerly
+Duotone Swiss), applies the same governance philosophy through a strict
+two-color-plus-accent palette; see `HOUSE-MARK.md` for how the two relate.
+
 ## When you apply this
 
 Whenever you build or restyle UI, reach for these tokens and patterns by
