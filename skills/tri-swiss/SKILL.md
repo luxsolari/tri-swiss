@@ -76,18 +76,18 @@ Use the semantic token, never a raw hex. `bg-background`, `text-foreground`,
 ### Light mode
 | Token | Hex | Role |
 |-------|-----|------|
-| `--background` | `#eae8d0` | Page background — warm cream |
+| `--background` | `#f5efe0` | Page background — warm cream |
 | `--foreground` | `#000000` | Body text, active controls, borders |
-| `--card` | `#f1efdb` | Elevated surface — card, popover |
+| `--card` | `#faf6ec` | Elevated surface — card, popover |
 | `--card-foreground` | `#000000` | Text on card surfaces |
 | `--primary` | `#d3281b` | Swiss Red — accent, destructive, ring |
-| `--primary-foreground` | `#eae8d0` | Text on primary |
+| `--primary-foreground` | `#f5efe0` | Text on primary |
 | `--secondary` | `#000000` | Secondary action background |
-| `--secondary-foreground` | `#eae8d0` | Text on secondary |
-| `--muted` | `#e2dfc7` | Subtle backgrounds — hover, code blocks |
+| `--secondary-foreground` | `#f5efe0` | Text on secondary |
+| `--muted` | `#ebe5d5` | Subtle backgrounds — hover, code blocks |
 | `--muted-foreground` | `#4a4838` | Subdued labels, metadata, placeholders |
 | `--border` | `#000000` | All borders — full ink for structural clarity |
-| `--input` | `#f1efdb` | Input field background |
+| `--input` | `#faf6ec` | Input field background |
 | `--ring` | `#d3281b` | Focus ring |
 | `--highlight` | `#56bfa3` | Pastel Turquoise — governed, non-semantic (see below) |
 
@@ -95,14 +95,14 @@ Use the semantic token, never a raw hex. `bg-background`, `text-foreground`,
 | Token | Hex | Role |
 |-------|-----|------|
 | `--background` | `#000000` | Near-black |
-| `--foreground` | `#eae8d0` | Cream text |
+| `--foreground` | `#f5efe0` | Cream text |
 | `--card` | `#161616` | Slightly lifted surface |
 | `--primary` | `#e2503f` | Red lifted for dark contrast |
-| `--secondary` | `#eae8d0` | Inverted |
+| `--secondary` | `#f5efe0` | Inverted |
 | `--secondary-foreground` | `#000000` | — |
 | `--muted` | `#1f1f1f` | Subtle dark surface |
 | `--muted-foreground` | `#a8a696` | Warm grey — readable but recessed |
-| `--border` | `#eae8d0` | Full cream — maintains structural clarity |
+| `--border` | `#f5efe0` | Full cream — maintains structural clarity |
 | `--input` | `#161616` | — |
 | `--ring` | `#e2503f` | — |
 | `--highlight` | `#63cbae` | Pastel Turquoise, lifted for dark mode |
