@@ -73,11 +73,13 @@ state-indicating color — though a link may carry it as a purely
 decorative hover-flourish (see the `--highlight` section below). Three guardrails keep this
 from tipping into loud: ink/cream still visually dominate any surface;
 Red and Turquoise never touch or sit adjacent on the same element; one
-accent per component, not both. The **tri-part segment stripe** — three equal solid blocks, ink/Red/
+accent per component, not both at any single moment. The **tri-part segment stripe** — three equal solid blocks, ink/Red/
 Turquoise in a row, used for a static decorative bar (e.g. beneath a hero
 title) — is the one explicitly named exception to "Red and Turquoise
 never touch": a single governed device, not a general loosening. Nowhere
-else may the two sit adjacent.
+else may the two sit adjacent. (See "Hover states" below for the sequential
+exception — the dual-accent hover pattern — where the two colors swap rather
+than coexist.)
 
 Turquoise also gets a genuine layout job of its own — a **Turquoise
 Structural Block**, parallel to Red's but kept clearly secondary: a

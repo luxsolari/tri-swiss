@@ -149,7 +149,7 @@ current one, the first-in-list — swaps its border from `border-border` to
 **Turquoise decorative accents.** Non-semantic, ornamental only — never as
 a button's, tag's, status pip's, or link's own default/rest state color
 (see the "Structural Block" section below for the nav-link
-hover-flourish, and "Cards" below for the Accent button / Interactive
+hover-flourish and the Accent button, and "Cards" below for the Interactive
 card — the sanctioned exceptions where Turquoise carries real hover
 meaning, not decoration):
 
