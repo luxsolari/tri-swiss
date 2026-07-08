@@ -17,7 +17,10 @@ Philosophy section) — Red and Turquoise sit spatially adjacent, reusable
 at any length — and the dual-accent hover pattern on the Accent button
 and Interactive card (§ SKILL.md "Hover states") — Red and Turquoise
 swap sequentially on hover, never simultaneously. Neither is a general
-loosening; don't extend either beyond its named pattern.
+loosening; don't extend either beyond its named pattern. List/table
+markers and borders stay ink/muted-foreground only; images default to
+grayscale/duotone, with full color reserved for the one named exception
+(§ SKILL.md "Images") where the photograph itself is the content.
 
 - Palette / token changes: update both `SKILL.md`'s tables and `assets/theme.css`
   so they never drift apart.
