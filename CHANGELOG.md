@@ -6,6 +6,8 @@ All notable changes to this plugin are documented here. Format follows
 
 ## [Unreleased]
 
+## [0.2.0] — 2026-07-08
+
 ### Added
 - **Accent button and Accent card** — a fifth button variant
   (Red-bordered, general emphasis rather than destructive) and a new
