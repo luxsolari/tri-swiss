@@ -13,7 +13,7 @@
 <p align="center"><strong><a href="https://luxsolari.github.io/tri-swiss/">View the live demo →</a></strong></p>
 
 A Claude Code plugin that teaches Claude **Tri-Swiss** — Lux Solari's
-Geist-based house design language, sibling to
+house design language, sibling to
 [Lux Swiss](https://github.com/luxsolari/lux-swiss) (formerly Duotone
 Swiss) — so every project you build shares one consistent, opinionated
 aesthetic.
@@ -49,10 +49,10 @@ meaning outside its two named hover exceptions, however often it recurs.
 
 - Visible 1px borders everywhere; **no shadows** (elevation is a background step).
 - Generous whitespace; mostly square corners.
-- **Geist Mono** for headings, data, tags, and nav; **Geist Sans** for body
-  and dense-data/utility text.
-- One governed extra register: **Space Mono** (italic, annotations/captions
-  only — the visible nod to Lux Swiss, formerly Duotone Swiss).
+- **Space Mono** for headings, data, tags, and nav; **Space Grotesk** for
+  body — or the **Geist** flavor (Geist Mono + Geist Sans), toggled with
+  a single `.geist` class; Zilla Slab (serif, long-form) is shared by both,
+  and mono italic covers annotations/captions in either flavor.
 - Uppercase monospace labels with wide letter-spacing.
 - Hand-rolled SVG charts by default — no chart libraries except a
   restyled Observable Plot.
@@ -66,7 +66,7 @@ contrast, never by a new hue:
 |-------|------|
 | ![Light mode hero](docs/assets/hero-light.png) | ![Dark mode hero](docs/assets/hero-dark.png) |
 
-Four type registers and the component library:
+Three type registers and the component library:
 
 ![Type registers](docs/assets/type-registers.png)
 ![Component gallery](docs/assets/components.png)
@@ -83,7 +83,7 @@ Once installed, the `tri-swiss` skill activates automatically whenever
 Claude builds or restyles UI — components, pages, forms, dashboards,
 Tailwind/CSS themes — and applies these tokens and patterns by default,
 even if you don't name the design system. You can also invoke it explicitly
-("apply my design system", "make this tri-swiss", "use the Geist system").
+("apply my design system", "make this tri-swiss", "use the tri-tone system").
 
 The skill bundles:
 
@@ -106,8 +106,10 @@ Add the marketplace, then install:
 ## Applying it to a project
 
 1. Copy `assets/theme.css` into your global stylesheet.
-2. Add the Geist + Geist Mono + Space Mono + Zilla Slab Google Fonts
-   link (or `next/font`).
+2. Pick a font flavor — **Space** (default: Space Grotesk + Space Mono) or
+   **Geist** (Geist Sans + Geist Mono, via the `.geist` class on `<html>`)
+   — and add that flavor's Google Fonts link (or `next/font`); both share
+   Zilla Slab as the serif register.
 3. Build with the semantic tokens (`bg-background`, `text-foreground`,
    `border-border`, `bg-primary`, …) and the component patterns. Reach for
    `bg-highlight`/`text-highlight` decoratively — icon fills, underlines,

@@ -5,19 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <script>
-    // Apply the saved theme before first paint to avoid a flash of the wrong mode.
+    // Apply the saved theme + font flavor before first paint to avoid a flash of
+    // the wrong mode. The toggle buttons are wired by the scripts at end of body.
     (function () {
       try {
         var saved = localStorage.getItem("theme");
         var dark = saved ? saved === "dark"
           : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
         if (dark) document.documentElement.classList.add("dark");
+        if (localStorage.getItem("flavor") === "geist") document.documentElement.classList.add("geist");
       } catch (e) {}
     })();
   </script>
 
   <title>Tri-Swiss — a tri-tone Swiss-minimalist design system for Claude Code</title>
-  <meta name="description" content="Two structural colors, one strong accent, one governed highlight. A Geist-based Swiss-minimalist design system that gives every Claude Code project one consistent, opinionated aesthetic." />
+  <meta name="description" content="Two structural colors, one strong accent, one governed highlight. A Swiss-minimalist design system that gives every Claude Code project one consistent, opinionated aesthetic." />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Tri-Swiss — a tri-tone Swiss-minimalist design system" />
@@ -33,7 +35,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Space+Mono:ital,wght@0,400;1,400&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Geist:wght@300;400;500;700&family=Geist+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -41,9 +43,14 @@
       --primary:#d3281b; --primary-foreground:#f5efe0; --secondary:#000000; --secondary-foreground:#f5efe0;
       --muted:#ebe5d5; --muted-foreground:#4a4838; --border:#000000; --input:#faf6ec; --ring:#d3281b;
       --highlight:#56bfa3; --highlight-foreground:#000000;
-      /* Role fonts */
+      /* Role fonts — Space flavor (default). --font-serif is shared by
+         both flavors and is never overridden by .geist. */
+      --font-mono:'Space Mono',ui-monospace,monospace; --font-sans:'Space Grotesk',system-ui,sans-serif;
+      --font-serif:'Zilla Slab',Georgia,serif;
+    }
+    /* Geist flavor — add class="geist" on <html>; composes with .dark. */
+    .geist {
       --font-mono:'Geist Mono',ui-monospace,monospace; --font-sans:'Geist',system-ui,sans-serif;
-      --font-annotation:'Space Mono',ui-monospace,monospace; --font-serif:'Zilla Slab',Georgia,serif;
     }
     .dark {
       --background:#000000; --foreground:#f5efe0; --card:#161616; --card-foreground:#f5efe0;
@@ -64,7 +71,7 @@
       font-size:3.5rem; line-height:1.05; margin:20px 0 0; }
     .label { font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;
       letter-spacing:0.2em; color:var(--muted-foreground); }
-    .annotation { font-family:var(--font-annotation); font-style:italic; }
+    .annotation { font-family:var(--font-mono); font-style:italic; }
     .divider { display:flex; align-items:baseline; gap:12px; margin:0 0 24px; }
     .divider .rule { height:1px; flex:1; background:var(--border); }
     section { padding:64px 0; border-top:1px solid var(--border); }
@@ -180,6 +187,11 @@
         </nav>
       </div>
       <div class="sidebar-bottom">
+        <div class="toggle" role="group" aria-label="Font flavor">
+          <button data-flavor-btn="space" aria-pressed="true">Space</button>
+          <span class="mid">·</span>
+          <button data-flavor-btn="geist" aria-pressed="false">Geist</button>
+        </div>
         <div class="toggle" role="group" aria-label="Color theme">
           <button data-theme-btn="light" aria-pressed="true">Light</button>
           <span class="mid">·</span>
@@ -210,7 +222,7 @@
           <div style="height:3px; flex:1; background:var(--highlight);"></div>
         </div>
         <p style="font-size:1.15rem; max-width:60ch; margin:24px 0 0; color:var(--foreground);">
-          Lux Solari's Geist-based house design language — Swiss-minimalist,
+          Lux Solari's house design language — Swiss-minimalist,
           tri-tone, more colorful. Two structural colors, one strong
           <span style="color:var(--primary);">accent</span>, one governed
           highlight; everything else is weight, space, and contrast.
@@ -347,7 +359,7 @@
             <h2 style="margin:8px 0 0;">Heading two</h2>
             <h3 style="margin:8px 0 0;">Heading three</h3>
             <p class="annotation" style="font-size:0.9rem; color:var(--muted-foreground); margin:20px 0 0; max-width:34ch;">
-              Space Mono italic is reserved for annotations and figure captions — never for
+              Mono italic is reserved for annotations and figure captions — never for
               emphasis. Emphasis is always weight.</p>
           </div>
           <div>
@@ -368,13 +380,13 @@
         </div>
       </section>
       <section id="registers">
-        <div class="divider"><h3>Four type registers</h3><span class="rule"></span></div>
-        <p class="label" style="margin:-8px 0 24px;">Core Geist pairing + two sanctioned registers</p>
+        <div class="divider"><h3>Three type registers</h3><span class="rule"></span></div>
+        <p class="label" style="margin:-8px 0 24px;">Core Space pairing + one sanctioned register · toggle Space · Geist in the nav to reskin the page</p>
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:32px;">
           <div>
             <p class="label" style="margin-bottom:12px;">Display / mono</p>
             <p style="font-family:var(--font-mono); font-size:1.7rem; font-weight:700; letter-spacing:-0.02em; margin:0;">Tri-Swiss</p>
-            <p class="label" style="margin-top:10px;">Geist Mono</p>
+            <p class="label" style="margin-top:10px;">Space Mono → Geist Mono</p>
           </div>
           <div>
             <p class="label" style="margin-bottom:12px;">Body &amp; utility / sans</p>
@@ -382,13 +394,7 @@
               carries a landing-page lead, a dashboard's dense stat block, and a
               settings page's fine print, no separate voice for any of them, just
               the weight axis already established.</p>
-            <p class="label" style="margin-top:10px;">Geist Sans</p>
-          </div>
-          <div>
-            <p class="label" style="margin-bottom:12px;">Annotation</p>
-            <p class="annotation" style="font-size:1.05rem; margin:0;">Fig. 1 — quarterly conversion rate, sampled daily across the
-              reporting window.</p>
-            <p class="label" style="margin-top:10px;">Space Mono, italic</p>
+            <p class="label" style="margin-top:10px;">Space Grotesk → Geist Sans</p>
           </div>
           <div>
             <p class="label" style="margin-bottom:12px;">Serif / long-form</p>
@@ -761,7 +767,7 @@
   </script>
   <script>
     // Fill each palette swatch with its live hex / rgb / hsl, recomputed on theme change
-    // so the values always match the swatch (data values → Geist Mono).
+    // so the values always match the swatch (data values → mono).
     (function () {
       function pad(n) { return n.toString(16).padStart(2, "0"); }
       function toHsl(r, g, b) {
@@ -808,6 +814,27 @@
         var dark = btn.dataset.themeBtn === "dark";
         localStorage.setItem("theme", dark ? "dark" : "light");
         apply(dark);
+      });
+    })();
+  </script>
+  <script>
+    // Font-flavor toggle (Space ⇄ Geist): swaps the .geist class, which reskins the
+    // page's --font-mono and --font-sans role variables. Persisted under "flavor".
+    (function () {
+      var root = document.documentElement;
+      apply(localStorage.getItem("flavor") === "geist");
+      function apply(geist) {
+        root.classList.toggle("geist", geist);
+        document.querySelectorAll("[data-flavor-btn]").forEach(function (b) {
+          b.setAttribute("aria-pressed", String(b.dataset.flavorBtn === (geist ? "geist" : "space")));
+        });
+      }
+      document.addEventListener("click", function (e) {
+        var btn = e.target.closest("[data-flavor-btn]");
+        if (!btn) return;
+        var geist = btn.dataset.flavorBtn === "geist";
+        localStorage.setItem("flavor", geist ? "geist" : "space");
+        apply(geist);
       });
     })();
   </script>

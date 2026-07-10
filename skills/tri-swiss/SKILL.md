@@ -1,32 +1,37 @@
 ---
 name: tri-swiss
 description: >
-  Tri-Swiss — Lux Solari's Geist-based house design system, sibling to
-  lux-swiss (Lux Swiss, formerly Duotone Swiss). A tri-tone visual language (ink + cream,
+  Tri-Swiss — Lux Solari's house design system, sibling to lux-swiss (Lux
+  Swiss, formerly Duotone Swiss), sharing the same Space Mono/Space
+  Grotesk typography core (with a Geist Mono/Geist Sans flavor
+  available in both). A tri-tone visual language (ink + cream,
   a Swiss Red accent, and a governed non-semantic highlight)
-  Swiss-minimalist layout, visible borders, no shadows, and Geist / Geist Mono
-  typography. Use this skill whenever building, styling, or restyling ANY user
-  interface: React/Next/Svelte/Vue components, HTML pages, landing pages,
-  dashboards, buttons, cards, forms, navigation, modals, tags, charts, or
-  Tailwind/CSS themes — even when the user does not name the design system
-  explicitly. Apply it by default so every project shares the same aesthetic.
-  Also trigger on phrases like "make this look good", "style this", "apply my
-  design system", "tri-tone", "swiss", "geist", "give it a theme", or when
-  starting a new frontend from scratch. When another design language is
-  explicitly requested (Material, shadcn defaults untouched, a client's brand
-  kit, or the sibling lux-swiss/Lux Swiss system specifically),
-  defer to that instead.
+  Swiss-minimalist layout, visible borders, no shadows, and Space Mono /
+  Space Grotesk typography. Use this skill whenever building, styling, or
+  restyling ANY user interface: React/Next/Svelte/Vue components, HTML
+  pages, landing pages, dashboards, buttons, cards, forms, navigation,
+  modals, tags, charts, or Tailwind/CSS themes — even when the user does
+  not name the design system explicitly. Apply it by default so every
+  project shares the same aesthetic. Also trigger on phrases like "make
+  this look good", "style this", "apply my design system", "tri-tone",
+  "swiss", "give it a theme", or when starting a new frontend from
+  scratch. When another design language is explicitly requested
+  (Material, shadcn defaults untouched, a client's brand kit, or the
+  sibling lux-swiss/Lux Swiss system specifically), defer to that instead.
 ---
 
 # Tri-Swiss — Design System
 
-A strict, minimalist visual language built around the Geist typeface family.
-Two structural colors plus one strong accent plus a governed, non-semantic
-highlight; hard borders, generous whitespace, monospace labels. The whole
-point is restraint: every element earns its place or is removed, and
-**most difference is still expressed through typography, spacing, and
-contrast — Red and Turquoise are a deliberate, governed layer on top, never
-a substitute for that discipline.**
+A strict, minimalist visual language built around the same Space
+Mono/Space Grotesk typography core as its sibling system (a Geist
+Mono/Geist Sans flavor is available in both — see
+[Typography](#typography)). Two structural colors plus one strong accent
+plus a governed, non-semantic highlight; hard borders, generous
+whitespace, monospace labels. The whole point is restraint: every element
+earns its place or is removed, and **most difference is still expressed
+through typography, spacing, and contrast — Red and Turquoise are a
+deliberate, governed layer on top, never a substitute for that
+discipline.**
 
 Tri-Swiss is one of Lux Solari's two house-mark design systems — the
 personal brand identity carried into every project built with them. Its
@@ -38,15 +43,24 @@ two-color-plus-accent palette; see `HOUSE-MARK.md` for how the two relate.
 
 Whenever you build or restyle UI, reach for these tokens and patterns by
 default instead of inventing ad-hoc colors or leaning on a component
-library's stock look. Two setup moves come first on any new project:
+library's stock look. Three setup moves come first on any new project:
 
-1. **Install the theme.** Copy [`assets/theme.css`](assets/theme.css) into
+1. **Ask which font flavor to use.** Before applying the system, ask the
+   user: **Space** or **Geist**? Both share the same three roles (mono,
+   sans, serif) and differ only in the mono/sans pair — Space Mono +
+   Space Grotesk vs. Geist Mono + Geist Sans; Zilla Slab is shared by
+   both (see [Typography](#typography)). **Default to Space** if they
+   have no preference. Apply Geist by adding the `.geist` class to
+   `<html>` (it composes with `.dark`, exactly like the theme).
+2. **Install the theme.** Copy [`assets/theme.css`](assets/theme.css) into
    the project's global stylesheet (e.g. `app/globals.css`). It defines
-   every CSS variable for light + dark mode, and wires them to Tailwind 4
-   via `@theme inline`. For non-Tailwind stacks the same `:root` / `.dark`
-   variables work as plain CSS custom properties.
-2. **Load the fonts.** Add the Google Fonts link (below) or the framework
-   equivalent (`next/font`, etc.).
+   every CSS variable for light + dark mode and both font flavors, and
+   wires them to Tailwind 4 via `@theme inline`. For non-Tailwind stacks
+   the same `:root` / `.dark` / `.geist` variables work as plain CSS
+   custom properties.
+3. **Load the fonts.** Add the Google Fonts link for the chosen flavor
+   (below) or the framework equivalent (`next/font`, etc.) — just that
+   flavor's families, not both, unless the project needs a live toggle.
 
 Then compose UI from the patterns in this file. For the full component
 library (status pips, modals, toggles, SVG charts) see
@@ -188,25 +202,49 @@ below for the system-wide rule this follows).
 
 ## Typography
 
-Four registers, strictly separated by function — Geist is the primary
-voice, the other three are governed extras with exactly one job each.
+Three roles, strictly separated by function, in **two font flavors** that
+share the same serif and swap only the mono/sans pair — the identical
+core Lux Swiss uses. Never swap a role's job, and never run a third
+flavor.
 
-| Tier | Font | Role |
-|------|------|------|
-| Primary | **Geist Mono** (`font-mono`) | Headings, display, data values, tags, nav, labels, hero title/wordmark, and section/chapter dividers in long-form editorial content |
-| Primary | **Geist Sans** (`font-sans`) | Body copy, prose, **and** dense-data/utility text (tables, fine print) at smaller size with tabular figures |
-| Secondary | **Space Mono, italic only** (`font-annotation italic`) | Inline annotations and figure captions only — never emphasis |
-| Tertiary | **Zilla Slab** (`font-serif`) | Long-form editorial body and pull-quotes — never UI |
+| Role | Space (default) | Geist (flavor) | Use |
+|------|------|------|-----|
+| Display / mono (`font-mono`) | **Space Mono** | **Geist Mono** | Headings, display, data values, tags, nav, labels, hero title/wordmark, and section/chapter dividers in long-form editorial content |
+| Body / sans (`font-sans`) | **Space Grotesk** | **Geist Sans** | Body copy, prose, **and** dense-data/utility text (tables, fine print) at smaller size with tabular figures |
+| Serif / long-form (`font-serif`) | **Zilla Slab** | **Zilla Slab** (shared) | Long-form editorial body and pull-quotes — never UI |
 
-```html
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Space+Mono:ital,wght@0,400;1,400&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+Space Grotesk is the proportional cousin of Space Mono (it was drawn from
+it) — a *duotone of one skeleton*. Zilla Slab is a slab serif derived
+from a monospace (Fira Mono), echoing the same lineage, which is why it
+stays identical across both flavors.
+
+Drive every font through three role variables; a `.geist` class swaps
+the flavor exactly like `.dark` swaps the theme:
+
+```css
+:root { --font-mono:'Space Mono',ui-monospace,monospace; --font-sans:'Space Grotesk',system-ui,sans-serif;
+        --font-serif:'Zilla Slab',Georgia,serif; }
+.geist { --font-mono:'Geist Mono',ui-monospace,monospace; --font-sans:'Geist',system-ui,sans-serif; }
 ```
 
-Geist Sans and Geist Mono load as **variable fonts** (100–900 axis); Space
-Mono loads regular + italic; Zilla Slab loads its usual four cuts.
+Load only the chosen flavor's two families plus Zilla Slab — three
+families, not five, unless the project needs a live toggle:
+
+```html
+<!-- Space flavor (default) -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+<!-- Geist flavor -->
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;700&family=Geist+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+```
+
+Both sans faces load as **variable fonts**, requested at just the four
+weights actually used (300/400/500/700) rather than their full axis;
+both mono faces load regular + bold, roman + italic; Zilla Slab loads
+its usual four cuts.
 
 **Range comes from weight, not more typefaces.** Within the Primary
-register, hierarchy is expressed through the weight axis, not a new face:
+register, hierarchy is expressed through the weight axis, not a new face.
+Sans weight scale (same four stops in either flavor):
 
 | Weight | Use |
 |--------|-----|
@@ -215,14 +253,14 @@ register, hierarchy is expressed through the weight axis, not a new face:
 | **500** Medium | UI emphasis, active labels, small headings in prose |
 | **700** Bold | Strong emphasis — sparing; prefer 500 |
 
-**Heading scale** — Geist Mono, weight 700: `h1` 3rem/−0.02em/1.1 ·
+**Heading scale** — mono, weight 700: `h1` 3rem/−0.02em/1.1 ·
 `h2` 2.25rem/−0.02em/1.15 · `h3` 1.875rem/−0.01em/1.2 · `h4` 1.5rem/1.3 ·
 `h5` 1.25rem/1.3 · `h6` 1.125rem/1.3.
 
-**Body** — Geist Sans 400, 1rem base, line-height 1.65, `kern`/`liga`/`calt`
+**Body** — sans, weight 400, 1rem base, line-height 1.65, `kern`/`liga`/`calt`
 on, antialiased.
 
-**Label pattern** (pervasive — nav, metadata, section headers): Geist Mono,
+**Label pattern** (pervasive — nav, metadata, section headers): mono,
 `text-xs`, `uppercase`, `tracking-[0.2em]`, weight 400 inactive / 700 active,
 `text-muted-foreground` inactive → `text-foreground` active.
 
@@ -231,11 +269,10 @@ stat block get `font-variant-numeric: tabular-nums`
 (`font-feature-settings: "tnum" 1`) so digits share one width and align to
 the grid. Prose numerals stay proportional (the default).
 
-**Space Mono italic** is reserved for one structural job: **inline
-annotations and figure captions** (e.g. a `<figcaption>` or a marginal
-note). It is never used for emphasis — emphasis is always weight. It is
-also the visible nod tying Tri-Swiss to its sibling system, Lux Swiss
-(formerly Duotone Swiss; it uses Space Mono/Grotesk as its own core pairing).
+**Mono italic** is reserved for one structural job: **inline annotations
+and figure captions** (e.g. a `<figcaption>` or a marginal note) — Space
+Mono italic in the Space flavor, Geist Mono italic in the Geist flavor.
+It is never used for emphasis — emphasis is always weight.
 
 ## Spacing & layout
 
