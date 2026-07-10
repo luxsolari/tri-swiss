@@ -1,7 +1,7 @@
 {
   "name": "tri-swiss",
-  "version": "0.2.0",
-  "description": "Tri-Swiss — a tri-tone (ink + cream + Swiss Red + Pastel Turquoise highlight) Swiss-minimalist design system built around the Geist typeface family. Sibling to lux-swiss (Lux Swiss, formerly Duotone Swiss); same governance, different palette and type identity.",
+  "version": "1.0.0",
+  "description": "Tri-Swiss — a tri-tone (ink + cream + Swiss Red + Pastel Turquoise highlight) Swiss-minimalist design system, sharing its Space Mono/Space Grotesk typography core (Geist Mono/Geist Sans flavor available) with sibling lux-swiss (Lux Swiss, formerly Duotone Swiss); same governance, different palette.",
   "author": {
     "name": "Lux Solari",
     "email": "luxsolari@outlook.com",
@@ -17,6 +17,8 @@
     "ui",
     "frontend",
     "theming",
+    "space-mono",
+    "space-grotesk",
     "geist",
     "geist-sans",
     "geist-mono"

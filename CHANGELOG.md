@@ -6,9 +6,32 @@ All notable changes to this plugin are documented here. Format follows
 
 ## [Unreleased]
 
-## [0.2.0] — 2026-07-08
+## [1.0.0] — 2026-07-10
+
+### Changed
+- **BREAKING: default typography flavor switched from Geist to Space** —
+  `--font-mono`/`--font-sans` now default to Space Mono/Space Grotesk
+  (matching sibling system Lux Swiss); Geist Mono/Geist Sans become the
+  opt-in `.geist` flavor instead (`assets/theme.css`, `SKILL.md`,
+  `docs/index.html`). Projects relying on Geist as the default need to
+  add the `.geist` class to `<html>` to keep the old look.
+- **Typography restructured from four registers to three** — the
+  standalone `--font-annotation`/`font-annotation` role (Space Mono,
+  italic only) is retired; annotations/captions now use
+  `var(--font-mono)` + `font-style: italic` in whichever flavor is
+  active, matching how Lux Swiss has always handled annotations
+  (`assets/theme.css`, `SKILL.md`, `references/components.md`,
+  `docs/index.html`).
 
 ### Added
+- **Geist font flavor** — a `.geist` class (composes with `.dark`,
+  exactly like the theme) that swaps `--font-mono`/`--font-sans` to
+  Geist Mono/Geist Sans; `--font-serif` (Zilla Slab) is shared by both
+  flavors and never overridden. `SKILL.md`'s setup steps ask which
+  flavor to apply (default: Space), each with its own 3-family Google
+  Fonts link. The showcase page (`docs/index.html`) gets a live
+  Space·Geist toggle next to the Light·Dark one, and
+  `scripts/capture/capture.mjs` can screenshot either flavor.
 - **Accent button and Accent card** — a fifth button variant
   (Red-bordered, general emphasis rather than destructive) and a new
   static Turquoise-bordered card with a background wash, addressing

@@ -366,11 +366,12 @@ import { IconArrowRight } from "geist-icons";
 <IconArrowRight className="icon" />
 ```
 
-## Hero / display type (Geist Mono)
+## Hero / display type (mono)
 
 The hero title/wordmark and section/chapter dividers inside long-form
-editorial content both use Geist Mono at display weight/size — the same
-face as every other heading, just scaled up. No separate register needed.
+editorial content both use the mono face at display weight/size — the
+same face as every other heading, just scaled up. No separate register
+needed.
 
 ```jsx
 <h1 className="font-mono" style={{ fontSize: "3.5rem", fontWeight: 700, letterSpacing: "-0.01em" }}>
@@ -382,14 +383,13 @@ face as every other heading, just scaled up. No separate register needed.
 </div>
 ```
 
-## Annotations & captions (Space Mono, italic only)
+## Annotations & captions (mono, italic only)
 
-The visible nod to Tri-Swiss's sibling system, Lux Swiss (formerly Duotone
-Swiss). Reserved for inline
-annotations and figure captions — never emphasis, never a heading.
+Reserved for inline annotations and figure captions — never emphasis,
+never a heading.
 
 ```jsx
-<figcaption className="font-annotation italic text-sm text-muted-foreground">
+<figcaption className="font-mono italic text-sm text-muted-foreground">
   Fig. 3 — quarterly share by category.
 </figcaption>
 ```
@@ -520,7 +520,7 @@ with a mono-label caption beneath:
 <figure className="m-0 border border-border" style={{ aspectRatio: "4 / 3" }}>
   <img src="/photo.jpg" alt=""
     style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(1)" }} />
-  <figcaption className="font-annotation italic text-sm text-muted-foreground p-2 border-t border-border">
+  <figcaption className="font-mono italic text-sm text-muted-foreground p-2 border-t border-border">
     Fig. 1 — grayscale, the default treatment.
   </figcaption>
 </figure>
@@ -535,7 +535,7 @@ never as decoration:
 <figure className="m-0 border border-border" style={{ aspectRatio: "4 / 3" }}>
   <img src="/photo.jpg" alt=""
     style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-  <figcaption className="font-annotation italic text-sm text-muted-foreground p-2 border-t border-border">
+  <figcaption className="font-mono italic text-sm text-muted-foreground p-2 border-t border-border">
     Fig. 2 — full color, because the photograph itself is the content.
   </figcaption>
 </figure>
