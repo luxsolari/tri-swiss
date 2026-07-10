@@ -366,19 +366,22 @@ import { IconArrowRight } from "geist-icons";
 <IconArrowRight className="icon" />
 ```
 
-## Hero / display type (mono)
+## Hero / display type (mono, Jost optional)
 
 The hero title/wordmark and section/chapter dividers inside long-form
-editorial content both use the mono face at display weight/size — the
-same face as every other heading, just scaled up. No separate register
-needed.
+editorial content use `font-display` — which defaults to the mono face
+(same as every other heading, just scaled up) and swaps to Jost, a
+governed optional accent, when the `.jost` class is applied (see
+`SKILL.md`'s "Hero-display accent"). Always use `font-display` for these
+two jobs specifically, never `font-mono` directly — that's what lets the
+Jost accent apply without touching headings, labels, or anything else.
 
 ```jsx
-<h1 className="font-mono" style={{ fontSize: "3.5rem", fontWeight: 700, letterSpacing: "-0.01em" }}>
+<h1 className="font-display" style={{ fontSize: "3.5rem", fontWeight: 700, letterSpacing: "-0.01em" }}>
   Page Title.
 </h1>
 
-<div className="font-mono" style={{ fontSize: "1.5rem", fontWeight: 700 }}>
+<div className="font-display" style={{ fontSize: "1.5rem", fontWeight: 700 }}>
   02 — Chapter Title
 </div>
 ```
