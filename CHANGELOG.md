@@ -6,6 +6,8 @@ All notable changes to this plugin are documented here. Format follows
 
 ## [Unreleased]
 
+## [1.0.0] — 2026-07-10
+
 ### Changed
 - **BREAKING: default typography flavor switched from Geist to Space** —
   `--font-mono`/`--font-sans` now default to Space Mono/Space Grotesk
