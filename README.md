@@ -53,9 +53,10 @@ meaning outside its two named hover exceptions, however often it recurs.
   body — or the **Geist** flavor (Geist Mono + Geist Sans), toggled with
   a single `.geist` class; Zilla Slab (serif, long-form) is shared by both,
   and mono italic covers annotations/captions in either flavor.
-- An optional **Jost** hero-display accent — governed to exactly one job
-  (the hero title/wordmark and long-form editorial chapter dividers),
-  toggled independently of the flavor with a `.jost` class.
+- An optional **Jost** heading accent — every heading (`h1`–`h6`), the
+  hero title/wordmark, and long-form editorial chapter dividers switch
+  to Jost when toggled, independently of the flavor, with a `.jost`
+  class; labels, nav, tags, and data stay on the mono flavor.
 - Uppercase monospace labels with wide letter-spacing.
 - Hand-rolled SVG charts by default — no chart libraries except a
   restyled Observable Plot.
