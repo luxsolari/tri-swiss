@@ -6,6 +6,8 @@ All notable changes to this plugin are documented here. Format follows
 
 ## [Unreleased]
 
+## [1.2.0] — 2026-09-30
+
 ### Added
 - **`--primary-foreground-strong` on-token** — the `card` cream `#faf6ec`
   in light (4.8:1 on Swiss Red; the brand cream lands at 4.48:1), warm ink
