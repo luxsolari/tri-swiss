@@ -21,7 +21,7 @@ for (const f of files.filter((f) => f.endsWith(".html") && path.basename(f) !== 
 
 const PALETTE = new Set([
   "#f5efe0","#000000","#faf6ec","#d3281b","#ebe5d5","#4a4838","#56bfa3",
-  "#161616","#e2503f","#1f1f1f","#a8a696","#63cbae",
+  "#161616","#e2503f","#1f1f1f","#a8a696","#63cbae","#1a120e",
 ]);
 
 const fail = (msg) => { console.error("FAIL:", msg); process.exitCode = 1; };
