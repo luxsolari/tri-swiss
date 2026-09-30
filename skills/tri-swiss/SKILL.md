@@ -137,7 +137,7 @@ Use the semantic token, never a raw hex. `bg-background`, `text-foreground`,
 | `--card-foreground` | `#000000` | Text on card surfaces |
 | `--primary` | `#d3281b` | Swiss Red — accent, destructive, ring |
 | `--primary-foreground` | `#f5efe0` | Text on primary at heading size (hero-band title, sidebar wordmark) |
-| `--primary-foreground-strong` | `#f5efe0` | Small text on primary fills — same cream in light (4.5:1) |
+| `--primary-foreground-strong` | `#faf6ec` | Small text on primary fills — the `card` cream, 4.8:1 on Swiss Red |
 | `--secondary` | `#000000` | Secondary action background |
 | `--secondary-foreground` | `#f5efe0` | Text on secondary |
 | `--muted` | `#ebe5d5` | Subtle backgrounds — hover, code blocks |
@@ -176,7 +176,8 @@ Swiss Red and the cream are exact brand values, and in dark mode the
 lifted red `#e2503f` cannot carry cream small text at 4.5:1 (it lands at
 3.4:1; even pure white only reaches 3.85:1). Rather than re-tint either
 brand color, `--primary-foreground-strong` is an added on-token, the same
-pattern `--highlight-foreground` already follows: cream in light, a warm
+pattern `--highlight-foreground` already follows: the `card` cream `#faf6ec`
+in light (4.8:1 on `#d3281b`; the brand cream lands at 4.48:1), a warm
 ink `#1a120e` in dark (4.8:1 on `#e2503f`). Use it for every piece of
 **small** text on a red fill — sidebar nav links and footer, labels
 inside a hero band, the hovered Destructive button's text, Default /

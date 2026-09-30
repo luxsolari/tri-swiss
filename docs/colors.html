@@ -69,7 +69,7 @@
             <p class="label">01 — Foundations</p>
             <h1>Colors</h1>
             <div class="stripe hero" aria-hidden="true"><i></i><i></i><i></i></div>
-            <p class="lead">Sixteen semantic tokens, two themes. Light and dark are the same system inverted: <code>background</code> and <code>foreground</code> swap, <code>border</code> follows <code>foreground</code>, <code>primary</code> lifts from <code>#d3281b</code> to <code>#e2503f</code>, <code>highlight</code> from <code>#56bfa3</code> to <code>#63cbae</code>, and <code>highlight-foreground</code> stays black in both. <code>primary-foreground-strong</code> is the added on-token for small text on red: cream in light, warm ink in dark.</p>
+            <p class="lead">Sixteen semantic tokens, two themes. Light and dark are the same system inverted: <code>background</code> and <code>foreground</code> swap, <code>border</code> follows <code>foreground</code>, <code>primary</code> lifts from <code>#d3281b</code> to <code>#e2503f</code>, <code>highlight</code> from <code>#56bfa3</code> to <code>#63cbae</code>, and <code>highlight-foreground</code> stays black in both. <code>primary-foreground-strong</code> is the added on-token for small text on red: the <code>card</code> cream in light, warm ink in dark.</p>
           </header>
           <section id="palette" class="first">
             <div class="divider"><h3>Palette</h3><span class="rule"></span></div>
@@ -124,7 +124,7 @@
                   <td><span class="tok-swatch" style="background:#f5efe0;"></span><code>#f5efe0</code></td>
                   <td>Text on primary at heading size: hero-band title, sidebar wordmark. 3.4:1 in dark, so large text only.</td></tr>
                 <tr><td><code>--primary-foreground-strong</code></td>
-                  <td><span class="tok-swatch" style="background:#f5efe0;"></span><code>#f5efe0</code></td>
+                  <td><span class="tok-swatch" style="background:#faf6ec;"></span><code>#faf6ec</code></td>
                   <td><span class="tok-swatch" style="background:#1a120e;"></span><code>#1a120e</code></td>
                   <td>Small text on primary fills: sidebar nav and footer, hero-band labels, hovered Destructive button text. An added on-token, 4.8:1 in dark.</td></tr>
                 <tr><td><code>--secondary</code></td>
@@ -196,7 +196,7 @@
 
           <section id="contrast">
             <div class="divider"><h3>Contrast</h3><span class="rule"></span></div>
-            <p class="measure"><code>foreground</code>, <code>muted-foreground</code> and <code>highlight-foreground</code> clear 7:1 on their grounds in both themes. Two pairs from the source are kept and flagged: <code>primary</code> on <code>background</code> in light is 4.5:1 exactly, and <code>highlight</code> as text on <code>background</code> in light is 1.95:1, so the hero's turquoise line is decoration only. The third, cream <code>primary-foreground</code> on the dark-mode red at 3.4:1, is resolved by an added on-token rather than a re-tint: <code>primary-foreground-strong</code> is cream in light and warm ink <code>#1a120e</code> in dark, 4.8:1 on <code>primary</code>, used for every piece of small text on a red fill (this site's sidebar included). <code>primary-foreground</code> stays the brand cream for heading-size text on red.</p>
+            <p class="measure"><code>foreground</code>, <code>muted-foreground</code> and <code>highlight-foreground</code> clear 7:1 on their grounds in both themes. Two pairs from the source are kept and flagged: <code>primary</code> on <code>background</code> in light is 4.5:1 exactly, and <code>highlight</code> as text on <code>background</code> in light is 1.95:1, so the hero's turquoise line is decoration only. The third, cream <code>primary-foreground</code> on the dark-mode red at 3.4:1, is resolved by an added on-token rather than a re-tint: <code>primary-foreground-strong</code> is the <code>card</code> cream <code>#faf6ec</code> in light and warm ink <code>#1a120e</code> in dark, 4.8:1 on <code>primary</code> in both, used for every piece of small text on a red fill (this site's sidebar included). <code>primary-foreground</code> stays the brand cream for heading-size text on red.</p>
             <table class="data-table" style="margin-top:24px; max-width:640px;">
               <thead><tr><th>Pair</th><th class="num">Light</th><th class="num">Dark</th></tr></thead>
               <tbody>
@@ -205,7 +205,7 @@
                 <tr><td>muted-foreground on card</td><td class="num">8.6</td><td class="num">7.4</td></tr>
                 <tr><td>primary on background</td><td class="num">4.5</td><td class="num">5.5</td></tr>
                 <tr><td>primary-foreground on primary (heading size)</td><td class="num">4.5</td><td class="num">3.4</td></tr>
-                <tr><td>primary-foreground-strong on primary</td><td class="num">4.5</td><td class="num">4.8</td></tr>
+                <tr><td>primary-foreground-strong on primary</td><td class="num">4.8</td><td class="num">4.8</td></tr>
                 <tr><td>highlight-foreground on highlight</td><td class="num">9.4</td><td class="num">10.7</td></tr>
                 <tr><td>highlight on background</td><td class="num">1.9</td><td class="num">10.7</td></tr>
               </tbody>

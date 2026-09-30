@@ -7,8 +7,9 @@ All notable changes to this plugin are documented here. Format follows
 ## [Unreleased]
 
 ### Added
-- **`--primary-foreground-strong` on-token** — cream `#f5efe0` in light,
-  warm ink `#1a120e` in dark (4.8:1 on the lifted red), for small text on
+- **`--primary-foreground-strong` on-token** — the `card` cream `#faf6ec`
+  in light (4.8:1 on Swiss Red; the brand cream lands at 4.48:1), warm ink
+  `#1a120e` in dark (4.8:1 on the lifted red), for small text on
   a Swiss Red fill: sidebar nav and footer, hero-band labels, the hovered
   Destructive button's text, Default / Hover captions on red. Added
   rather than re-tinting a brand color: cream on `#e2503f` is 3.4:1 and
