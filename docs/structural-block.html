@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    // Apply the saved theme, flavor and heading accent before first paint.
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        var dark = saved ? saved === "dark"
+          : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (dark) document.documentElement.classList.add("dark");
+        if (localStorage.getItem("flavor") === "geist") document.documentElement.classList.add("geist");
+        if (localStorage.getItem("jost") === "on") document.documentElement.classList.add("jost");
+      } catch (e) {}
+    })();
+  </script>
+  <title>Structural Block — Tri-Swiss</title>
+  <meta name="description" content="Swiss Red's layout job in Tri-Swiss: sidebar, hero band, bold word, the tri-part stripe and the hover hierarchy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Structural Block — Tri-Swiss" />
+  <meta property="og:description" content="Swiss Red's layout job in Tri-Swiss: sidebar, hero band, bold word, the tri-part stripe and the hover hierarchy." />
+  <meta property="og:url" content="https://luxsolari.github.io/tri-swiss/structural-block.html" />
+  <meta property="og:image" content="https://luxsolari.github.io/tri-swiss/assets/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Structural Block — Tri-Swiss" />
+  <meta name="twitter:description" content="Swiss Red's layout job in Tri-Swiss: sidebar, hero band, bold word, the tri-part stripe and the hover hierarchy." />
+  <meta name="twitter:image" content="https://luxsolari.github.io/tri-swiss/assets/social-card.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Geist:wght@300;400;500;700&family=Geist+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&family=Jost:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div>
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <a class="sidebar-wordmark" href="index.html">Tri-Swiss</a>
+          <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+            <svg class="icon" viewBox="0 0 24 24" style="color:var(--primary-foreground);">
+              <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        <nav class="sidebar-nav" data-nav-list aria-label="Sections"><a href="index.html">Overview</a><a href="colors.html">Colors</a><a href="typography.html">Typography</a><a href="spacing.html">Spacing</a><a href="components.html">Components</a><a href="structural-block.html">Structural Block</a><a href="highlight.html">Highlight</a><a href="charts.html">Charts</a><a href="house-mark.html">House Mark</a></nav>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="toggle" role="group" aria-label="Font flavor">
+          <button data-flavor-btn="space" aria-pressed="true">Space</button><span class="mid">·</span><button data-flavor-btn="geist" aria-pressed="false">Geist</button>
+        </div>
+        <div class="toggle" role="group" aria-label="Heading face">
+          <button data-jost-btn="mono" aria-pressed="true">Mono</button><span class="mid">·</span><button data-jost-btn="jost" aria-pressed="false">Jost</button>
+        </div>
+        <div class="toggle" role="group" aria-label="Color theme">
+          <button data-theme-btn="light" aria-pressed="true">Light</button><span class="mid">·</span><button data-theme-btn="dark" aria-pressed="false">Dark</button>
+        </div>
+        <a href="https://github.com/luxsolari/tri-swiss">GitHub <svg class="icon" viewBox="0 0 24 24" width="14" height="14"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+        <span>© 2026 Lux Solari · <a href="index.html#license">License</a></span>
+      </div>
+    </aside>
+    <div class="content">
+      <div class="content-inner">
+        <main>
+          <header class="page-head">
+            <p class="label">05 — Patterns</p>
+            <h1>Structural Block</h1>
+            <div class="stripe hero" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p class="lead">Swiss Red's third job, on top of dividers and card borders: a genuine layout element, not just a border or a rule. Outside the one block, ink and cream dominate every other surface exactly as before. Turquoise gets a smaller block of its own, documented on the Highlight page.</p>
+          </header>
+          <section id="forms" class="first">
+            <div class="divider"><h3>Red's three forms, pick one block per layout</h3><span class="rule"></span></div>
+            <div class="grid grid-2 gap-32" style="align-items:start;">
+              <div>
+                <p class="label">Sidebar / nav rail</p>
+                <p class="small" style="margin-top:8px;">Full-height solid <code>primary</code> panel, 22% of the viewport wide (min 220px, max 280px), sticky. Holds the wordmark, anchor nav, toggles, an external link and the copyright. Nav links are <code>primary-foreground</code> at 0.75 opacity; on hover they lift to 1 and gain a 2px <code>highlight</code> underline. This site's sidebar is the live instance.</p>
+                <p class="label" style="margin-top:24px;">Hero band</p>
+                <p class="small" style="margin-top:8px;">Solid <code>primary</code> horizontal block, padding 64px by 48px, used once as an alternative to the sidebar. Never combined with it.</p>
+                <p class="label" style="margin-top:24px;">Bold word</p>
+                <p class="small" style="margin-top:8px;">One word inside a heading or paragraph in <code>primary</code>, at normal weight and size. Independent of the two block forms.</p>
+              </div>
+              <div style="border:1px solid var(--border);">
+                <div style="background:var(--primary); color:var(--primary-foreground); padding:40px 32px;"><p class="label" style="color:var(--primary-foreground); opacity:0.75;">Hero band</p><h2 style="margin-top:12px;">Hero title.</h2></div>
+                <div style="padding:20px 32px;"><p class="small">Two structural colors, one strong <span class="accent-word">accent</span>.</p></div>
+              </div>
+            </div>
+            <pre style="margin-top:32px;"><code>&lt;aside style="width:22%; min-width:220px; max-width:280px; background:var(--primary);
+  color:var(--primary-foreground); position:sticky; top:0; height:100vh; padding:32px 28px;"&gt;
+  …wordmark, nav, toggles, copyright…
+&lt;/aside&gt;
+
+&lt;div style="background:var(--primary); color:var(--primary-foreground); padding:64px 48px;"&gt;
+  &lt;h1&gt;Hero title.&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Two structural colors, one strong &lt;span style="color:var(--primary);"&gt;accent&lt;/span&gt;.&lt;/p&gt;</code></pre>
+          </section>
+
+          <section id="stripe">
+            <div class="divider"><span class="stripe" aria-hidden="true"><i></i><i></i><i></i></span><h3>The tri-part segment stripe</h3><span class="rule"></span></div>
+            <p class="measure">Three equal solid segments, <code>foreground</code>, <code>primary</code>, <code>highlight</code>, 3px tall, as a static decorative divider or spacer at any length: a 36px marker (gap 3px), a 64px rule under the hero title (gap 4px), a 140px closing flourish (gap 6px). The one named exception to "Red and Turquoise never touch," scoped to this pattern only. Always three equal segments in this exact order. Static and decorative only, used a handful of times per page.</p>
+            <div style="display:flex; flex-direction:column; gap:24px; margin-top:32px;">
+              <div class="row" style="gap:20px;"><div class="stripe " aria-hidden="true"><i></i><i></i><i></i></div><span class="cap">36px · gap 3px</span></div>
+              <div class="row" style="gap:20px;"><div class="stripe hero" aria-hidden="true"><i></i><i></i><i></i></div><span class="cap">64px · gap 4px</span></div>
+              <div class="row" style="gap:20px;"><div class="stripe flourish" aria-hidden="true"><i></i><i></i><i></i></div><span class="cap">140px · gap 6px</span></div>
+            </div>
+            <pre style="margin-top:32px;"><code>&lt;div style="display:flex; gap:3px; width:36px;" aria-hidden="true"&gt;
+  &lt;div style="height:3px; flex:1; background:var(--foreground);"&gt;&lt;/div&gt;
+  &lt;div style="height:3px; flex:1; background:var(--primary);"&gt;&lt;/div&gt;
+  &lt;div style="height:3px; flex:1; background:var(--highlight);"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section id="hover">
+            <div class="divider"><h3>Hover hierarchy</h3><span class="rule"></span></div>
+            <p class="measure">Wherever a hover uses an accent color to signal interactivity, Red is the only color permitted to carry that real signal. Turquoise never signals on its own; it may only layer in as decoration alongside Red's or ink's feedback. Most controls hover via ink and <code>muted-foreground</code> shifts only. <strong>The one named exception, dual-accent hover:</strong> the Accent button and the Interactive card swap Red for Turquoise on hover. The two colors are never visible on the element simultaneously, and the carve-out must not spread beyond these two patterns.</p>
+            <div class="grid grid-2" style="margin-top:32px;">
+              <div class="demo"><span class="label">Destructive <span class="note">Red carries the real signal</span></span><div class="hover-pair"><div><span class="cap">Default</span><button class="btn btn-destructive">Delete</button></div><div><span class="cap">Hover</span><button class="btn btn-destructive is-hover-demo">Delete</button></div></div></div>
+              <div class="demo"><span class="label">Nav link <span class="note">Turquoise flourish, layered</span></span><div class="on-red"><div><span class="cap" style="display:block; margin-bottom:8px;">Default</span><a href="#hover" class="demo-nav-link" onclick="return false;">Section</a></div><div><span class="cap" style="display:block; margin-bottom:8px;">Hover</span><a href="#hover" class="demo-nav-link is-hover-demo" onclick="return false;">Section</a></div></div></div>
+              <div class="demo"><span class="label">Accent button <span class="note">Dual-accent exception</span></span><div class="hover-pair"><div><span class="cap">Default</span><button class="btn btn-accent">Learn more</button></div><div><span class="cap">Hover</span><button class="btn btn-accent is-hover-demo">Learn more</button></div></div></div>
+              <div class="demo"><span class="label">Interactive card <span class="note">Dual-accent exception</span></span><a href="#hover" class="card card-interactive is-hover-demo" style="padding:16px;" onclick="return false;"><h4>Hovered</h4><p class="small muted">Red at rest, Turquoise on hover.</p></a></div>
+            </div>
+          </section>
+
+          <section id="turquoise-block">
+            <div class="divider"><h3>Turquoise's own block</h3><span class="rule"></span></div>
+            <p class="measure">Parallel to Red's block but kept clearly secondary: a content-sized callout panel that may recur, one second-moment panel later in the page, one closing band near the end. Each capped around 15% of viewport height, never adjacent to Red's block, combined footprint visibly smaller than Red's. Details and demos on the <a href="highlight.html">Highlight</a> page.</p>
+          </section>
+          <div class="pager"><a href="components.html" class="label"><svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg> Components</a><a href="highlight.html" class="label">Highlight <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+          <footer>
+            <div class="footer-row">
+              <span id="license" class="muted">v1.1.0 · © 2026 Lux Solari (Luciano Laje) — Design <a href="https://github.com/luxsolari/tri-swiss/blob/main/LICENSE-DESIGN">CC BY-SA 4.0</a> · Code <a href="https://github.com/luxsolari/tri-swiss/blob/main/LICENSE">MIT/X11</a></span>
+              <a href="https://github.com/luxsolari/tri-swiss" style="display:inline-flex; align-items:center; gap:8px;">GitHub <svg class="icon" viewBox="0 0 24 24" width="14" height="14"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </div>
+          </footer>
+        </main>
+      </div>
+    </div>
+  </div>
+  <script src="assets/site.js"></script>
+</body>
+</html>

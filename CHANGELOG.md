@@ -6,6 +6,30 @@ All notable changes to this plugin are documented here. Format follows
 
 ## [Unreleased]
 
+### Added
+- **Documentation site** — the single showcase page is now a navigable
+  site under `docs/` that is both showcase and documentation: Overview,
+  Colors, Typography, Spacing, Components (nineteen patterns with live
+  demos and guidelines, opening with an at-a-glance gallery), Structural
+  Block, Highlight (the Turquoise token's own page), Charts and House
+  Mark, all sharing `docs/assets/site.css` (tokens plus every pattern)
+  and `docs/assets/site.js` (theme / flavor / Jost toggles, mobile nav,
+  live palette values). Content and structure follow the extracted
+  Tri-Swiss design-system artifact.
+- **House banner** — `docs/banner.html`, the system's cover (red slab,
+  ink block, a smaller turquoise block, three hairline rules, the
+  tri-part segment stripe, the wordmark in Space Mono), rendered to
+  `docs/assets/banner-light.png` and `banner-dark.png` by
+  `scripts/capture/banner.sh` (headless Chrome). It heads the README
+  (theme-aware `<picture>`) and the site's Overview.
+
+### Changed
+- `scripts/capture/capture.mjs` shoots from the per-page site and adds
+  `plot.png`; `scripts/capture/verify-philosophy.mjs` checks every page
+  plus the shared stylesheet and script. README and social screenshots
+  regenerated.
+- README "See it" now indexes the site's pages.
+
 ## [1.1.0] — 2026-07-10
 
 ### Added
