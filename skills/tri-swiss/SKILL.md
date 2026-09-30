@@ -136,7 +136,8 @@ Use the semantic token, never a raw hex. `bg-background`, `text-foreground`,
 | `--card` | `#faf6ec` | Elevated surface — card, popover |
 | `--card-foreground` | `#000000` | Text on card surfaces |
 | `--primary` | `#d3281b` | Swiss Red — accent, destructive, ring |
-| `--primary-foreground` | `#f5efe0` | Text on primary |
+| `--primary-foreground` | `#f5efe0` | Text on primary at heading size (hero-band title, sidebar wordmark) |
+| `--primary-foreground-strong` | `#faf6ec` | Small text on primary fills — the `card` cream, 4.8:1 on Swiss Red |
 | `--secondary` | `#000000` | Secondary action background |
 | `--secondary-foreground` | `#f5efe0` | Text on secondary |
 | `--muted` | `#ebe5d5` | Subtle backgrounds — hover, code blocks |
@@ -168,6 +169,21 @@ Dark mode is the `.dark` class on `<html>`. Toggle with
 `document.documentElement.classList.toggle("dark", isDark)` and persist under
 a `theme` key in `localStorage`. In Tailwind 4 the variant is
 `@custom-variant dark (&:is(.dark *));` (already in `theme.css`).
+
+### The `--primary-foreground-strong` on-token
+
+Swiss Red and the cream are exact brand values, and in dark mode the
+lifted red `#e2503f` cannot carry cream small text at 4.5:1 (it lands at
+3.4:1; even pure white only reaches 3.85:1). Rather than re-tint either
+brand color, `--primary-foreground-strong` is an added on-token, the same
+pattern `--highlight-foreground` already follows: the `card` cream `#faf6ec`
+in light (4.8:1 on `#d3281b`; the brand cream lands at 4.48:1), a warm
+ink `#1a120e` in dark (4.8:1 on `#e2503f`). Use it for every piece of
+**small** text on a red fill — sidebar nav links and footer, labels
+inside a hero band, the hovered Destructive button's text, Default /
+Hover captions on red. Keep `--primary-foreground` for heading-size text
+on red (the hero-band title, the sidebar wordmark), where 3.4:1 clears
+the large-text threshold and the cream-on-red identity stays intact.
 
 ### The `--highlight` token — read this before using it
 
@@ -359,7 +375,7 @@ All buttons: `font-mono uppercase tracking-[0.2em] text-xs`. Five variants:
 - **Filled** (primary action, rare): `border border-foreground bg-foreground px-4
   py-2 text-background hover:bg-foreground/90`.
 - **Destructive:** `border border-primary text-primary px-4 py-2
-  hover:bg-primary hover:text-primary-foreground` — Red's already-named
+  hover:bg-primary hover:text-primary-foreground-strong` — Red's already-named
   "destructive" job (see Philosophy), now with a documented variant.
   Demonstrates the hover hierarchy below: Red carries the real hover
   signal.

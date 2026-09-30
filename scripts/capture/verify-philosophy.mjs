@@ -3,11 +3,25 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const html = fs.readFileSync(path.resolve(here, "../../docs/index.html"), "utf8");
+// Every page of the documentation site plus its shared stylesheet and script are
+// checked as one text; each page must also carry its own meta tags and stylesheet.
+const docs = path.resolve(here, "../../docs");
+const files = [
+  ...fs.readdirSync(docs).filter((f) => f.endsWith(".html")).map((f) => path.join(docs, f)),
+  path.join(docs, "assets/site.css"),
+  path.join(docs, "assets/site.js"),
+];
+const html = files.map((f) => fs.readFileSync(f, "utf8")).join("\n");
+for (const f of files.filter((f) => f.endsWith(".html") && path.basename(f) !== "banner.html")) {
+  const page = fs.readFileSync(f, "utf8");
+  for (const needle of ['property="og:image"', 'name="description"', 'rel="stylesheet" href="assets/site.css"']) {
+    if (!page.includes(needle)) { console.error("FAIL:", path.basename(f), "missing", needle); process.exitCode = 1; }
+  }
+}
 
 const PALETTE = new Set([
   "#f5efe0","#000000","#faf6ec","#d3281b","#ebe5d5","#4a4838","#56bfa3",
-  "#161616","#e2503f","#1f1f1f","#a8a696","#63cbae",
+  "#161616","#e2503f","#1f1f1f","#a8a696","#63cbae","#1a120e",
 ]);
 
 const fail = (msg) => { console.error("FAIL:", msg); process.exitCode = 1; };

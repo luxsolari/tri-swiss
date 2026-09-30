@@ -6,6 +6,40 @@ All notable changes to this plugin are documented here. Format follows
 
 ## [Unreleased]
 
+### Added
+- **`--primary-foreground-strong` on-token** — the `card` cream `#faf6ec`
+  in light (4.8:1 on Swiss Red; the brand cream lands at 4.48:1), warm ink
+  `#1a120e` in dark (4.8:1 on the lifted red), for small text on
+  a Swiss Red fill: sidebar nav and footer, hero-band labels, the hovered
+  Destructive button's text, Default / Hover captions on red. Added
+  rather than re-tinting a brand color: cream on `#e2503f` is 3.4:1 and
+  no light foreground can reach 4.5:1 on it, while darkening the red
+  breaks red-on-black. `--primary-foreground` stays the brand cream for
+  heading-size text on red (`assets/theme.css`, `SKILL.md`,
+  `docs/assets/site.css`).
+- **Documentation site** — the single showcase page is now a navigable
+  site under `docs/` that is both showcase and documentation: Overview,
+  Colors, Typography, Spacing, Components (nineteen patterns with live
+  demos and guidelines, opening with an at-a-glance gallery), Structural
+  Block, Highlight (the Turquoise token's own page), Charts and House
+  Mark, all sharing `docs/assets/site.css` (tokens plus every pattern)
+  and `docs/assets/site.js` (theme / flavor / Jost toggles, mobile nav,
+  live palette values). Content and structure follow the extracted
+  Tri-Swiss design-system artifact.
+- **House banner** — `docs/banner.html`, the system's cover (red slab,
+  ink block, a smaller turquoise block, three hairline rules, the
+  tri-part segment stripe, the wordmark in Space Mono), rendered to
+  `docs/assets/banner-light.png` and `banner-dark.png` by
+  `scripts/capture/banner.sh` (headless Chrome). It heads the README
+  (theme-aware `<picture>`) and the site's Overview.
+
+### Changed
+- `scripts/capture/capture.mjs` shoots from the per-page site and adds
+  `plot.png`; `scripts/capture/verify-philosophy.mjs` checks every page
+  plus the shared stylesheet and script. README and social screenshots
+  regenerated.
+- README "See it" now indexes the site's pages.
+
 ## [1.1.0] — 2026-07-10
 
 ### Added

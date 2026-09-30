@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    // Apply the saved theme, flavor and heading accent before first paint.
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        var dark = saved ? saved === "dark"
+          : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (dark) document.documentElement.classList.add("dark");
+        if (localStorage.getItem("flavor") === "geist") document.documentElement.classList.add("geist");
+        if (localStorage.getItem("jost") === "on") document.documentElement.classList.add("jost");
+      } catch (e) {}
+    })();
+  </script>
+  <title>Highlight — Tri-Swiss</title>
+  <meta name="description" content="The Tri-Swiss highlight token: Pastel Turquoise's sanctioned decorative uses, its own Structural Block, and the dual-accent exception." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Highlight — Tri-Swiss" />
+  <meta property="og:description" content="The Tri-Swiss highlight token: Pastel Turquoise's sanctioned decorative uses, its own Structural Block, and the dual-accent exception." />
+  <meta property="og:url" content="https://luxsolari.github.io/tri-swiss/highlight.html" />
+  <meta property="og:image" content="https://luxsolari.github.io/tri-swiss/assets/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Highlight — Tri-Swiss" />
+  <meta name="twitter:description" content="The Tri-Swiss highlight token: Pastel Turquoise's sanctioned decorative uses, its own Structural Block, and the dual-accent exception." />
+  <meta name="twitter:image" content="https://luxsolari.github.io/tri-swiss/assets/social-card.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Geist:wght@300;400;500;700&family=Geist+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,400;0,500;0,700;1,400&family=Jost:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div>
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <a class="sidebar-wordmark" href="index.html">Tri-Swiss</a>
+          <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+            <svg class="icon" viewBox="0 0 24 24" style="color:var(--primary-foreground);">
+              <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        <nav class="sidebar-nav" data-nav-list aria-label="Sections"><a href="index.html">Overview</a><a href="colors.html">Colors</a><a href="typography.html">Typography</a><a href="spacing.html">Spacing</a><a href="components.html">Components</a><a href="structural-block.html">Structural Block</a><a href="highlight.html">Highlight</a><a href="charts.html">Charts</a><a href="house-mark.html">House Mark</a></nav>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="toggle" role="group" aria-label="Font flavor">
+          <button data-flavor-btn="space" aria-pressed="true">Space</button><span class="mid">·</span><button data-flavor-btn="geist" aria-pressed="false">Geist</button>
+        </div>
+        <div class="toggle" role="group" aria-label="Heading face">
+          <button data-jost-btn="mono" aria-pressed="true">Mono</button><span class="mid">·</span><button data-jost-btn="jost" aria-pressed="false">Jost</button>
+        </div>
+        <div class="toggle" role="group" aria-label="Color theme">
+          <button data-theme-btn="light" aria-pressed="true">Light</button><span class="mid">·</span><button data-theme-btn="dark" aria-pressed="false">Dark</button>
+        </div>
+        <a href="https://github.com/luxsolari/tri-swiss">GitHub <svg class="icon" viewBox="0 0 24 24" width="14" height="14"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+        <span>© 2026 Lux Solari · <a href="index.html#license">License</a></span>
+      </div>
+    </aside>
+    <div class="content">
+      <div class="content-inner">
+        <main>
+          <header class="page-head">
+            <p class="label">06 — Governance</p>
+            <h1>Highlight</h1>
+            <div class="stripe hero" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p class="lead">Pastel Turquoise is not a second accent. It carries zero semantic meaning: never success, never info, never a second interactive state. Unlike Swiss Red, it is never the answer when an element needs to signal something. It is sanctioned for open-ended decorative reuse, and it has a Structural Block of its own.</p>
+          </header>
+          <section id="uses" class="first">
+            <div class="divider"><h3>Sanctioned uses</h3><span class="rule"></span></div>
+            <ol class="list-plain ordered measure">
+              <li><span class="n">01</span><span>A second data series in a hand-rolled SVG or Observable Plot chart, when it is a genuine third line and solid-versus-dashed is exhausted.</span></li>
+              <li><span class="n">02</span><span>A brand or hero moment: the hero's turquoise line and its filled circle icon.</span></li>
+              <li><span class="n">03</span><span>An icon fill on a single icon, as a flourish rather than a state cue.</span></li>
+              <li><span class="n">04</span><span>An underline or rule beneath a heading or label, 2px.</span></li>
+              <li><span class="n">05</span><span>A background wash at 10% behind a block that wants separation without a hard border.</span></li>
+              <li><span class="n">06</span><span>A dot accent, matching the dot-indicator pattern.</span></li>
+              <li><span class="n">07</span><span>A hover-triggered flourish on a nav link or label: an underline that appears on hover, identical regardless of state, layered alongside the element's real feedback.</span></li>
+              <li><span class="n">08</span><span>A card's border plus a subtle 8% wash: the Accent card.</span></li>
+              <li><span class="n">09</span><span>Its own Structural Block: the callout panel, the second-moment panel, the closing band.</span></li>
+            </ol>
+            <p class="measure" style="margin-top:24px;">It can recur multiple times on the same page; the old one-brand-moment cap is gone. The test that governs every use is unchanged: <strong>if Turquoise's presence or absence would change what the reader understands about state, it is wrong.</strong> If it is purely ornamental and removable without changing meaning, it is fine.</p>
+            <div class="row" style="gap:32px; margin-top:32px;">
+              <div class="hero-moment" style="margin:0;"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>A genuine third color.</div>
+              <svg class="icon" viewBox="0 0 24 24" style="color:var(--highlight);"><path d="M12 2v20"/><path d="M2 12h20"/></svg>
+              <span class="hl-dot"></span>
+              <span class="hl-underline label" style="color:var(--foreground);">Underline</span>
+              <span class="hl-wash small">Wash at 10%</span>
+            </div>
+          </section>
+
+          <section id="never">
+            <div class="divider"><h3>Never</h3><span class="rule"></span></div>
+            <ul class="list-plain measure">
+              <li>As a button's, tag's, status pip's or link's own state-indicating or rest color.</li>
+              <li>Adjacent to Red on the same element, except inside the tri-part stripe.</li>
+              <li>On a list marker or table rule.</li>
+              <li>As text carrying meaning on the cream ground: at 1.95:1 it is decoration only.</li>
+            </ul>
+          </section>
+
+          <section id="dual">
+            <div class="divider"><h3>The dual-accent exception</h3><span class="rule"></span></div>
+            <p class="measure">The Accent button and the Interactive card swap Red for Turquoise on hover: red border at rest, turquoise fill or border on hover. This is a genuine, deliberate exception to "Red is the only color permitted to carry real hover meaning," scoped to exactly these two patterns. The two colors are never visible on the element simultaneously, so it does not touch the never-adjacent guardrail. It must not spread beyond these two.</p>
+            <div class="grid grid-2" style="margin-top:32px;">
+              <div class="demo"><span class="label">Accent button</span><div class="hover-pair"><div><span class="cap">Default</span><button class="btn btn-accent">Learn more</button></div><div><span class="cap">Hover</span><button class="btn btn-accent is-hover-demo">Learn more</button></div></div></div>
+              <div class="demo"><span class="label">Interactive card</span><div class="grid grid-2" style="gap:12px;"><a href="#dual" class="card card-interactive" style="padding:16px;" onclick="return false;"><h4>Rest</h4><p class="small muted">Red border.</p></a><a href="#dual" class="card card-interactive is-hover-demo" style="padding:16px;" onclick="return false;"><h4>Hover</h4><p class="small muted">Turquoise + 5% wash.</p></a></div></div>
+            </div>
+          </section>
+
+          <section id="block">
+            <div class="divider"><h3>Turquoise's Structural Block</h3><span class="rule"></span></div>
+            <p class="measure">Parallel to Red's block but kept clearly secondary. Never adjacent to Red's Sidebar or HeroBand; combined footprint visibly smaller than Red's wherever both appear; ink and cream still dominate every surface outside these blocks; one accent per component still holds. <code>highlight-foreground</code> is constant black on these fills in both themes.</p>
+            <div class="grid grid-2" style="margin-top:32px;">
+              <div class="callout"><p class="t">Callout panel</p><p>Solid highlight, padding 14px by 16px, max width 60ch. Content-sized, never full-bleed; may recur a few times per page.</p></div>
+              <div class="callout"><p class="t">Note</p><p>A content-level device, not page chrome. Title at 0.7rem mono 700, body at 0.9rem.</p></div>
+            </div>
+            <div class="panel" style="margin-top:20px;"><p class="label" style="margin:0;">Second-moment panel</p><p class="statement">One larger section, used once, later in the page flow, never in the hero. Padding 40px, capped around 15% of viewport height.</p></div>
+            <div class="closing-band" style="margin-top:20px;"><p>Closing band · used once near the page's end · padding 28px</p></div>
+            <pre style="margin-top:32px;"><code>&lt;div style="background:var(--highlight); color:var(--highlight-foreground); padding:14px 16px; max-width:60ch;"&gt;
+  &lt;p style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; font-weight:700;"&gt;Tip&lt;/p&gt;
+  &lt;p style="margin:8px 0 0; font-size:0.9rem;"&gt;Content-sized, never full-bleed.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+          <div class="pager"><a href="structural-block.html" class="label"><svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg> Structural Block</a><a href="charts.html" class="label">Charts <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+          <footer>
+            <div class="footer-row">
+              <span id="license" class="muted">v1.1.0 · © 2026 Lux Solari (Luciano Laje) — Design <a href="https://github.com/luxsolari/tri-swiss/blob/main/LICENSE-DESIGN">CC BY-SA 4.0</a> · Code <a href="https://github.com/luxsolari/tri-swiss/blob/main/LICENSE">MIT/X11</a></span>
+              <a href="https://github.com/luxsolari/tri-swiss" style="display:inline-flex; align-items:center; gap:8px;">GitHub <svg class="icon" viewBox="0 0 24 24" width="14" height="14"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </div>
+          </footer>
+        </main>
+      </div>
+    </div>
+  </div>
+  <script src="assets/site.js"></script>
+</body>
+</html>

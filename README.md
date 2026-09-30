@@ -6,11 +6,14 @@
 
 <p align="center">
   <a href="https://luxsolari.github.io/tri-swiss/">
-    <img src="docs/assets/hero-light.png" alt="Tri-Swiss — a tri-tone Swiss-minimalist design system" width="900" />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-dark.png" />
+      <img src="docs/assets/banner-light.png" alt="Tri-Swiss — two colors, one accent, one genuine third" width="960" />
+    </picture>
   </a>
 </p>
 
-<p align="center"><strong><a href="https://luxsolari.github.io/tri-swiss/">View the live demo →</a></strong></p>
+<p align="center"><strong><a href="https://luxsolari.github.io/tri-swiss/">Showcase and documentation →</a></strong></p>
 
 A Claude Code plugin that teaches Claude **Tri-Swiss** — Lux Solari's
 house design language, sibling to
@@ -63,6 +66,28 @@ meaning outside its two named hover exceptions, however often it recurs.
 
 ## See it
 
+[luxsolari.github.io/tri-swiss](https://luxsolari.github.io/tri-swiss/) is both
+the showcase and the documentation. Its sidebar is Red's Structural Block,
+its Overview ends in Turquoise's, and every demo on it is plain HTML on the
+tokens:
+
+| Page | What it documents |
+|------|-------------------|
+| [Overview](https://luxsolari.github.io/tri-swiss/) | The banner, the two governing rules, how to use the system, the do-not list, the Turquoise moment and closing band |
+| [Colors](https://luxsolari.github.io/tri-swiss/colors.html) | Fifteen semantic tokens in both themes, Red's jobs, Turquoise's jobs, the three guardrails, measured contrast |
+| [Typography](https://luxsolari.github.io/tri-swiss/typography.html) | Three roles, the Space/Geist flavors, the weight axis, the heading scale, labels, Jost |
+| [Spacing](https://luxsolari.github.io/tri-swiss/spacing.html) | Spacing steps, the one radius, fixed sizes including Turquoise's caps, opacity states |
+| [Components](https://luxsolari.github.io/tri-swiss/components.html) | Nineteen patterns with live demos and guidelines |
+| [Structural Block](https://luxsolari.github.io/tri-swiss/structural-block.html) | Sidebar, hero band, bold word, the tri-part stripe, the hover hierarchy |
+| [Highlight](https://luxsolari.github.io/tri-swiss/highlight.html) | The Turquoise token: sanctioned uses, its own block, the dual-accent exception |
+| [Charts](https://luxsolari.github.io/tri-swiss/charts.html) | Hand-rolled SVG, the governed third line, restyled Observable Plot |
+| [House Mark](https://luxsolari.github.io/tri-swiss/house-mark.html) | How Tri-Swiss and Lux Swiss relate |
+
+The site is static HTML under `docs/`, served by GitHub Pages: `docs/assets/site.css`
+holds the tokens and every pattern, `docs/assets/site.js` the theme, flavor and Jost
+toggles. The banner above is `docs/banner.html`, rendered by
+`scripts/capture/banner.sh`.
+
 Light and dark are the same tri-tone system inverted — difference by
 contrast, never by a new hue:
 
@@ -75,6 +100,7 @@ Three type registers and the component library:
 ![Type registers](docs/assets/type-registers.png)
 ![Component gallery](docs/assets/components.png)
 ![Charts](docs/assets/charts.png)
+![Observable Plot, restyled](docs/assets/plot.png)
 
 Turquoise's own Structural Block — a genuine third color, not an occasional accent:
 
